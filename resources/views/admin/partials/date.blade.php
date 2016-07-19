@@ -1,0 +1,1 @@
+{{ Date::parse($date)->format('d M Y') }}

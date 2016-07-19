@@ -1,0 +1,138 @@
+table th {text-align: center;}
+table .visible {color:green;}
+table .unvisible {color:grey;}
+.padding-top-7 {padding-top:7px; display: block;}
+
+.controls {
+    font-size: 0;
+    height: 20px;
+    letter-spacing: -1px;
+    line-height: 0;
+    text-align: center;
+    width: 100px;
+}
+.fullleft, .oneleft, .fullright, .oneright, #deletebutton {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: top;
+}
+#deletebutton {
+    background-image: url("/images/admin/delete.png");
+    height: 16px;
+    width: 16px;
+}
+.fullleft {
+    background: url("/images/admin/arrows-sprite.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+}
+.oneleft {
+    background: url("/images/admin/arrows-sprite.png") no-repeat scroll 0 -39px rgba(0, 0, 0, 0);
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+}
+.fullright {
+    background: url("/images/admin/arrows-sprite.png") no-repeat scroll 0 -18px rgba(0, 0, 0, 0);
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+}
+.oneright {
+    background: url("/images/admin/arrows-sprite.png") no-repeat scroll 0 -60px rgba(0, 0, 0, 0);
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+}
+
+.delete_features{
+	float:right;
+	cursor:pointer;
+
+}
+
+.btn-responsive {white-space: normal; word-wrap: break-word;}
+
+table.orders {font-size: 80%;}
+
+.widget-main .tab-content {border: 1px solid #c5d0dc;}
+.edit_order .nav-tabs > li > a {padding: 2px 8px 2px; font-size:90%; line-height: 90%;}
+.white-td {border-width:0px !important; background:white !important;}
+table.quantity { width:100%; font-size:90%; font-weight: normal;}
+.widget-body table.quantity thead tr {background: none !important;}
+.edit_order .tab-content {padding:3px;}
+table.quantity td, table.quantity th {padding:2px; border-right:1px dotted #999;  text-align: center !important; font-weight: normal; background: none;}
+table.quantity tbody tr {border-top:1px dotted #999;}
+table.quantity select {height: 24px; padding:0 2px;}
+
+.main-page .btn.btn-app {
+    padding: 12px 5px 9px;
+    white-space: normal;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+input:disabled, textarea:disabled, option:disabled, optgroup:disabled, select:disabled:disabled  {background: #ccc;}
+
+button.deletebutton{
+    background:none;
+    border:none;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    background: 0 0 !important;
+}
+
+.tag-input-style+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+    background-color: rgba(0,0,0,.2) !important;
+}
+
+#photos ul.photos{
+    margin-top:15px;
+}
+
+#photos ul.photos li:first-child{
+    /*margin-right: 20px*/
+    position: relative;
+}
+
+#photos ul.photos li:first-child > a:before{
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 166px;
+    background-color: rgba(0,0,0,.55);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    content: 'LOGO';
+        display: flex;
+    justify-content:center;
+        font-size: 15px;
+    letter-spacing: 1px;
+    align-items:center;
+    color: white;
+}
+
+#photos ul.photos li:first-child:hover > a:before{
+        left: 24px;
+}
+
+.ace-thumbnails>li{
+    margin:0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.margin-b-m-15{
+    margin-bottom: -15px;
+}
+
+.margin-t-m-15{
+    margin-top: -15px;
+}
+
