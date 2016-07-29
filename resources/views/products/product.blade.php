@@ -12,10 +12,10 @@
                                 </a>
                             </li>
                             <li class="p-none si-no">
-                                <a href="#">Shop</a>
+                                <a href="#">Кассовые аппараты</a>
                             </li>
                             <li>
-                                <a class="current" href="#">Single Product</a>
+                                <a class="current" href="#">Кассовый Аппарат ККМ ОКА-МК</a>
                             </li>
                         </ul>
                     </div>
@@ -26,102 +26,93 @@
 <section class="single-product-area sit">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6 none-si-pro">
+                    <div class="col-md-5 col-sm-6 none-si-pro">
                         <div class="pro-img-tab-content tab-content">
+
                             <div class="tab-pane active" id="image-1">
                                 <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/3-539x761.jpg" href="img/product/3-539x761.jpg">
-                                        <img src="img/product/3-539x761.jpg" alt="" class="simpleLens-big-image">
+                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg" href="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg">
+                                        <img src="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
                             <div class="tab-pane" id="image-2">
                                 <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/9-539x761.jpg" href="img/product/9-539x761.jpg">
-                                        <img src="img/product/9-539x761.jpg" alt="" class="simpleLens-big-image">
+                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" href="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg">
+                                        <img src="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
                             <div class="tab-pane" id="image-3">
                                 <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/10-539x761.jpg" href="img/product/10-539x761.jpg">
-                                        <img src="img/product/10-539x761.jpg" alt="" class="simpleLens-big-image">
+                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" href="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg">
+                                        <img src="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
                             <div class="tab-pane" id="image-4">
                                 <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/4-539x761.jpg" href="img/product/4-539x761.jpg">
-                                        <img src="img/product/4-539x761.jpg" alt="" class="simpleLens-big-image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="image-5">
-                                <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/17-539x761.jpg" href="img/product/17-539x761.jpg">
-                                        <img src="img/product/17-539x761.jpg" alt="" class="simpleLens-big-image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="image-6">
-                                <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="img/product/14-539x761.jpg" href="img/product/14-539x761.jpg">
-                                        <img src="img/product/14-539x761.jpg" alt="" class="simpleLens-big-image">
+                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image=http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg href="ihttp://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg">
+                                        <img src="http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="pro-img-tab-slider indicator-style2">
-                            <div class="item"><a href="#image-1" data-toggle="tab"><img src="img/product/3-539x761.jpg" alt="" /></a></div>
-                            <div class="item"><a href="#image-2" data-toggle="tab"><img src="img/product/9-539x761.jpg" alt="" /></a></div>
-                            <div class="item"><a href="#image-3" data-toggle="tab"><img src="img/product/10-539x761.jpg" alt="" /></a></div>
-                            <div class="item"><a href="#image-4" data-toggle="tab"><img src="img/product/4-539x761.jpg" alt="" /></a></div>
-                            <div class="item"><a href="#image-5" data-toggle="tab"><img src="img/product/17-539x761.jpg" alt="" /></a></div>
-                            <div class="item"><a href="#image-6" data-toggle="tab"><img src="img/product/14-539x761.jpg" alt="" /></a></div>
+
+                        <div class="pro-img-tab-slider indicator-style2 product_img_min">
+                            <div class="item">
+                                <a href="#image-1" data-toggle="tab">
+                                    <img src="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="item"><a href="#image-2" data-toggle="tab"><img src="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" alt="" /></a></div>
+                            <div class="item"><a href="#image-3" data-toggle="tab"><img src="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" alt="" /></a></div>
+                            <div class="item"><a href="#image-4" data-toggle="tab"><img src="http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg" alt="" /></a></div>
                         </div>
                     </div>
-                    <div class="col-md-5 col-sm-6">
+                    <div class="col-md-7 col-sm-6">
                         <div class="cras">
                             <div class="product-name">
-                                <h2>Ut wisi enim</h2>
+                                <h2>Кассовый аппарат ККМ ОКА-МК</h2>
                             </div>
-                            <div class="pro-rating cendo-pro">
+<!--                             <div class="pro-rating cendo-pro">
                                 <div class="pro_one">
                                     <img src="img/icon/stars-1.png" alt="">
                                 </div>
                                 <p class="rating-links">
                                     <a href="#">1 Reviews</a>
                                 </p>
-                            </div>
-                            <p class="availability in-stock">
+                            </div> -->
+<!--                             <p class="availability in-stock">
                                 Product Code: Product 3
-                            </p>
-                            <p class="availability in-stock2">
-                                Availability:In stock
-                            </p>
+                            </p> -->
+<!--                             <p class="availability in-stock2">
+                                Есть в наличии
+                            </p> -->
                             <div class="short-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio...</p>
+                                <p>Незаменима при выездной торговле. Имеет влагостойкую клавиатуру, светодиодный индикатор, калькулятор, работает от встроенного аккумулятора (с подзарядкой от сети переменного тока 220 В) или от любого внешнего источника тока напряжением 12-16 В. Элементная база К-МОП, процессор Winbond.  
+Потребляемая мощность при средней эксплуатационной нагрузке - не более 6 Вт.</p>
                             </div>
                             <div class="pre-box">
-                                <span class="special-price">$155.00</span>
+                                <span class="special-price">3000 лей</span>
                             </div>
                             <div class="add-to-box1">
                                 <div class="add-to-box add-to-box2">
                                     <div class="add-to-cart">
                                         <div class="input-content">
-                                            <label for="qty">Quantity:</label>
+                                            <label for="qty">Количество:</label>
                                             <input id="qty" class="input-text qty" type="text" name="qty" maxlength="12" value="1" title="Qty">
                                         </div>
-                                        <div class="product-icon">
+                                        <div class="product-icon product-icon-buy">
                                             <a href="#">
-                                                <i class="fa fa-shopping-cart"></i>
+                                                Счет на оплату
                                             </a>
-                                            <a href="#">
+                                            <!-- <a href="#">
                                                 <i class="fa fa-heart"></i>
                                             </a>
                                             <a href="#">
                                                 <i class="fa fa-retweet"></i>
-                                            </a>
+                                            </a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-12">
+<!--                     <div class="col-md-3 col-sm-12">
                         <div class="related-title s-title">
                             <h2>
                                 <span>Related</span>
@@ -441,7 +432,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -453,16 +444,68 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active">
-                                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Product Description</a>
+                                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Описание товара</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews (1)</a>
+                                    <a href="#characteristic" aria-controls="profile" role="tab" data-toggle="tab">Характеристики товара</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#instructions" aria-controls="profile" role="tab" data-toggle="tab">Инструкции</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#software" aria-controls="profile" role="tab" data-toggle="tab">Софт</a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue. Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis. </div>
-                                <div role="tabpanel" class="tab-pane" id="profile">
+                                <div role="tabpanel" class="tab-pane active" id="home">
+                                    Tremol M-KL самый модифицированный кассовый аппарат в TREMOL, который просматривается в новой версии всей линейки MCC Tremol M.
+Большой удобный дисплей позволяет с легкостью пользоваться аппаратом. Быстрый запуск любого меню, большее разрешение, и хорошая зарядная батарея – вот основные характеристики топового кассового аппарата. Все фискальные устройства с Bluetooth имеют функцию запроса операционной системы Android, что позволяют клиенту контролировать устройства прямо с телефона или планшета.
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="characteristic">
+
+                                    <table class="table table-bordered table_carac">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 35%;">Ширина ленты</td>
+                                                <td>57 мм</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 35%;">Тип аппарата</td>
+                                                <td>стационарный </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 35%;">Питание</td>
+                                                <td>аккумулятор 7.4V, 2200mA Li-Ion, от сети (220В)</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 35%;">Интерфейсы подключения</td>
+                                                <td>USB, RS232 (COM), Bluetooth, GSM/GPRS (опционально)</td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 35%;">Бренд</td>
+                                                <td>Tremol</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane" id="instructions">
+                                    Инструкции
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="software">
+                                    Софт
+                                </div>
+                              <!--   <div role="tabpanel" class="tab-pane" id="profile">
                                     <form class="form-horizontal">
                                         <div id="review">
                                             <table class="table table-striped table-bordered">
@@ -543,7 +586,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -556,7 +599,7 @@
                     <div class="col-md-12">
                         <div class="title-group-parent grp-three">
                             <div class="featured-slider-title title-group">
-                                <h2>Mostviewed</h2>
+                                <h2>Мы рекомендуем</h2>
                                 <div class="after-title">
                                     <span class="content-after-title"></span>
                                 </div>
@@ -578,23 +621,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
+                                                <img class="primary-image" alt="" src="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                        <!-- <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">Ut wisi enim</a>
+                                            <a href="#">Кассовые аппараты</a>
                                         </h2>
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -608,23 +651,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
+                                                <img class="primary-image" alt="" src="http://www.wmsteh.com/detect/image/pro1500ir.jpg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                        <!-- <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">sed diam </a>
+                                            <a href="#">детектор валют</a>
                                         </h2>
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -639,23 +682,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/11-539x761.jpg">
+                                                <img class="primary-image" alt="" src="http://alkir-service.ru/wp-content/uploads/2013/07/EC-410.jpeg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                       <!--  <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">quis nostrud</a>
+                                            <a href="#">денежные ящики</a>
                                         </h2>
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -670,23 +713,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/10-539x761.jpg">
+                                                <img class="primary-image" alt="" src="https://stepprint.ru/files/uploads/PressFoto_131351_StepPrint.jpg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                       <!--  <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">exerci tation</a>
+                                            <a href="#">чековая лента</a>
                                         </h2>
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-5.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -700,23 +743,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/11-539x761.jpg">
+                                                <img class="primary-image" alt="" src="http://axis-ua.com/published/publicdata/WEBASYSTUKDEMO/attachments/SC/products_pictures/157_88.jpg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                        <!-- <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">malesuada</a>
+                                            <a href="#">купюросчетная машина</a>
                                         </h2>
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -731,23 +774,23 @@
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
-                                                <img class="primary-image" alt="" src="img/product/18-539x761.jpg">
+                                                <img class="primary-image" alt="" src="http://www.1kkt.ru/file/UtZiKRjJ2Q/iA9YXN5VPu.jpg">
                                             </a>
                                         </div>
-                                        <div class="ratings reload">
+                                        <!-- <div class="ratings reload">
                                             <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                             <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                            <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                             <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="content-box again">
                                         <h2 class="name">
-                                            <a href="#">sed diam </a>
+                                            <a href="#">Кассовые аппараты </a>
                                         </h2>
-                                        <div class="price-box">
+                                       <!--  <div class="price-box">
                                             <a href="#"><img alt="" src="img/icon/stars-5.png"></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -756,7 +799,7 @@
                 </div>
             </div>
         </section>
-        <div class="icon-slider-area">
+<!--         <div class="icon-slider-area">
             <div class="container">
                 <div class="row">          
                     <div class="col-md-12">
@@ -773,6 +816,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 @stop

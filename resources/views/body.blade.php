@@ -4,7 +4,7 @@
     <base href="{{ URL::to('/') }}"/>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Cendo | Home 2</title>
+        <title>Rezomedia - Integrarea sistemelor de casa si control</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +15,7 @@
         <!-- Google Fonts
         ============================================ -->        
        <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
        
         <!-- Bootstrap CSS
         ============================================ -->        
@@ -44,6 +45,8 @@
         <!-- style CSS
         ============================================ -->
         <link rel="stylesheet" href="css/style.css">
+
+        <link rel="stylesheet" href="css/custom.css">
         <!-- responsive CSS
         ============================================ -->
         <link rel="stylesheet" href="css/responsive.css">
@@ -184,7 +187,22 @@
         <!-- main JS
         ============================================ -->        
         <script src="js/main.js"></script>
-
+<!-- Chatra {literal} -->
+<script>
+    ChatraID = 'gKtuMXLajPCx3JzNa';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
 
 </body>
 </html>

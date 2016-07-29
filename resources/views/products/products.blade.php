@@ -25,7 +25,7 @@
                     <div class="col-md-3 col-sm-3">
                         <div class="shop-around">
                            <div class="all-shop2-area">
-                               <div class="block-title">
+<!--                                <div class="block-title">
                                     <h2>Price</h2>
                                 </div>
                                 <div class="widget shop-filter">
@@ -61,8 +61,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="filter-attribute-container">
+                                </div> -->
+<!--                                 <div class="filter-attribute-container">
                                     <div class="block-title">
                                         <h2>Color</h2>
                                     </div>
@@ -84,36 +84,48 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="filter-attribute-container">
                                     <div class="block-title">
-                                        <h2>Category</h2>
+                                        <h2>Категории товаров</h2>
                                     </div>
                                     <div class="layered-content">
                                         <div class="cen-shop">
                                             <ul>
                                                 <li>
-                                                    <a class="a-filter add-filter" href="#">Dresses (7)</a>
+                                                    <a class="a-filter add-filter" href="#">Кассовые аппараты (10)</a>
                                                 </li>
                                                 <li>
-                                                    <a class="a-filter add-filter" href="#">Accessories (9)</a>
+                                                    <a class="a-filter add-filter" href="#">Купюросчетные машинки (9)</a>
                                                 </li>
                                                 <li>
-                                                    <a class="a-filter add-filter" href="#">Tops (3)</a>
+                                                    <a class="a-filter add-filter" href="#">Детекторы валют (3)</a>
                                                 </li>
                                                 <li>
-                                                    <a class="a-filter add-filter" href="#">Handbags (1)</a>
+                                                    <a class="a-filter add-filter" href="#">Сканеры (1)</a>
+                                                </li>
+                                                <li>
+                                                    <a class="a-filter add-filter" href="#">Весы (1)</a>
+                                                </li>
+                                                <li>
+                                                    <a class="a-filter add-filter" href="#">Денежные ящики (1)</a>
+                                                </li>
+                                                <li>
+                                                    <a class="a-filter add-filter" href="#">Чековая лента (1)</a>
+                                                </li>
+                                                <li>
+                                                    <a class="a-filter add-filter" href="#">Все в одном( ПК+Монитор) (1)</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                            </div>
-                           <div class="save-up shop2-up">
+                          <!--  <div class="save-up shop2-up">
                                 <a href="#">
-                                    <img src="img/banner/banner_left.jpg" alt="">
+                                    <img src="img/banners/banner_left.jpg" alt="">
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9">
@@ -121,7 +133,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="features-tab fe-again">
                                   <!-- Nav tabs -->
-                                    <div class="shop-all-tab top-shop-n">
+<!--                                     <div class="shop-all-tab top-shop-n">
                                         <div class="two-part an-tw">
                                             <ul class="nav tabs" role="tablist">
                                                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-th-large"></i> Grid</a></li>
@@ -148,7 +160,7 @@
                                                 <a href="#"><i class="fa fa-long-arrow-up"></i></a> 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                   <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="home">
@@ -167,20 +179,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">Ut wisi enim</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+<!--                                                                     <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -198,20 +210,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/11-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">quis nostrud</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+<!--                                                                     <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -228,20 +240,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">Ut wisi enim</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+                                                                   <!--  <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -259,20 +271,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">quis nostrud</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+                                                                    <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -289,20 +301,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/3-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">Ut wisi enim</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+                                                                    <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -319,20 +331,20 @@
                                                                             <img class="primary-image" alt="" src="img/product/10-539x761.jpg">
                                                                         </a>
                                                                     </div>
-                                                                    <div class="ratings">
+<!--                                                                     <div class="ratings">
                                                                         <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                                         <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                                        <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                                         <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
                                                                         <a href="#">Ut wisi enim</a>
                                                                     </h2>
-                                                                    <div class="price-box">
+                                                                    <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -340,7 +352,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="profile">
+<!--                                         <div role="tabpanel" class="tab-pane" id="profile">
                                             <div class="row sho">
                                                 <div class="li-item">
                                                     <div class="col-md-4 col-sm-4 col-xs-12 col-shop">
@@ -523,7 +535,7 @@
                                                     </div>
                                                 </div>
                                             </div>  
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 text-left">
@@ -545,7 +557,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-6 text-right">Showing 1 to 6 of 18 (3 Pages)</div>
+                                        <!-- <div class="col-sm-6 text-right">Showing 1 to 6 of 18 (3 Pages)</div> -->
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +566,7 @@
                 </div>
             </div>
         </section>
-        <div class="icon-slider-area">
+<!--         <div class="icon-slider-area">
             <div class="container">
                 <div class="row">          
                     <div class="col-md-12">
@@ -571,5 +583,5 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 @stop

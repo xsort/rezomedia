@@ -53,7 +53,7 @@
         <section class="home2-all-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-4">
+                   <!--  <div class="col-md-3 col-sm-4">
                         <div class="save-up">
                             <a href="#"><img alt="" src="img/banners/banner_left.jpg"></a>
                         </div>
@@ -64,13 +64,13 @@
                             <div class="ma-box-content-all">
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/10-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">quis nostrud</a>
+                                            <a href="/product">quis nostrud</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -101,13 +101,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">rutrum at</a>
+                                            <a href="/product">rutrum at</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -138,13 +138,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">sed diam </a>
+                                            <a href="/product">sed diam </a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -175,13 +175,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">Ut wisi enim</a>
+                                            <a href="/product">Ut wisi enim</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -212,13 +212,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/5-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">nibh euismod</a>
+                                            <a href="/product">nibh euismod</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -251,13 +251,13 @@
                             <div class="ma-box-content-all">
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/10-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">quis nostrud</a>
+                                            <a href="/product">quis nostrud</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -288,13 +288,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">rutrum at</a>
+                                            <a href="/product">rutrum at</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -325,13 +325,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">sed diam </a>
+                                            <a href="/product">sed diam </a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -362,13 +362,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">Ut wisi enim</a>
+                                            <a href="/product">Ut wisi enim</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -399,13 +399,13 @@
                                 </div>
                                 <div class="ma-box-content">
                                     <div class="product-img-right">
-                                        <a href="/prodruct">
+                                        <a href="/product">
                                             <img class="primary-image" alt="" src="img/product/5-539x761.jpg">
                                         </a>
                                     </div>
                                     <div class="product-content">
                                         <h2 class="product-name">
-                                            <a href="/prodruct">nibh euismod</a>
+                                            <a href="/product">nibh euismod</a>
                                         </h2>
                                         <div class="pro-rating">
                                             <div class="pro_one">
@@ -441,21 +441,21 @@
                                 <img src="img/banners/banner_left2_home2.jpg" alt="">
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-9 col-sm-8">
+                    </div> -->
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="first-banner">
-                                    <a href="#"><img alt="" src="img/banners/img1_banner_top.jpg"></a>
+                                    <a href="#"><img  alt="" src="https://static12.insales.ru/files/1/7609/269753/original/banner_event_736x240_500rub.jpg" style="height:216px"></a>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="first-banner res-free">
-                                    <a href="#"><img alt="" src="img/banners/img2_banner_top.jpg"></a>
+                                    <a href="#"><img alt="" src="http://vashkarapuz.ru/sites/default/files/imce/banner_10.jpg" style="height:216px;width:100%"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="ma-title now2">
+<!--                         <div class="ma-title now2">
                             <h2>New Products </h2>
                         </div>
                         <div class="row">
@@ -468,7 +468,7 @@
                                                     <span class="price-new new2">$1500.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/13-539x761.jpg">
                                                     </a>
@@ -482,7 +482,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">Ut wisi enim</a>
+                                                    <a href="/product">Ut wisi enim</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -500,7 +500,7 @@
                                                     <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/11-539x761.jpg">
                                                     </a>
@@ -514,7 +514,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">sit amet</a>
+                                                    <a href="/product">sit amet</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
@@ -531,7 +531,7 @@
                                                     <span class="price-new new2">$70.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/2-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/11-539x761.jpg">
                                                     </a>
@@ -577,7 +577,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">laoreet dolore</a>
+                                                    <a href="/product">laoreet dolore</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
@@ -594,7 +594,7 @@
                                                     <span class="price-new new2">$90.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/5-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/16-539x761.jpg">
                                                     </a>
@@ -608,7 +608,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">rutrum at</a>
+                                                    <a href="/product">rutrum at</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
@@ -625,7 +625,7 @@
                                                     <span class="price-new new2">$150.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/13-539x761.jpg">
                                                     </a>
@@ -639,7 +639,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">Ut wisi enim</a>
+                                                    <a href="/product">Ut wisi enim</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -649,8 +649,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div> -->
+<!--                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="big-sale">
                                     <div class="first-banner2">
@@ -665,11 +665,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ma-title now2">
+                        </div> -->
+<!--                         <div class="ma-title now2">
                             <h2>Featured Products </h2>
-                        </div>
-                        <div class="row">
+                        </div> -->
+                        <!-- <div class="row">
                             <div class="active-slider8 indicator-style2">
                                 <div class="col-md-4">
                                     <div class="slider-one">
@@ -679,7 +679,7 @@
                                                     <span class="price-new new2">$70.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/11-539x761.jpg">
                                                     </a>
@@ -693,7 +693,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">Ut wisi enim</a>
+                                                    <a href="/product">Ut wisi enim</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -711,7 +711,7 @@
                                                     <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/17-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/14-539x761.jpg">
                                                     </a>
@@ -725,7 +725,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">sit amet</a>
+                                                    <a href="/product">sit amet</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
@@ -742,7 +742,7 @@
                                                     <span class="price-new new2">$120.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/18-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/8-539x761.jpg">
                                                     </a>
@@ -756,7 +756,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">adipiscing elit</a>
+                                                    <a href="/product">adipiscing elit</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-5.png"></a>
@@ -774,7 +774,7 @@
                                                     <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/3-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/10-539x761.jpg">
                                                     </a>
@@ -788,7 +788,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">laoreet dolore</a>
+                                                    <a href="/product">laoreet dolore</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
@@ -805,7 +805,7 @@
                                                     <span class="price-new new2">$140.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/5-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/16-539x761.jpg">
                                                     </a>
@@ -819,7 +819,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">rutrum at</a>
+                                                    <a href="/product">rutrum at</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
@@ -836,7 +836,7 @@
                                                     <span class="price-new new2">$150.00</span>
                                                 </p>
                                                 <div class="product-img">
-                                                    <a href="/prodruct">
+                                                    <a href="/product">
                                                         <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
                                                         <img class="secondary-image" alt="" src="img/product/13-539x761.jpg">
                                                     </a>
@@ -850,7 +850,7 @@
                                             </div>
                                             <div class="content-box again">
                                                 <h2 class="name">
-                                                    <a href="/prodruct">Ut wisi enim</a>
+                                                    <a href="/product">Ut wisi enim</a>
                                                 </h2>
                                                 <div class="price-box">
                                                     <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -860,13 +860,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row">
                    <div class="col-md-12">
                        <div class="ma-title now2 now3">
-                            <h2>Mostviewed</h2>
+                            <h2>Наши товары:</h2>
                         </div>
                    </div>
                     <div class="row">
@@ -880,24 +880,24 @@
                                                 <span class="price-new new2">$120.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+                                            <!-- <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">Ut wisi enim</a>
+                                                <a href="/product">Кассовые аппараты</a>
                                             </h2>
-                                            <div class="price-box">
+                                            <!-- <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -911,24 +911,24 @@
                                                 <span class="price-old">$100.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/18-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="http://www.wmsteh.com/detect/image/pro1500ir.jpg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+       <!--                                      <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">sit amet</a>
+                                                <a href="/product">детектор валют</a>
                                             </h2>
-                                            <div class="price-box">
+                                            <!-- <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -941,24 +941,24 @@
                                                 <span class="price-new new2">$140.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/13-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="http://alkir-service.ru/wp-content/uploads/2013/07/EC-410.jpeg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+                                           <!--  <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">adipiscing elit</a>
+                                                <a href="/product">денежные ящики</a>
                                             </h2>
-                                            <div class="price-box">
+                                            <!-- <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-5.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -972,24 +972,24 @@
                                                 <span class="price-old">$110.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/3-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="https://stepprint.ru/files/uploads/PressFoto_131351_StepPrint.jpg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+                                            <!-- <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">laoreet dolore</a>
+                                                <a href="/product">чековая лента</a>
                                             </h2>
-                                            <div class="price-box">
+                                            <!-- <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-0.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1002,24 +1002,24 @@
                                                 <span class="price-new new2">$170.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/8-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="http://axis-ua.com/published/publicdata/WEBASYSTUKDEMO/attachments/SC/products_pictures/157_88.jpg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+                                           <!--  <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">rutrum at</a>
+                                                <a href="/product">купюросчетная машина</a>
                                             </h2>
-                                            <div class="price-box">
+                                            <!-- <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1032,24 +1032,24 @@
                                                 <span class="price-new new2">$100.00</span>
                                             </p>
                                             <div class="product-img">
-                                                <a href="/prodruct">
-                                                    <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
+                                                <a href="/product">
+                                                    <img class="primary-image" alt="" src="http://www.1kkt.ru/file/UtZiKRjJ2Q/iA9YXN5VPu.jpg">
                                                 </a>
                                             </div>
-                                            <div class="ratings">
+                                            <!-- <div class="ratings">
                                                 <a class="add" href="" data-toggle="tooltip" title="add to Cart"> <i class="fa fa-shopping-cart"></i></a>   
                                                 <a href="" class="wishlist" data-toggle="tooltip" title="add to wish List"><i class="fa fa-heart"></i></a>
                                                <a href="" class="wishlist" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-retweet"></i></a>
                                                 <a href="#productModal" class="search2" title="Quick View" data-toggle="modal"><i class="fa fa-search"></i></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="content-box again">
                                             <h2 class="name h2">
-                                                <a href="/prodruct">Ut wisi enim</a>
+                                                <a href="/product">Кассовые аппараты</a>
                                             </h2>
-                                            <div class="price-box">
+                                           <!--  <div class="price-box">
                                                 <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1060,7 +1060,7 @@
                 </div>
             </div>
         </section>
-        <section class="our-blog-area">
+ <!--        <section class="our-blog-area">
             <div class="container">
                <div class="row">
                    <div class="col-md-12">
@@ -1174,20 +1174,20 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <div class="icon-slider-area">
             <div class="container">
                 <div class="row">          
                     <div class="col-md-12">
                         <div class="item_all indicator-style3">
-                            <a href="#"><img src="img/logo-slider/brand1-175x72.png" alt="" /></a>
+                            <a href="#" class="part_item"><img src="http://www.compsi.net/dell-registered-partner-logo.jpg" alt="" /></a>
+                            <a href="#" class="part_item"><img src="http://btech.kiev.ua/wp-content/uploads/2013/01/terrasoft_implementation_partner_logo.png" alt="" /></a>
+                            <a href="#" class="part_item"><img src="http://www.pulsarit.net/wp-content/blogs.dir/1/files/partner_ucc/lifesize.jpg" alt="" /></a>
+                            <a href="#" class="part_item"><img src="http://p3week.ru/images/partners/biz_partner_logo_new.png" alt="" /></a>
+                            <a href="#" class="part_item"><img src="https://d0.awsstatic.com/logos/partners/Logo-BEEVA.jpg" alt="" /></a>
+                            <!-- <a href="#"><img src="img/logo-slider/brand1-175x72.png" alt="" /></a>
                             <a href="#"><img src="img/logo-slider/brand2-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand3-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand4-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand5-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand1-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand2-175x72.png" alt="" /></a>
-                            <a href="#"><img src="img/logo-slider/brand3-175x72.png" alt="" /></a>
+                            <a href="#"><img src="img/logo-slider/brand3-175x72.png" alt="" /></a> -->
                         </div>
                     </div>
                 </div>
