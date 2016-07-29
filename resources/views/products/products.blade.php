@@ -7,12 +7,12 @@
                     <div class="col-md-12">
                         <ul class="breadcrumb"> 
                             <li class="p-none">
-                                <a href="#">
+                                <a href="/">
                                     <i class="fa fa-home"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="current" href="#">shop</a>
+                                <a class="current" href="javascript:void(0);">Кассовые аппараты</a>
                             </li>
                         </ul>
                     </div>
@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-3">
-                        <div class="shop-around">
+                        <div class="shop-around margin-b-20">
                            <div class="all-shop2-area">
 <!--                                <div class="block-title">
                                     <h2>Price</h2>
@@ -85,14 +85,14 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <div class="filter-attribute-container">
+                                <div class="filter-attribute-container ">
                                     <div class="block-title">
                                         <h2>Категории товаров</h2>
                                     </div>
-                                    <div class="layered-content">
+                                    <div class="layered-content no_cb">
                                         <div class="cen-shop">
                                             <ul>
-                                                <li>
+                                                <li >
                                                     <a class="a-filter add-filter" href="#">Кассовые аппараты (10)</a>
                                                 </li>
                                                 <li>
@@ -116,6 +116,98 @@
                                                 <li>
                                                     <a class="a-filter add-filter" href="#">Все в одном( ПК+Монитор) (1)</a>
                                                 </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div></div></div>
+
+                                    <div class="shop-around margin-b-20">
+                                        <div class="all-shop2-area">
+                                            <div class="filter-attribute-container">
+
+                                    <div class="block-title">
+                                        <h2>Ширина ленты</h2>
+                                    </div>
+                                    <div class="layered-content">
+                                        <div class="cen-shop">
+                                             <ul>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">28+28</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">35+20</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">38+38</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">57</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">80</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="block-title">
+                                        <h2>Тип аппарата</h2>
+                                    </div>
+                                    <div class="layered-content">
+                                        <div class="cen-shop">
+                                            <ul>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">Портативный</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">Стационарный</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">Фискальный</a>
+                                                </li>
+                                                <li class="item_filter">
+                                                    <a class="a-filter add-filter" href="javascript:void(0);">Регистратор</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="block-title">
+                                        <h2>Питание</h2>
+                                    </div>
+                                    <div class="layered-content">
+                                        <div class="cen-shop">
+                                            <ul>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">С аккумулятором</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Без аккумулятора</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="block-title">
+                                        <h2>Интефейс</h2>
+                                    </div>
+                                    <div class="layered-content">
+                                        <div class="cen-shop">
+                                            <ul>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">USB</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">LAN</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">rs232</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="block-title">
+                                        <h2>Бренд</h2>
+                                    </div>
+                                    <div class="layered-content">
+                                        <div class="cen-shop">
+                                            <ul>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Datex</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Tremol</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Daisy</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Elicom</a></li>
+                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Aclas</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -175,8 +267,8 @@
                                                                         <span class="price-new new2">$150.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/9-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="http://spb-kassa.ru/images/%D0%90%D0%BB%D1%8C%D1%84%D0%B0%20400/%D0%B0%D0%BB%D1%8C%D1%84%D0%B0_400%D0%BA.jpg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -188,7 +280,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">Ut wisi enim</a>
+                                                                        <a href="/product">Кассовые аппараты</a>
                                                                     </h2>
 <!--                                                                     <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -206,8 +298,8 @@
                                                                         <span class="price-old">$100.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/11-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="http://www.wmsteh.com/detect/image/pro1500ir.jpg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -219,7 +311,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">quis nostrud</a>
+                                                                        <a href="/product">детектор валют</a>
                                                                     </h2>
 <!--                                                                     <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
@@ -236,8 +328,8 @@
                                                                         <span class="price-new new2">$70.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/4-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="http://alkir-service.ru/wp-content/uploads/2013/07/EC-410.jpeg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -249,7 +341,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">Ut wisi enim</a>
+                                                                        <a href="/product">Денежные ящики</a>
                                                                     </h2>
                                                                    <!--  <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -267,8 +359,8 @@
                                                                         <span class="price-old">$100.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/16-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="https://stepprint.ru/files/uploads/PressFoto_131351_StepPrint.jpg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -280,7 +372,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">quis nostrud</a>
+                                                                        <a href="/product">чековая лента</a>
                                                                     </h2>
                                                                     <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-1.png"></a>
@@ -297,8 +389,8 @@
                                                                         <span class="price-new new2">$170.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/3-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="http://axis-ua.com/published/publicdata/WEBASYSTUKDEMO/attachments/SC/products_pictures/157_88.jpg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -310,7 +402,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">Ut wisi enim</a>
+                                                                        <a href="/product">купюросчетная машина</a>
                                                                     </h2>
                                                                     <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>
@@ -327,8 +419,8 @@
                                                                         <span class="price-new new2">$110.00</span>
                                                                     </p>
                                                                     <div class="product-img">
-                                                                        <a href="#">
-                                                                            <img class="primary-image" alt="" src="img/product/10-539x761.jpg">
+                                                                        <a href="/product">
+                                                                            <img class="primary-image" alt="" src="http://www.1kkt.ru/file/UtZiKRjJ2Q/iA9YXN5VPu.jpg">
                                                                         </a>
                                                                     </div>
 <!--                                                                     <div class="ratings">
@@ -340,7 +432,7 @@
                                                                 </div>
                                                                 <div class="content-box again">
                                                                     <h2 class="name">
-                                                                        <a href="#">Ut wisi enim</a>
+                                                                        <a href="/product">Кассовые аппараты</a>
                                                                     </h2>
                                                                     <!-- <div class="price-box">
                                                                         <a href="#"><img alt="" src="img/icon/stars-2.png"></a>

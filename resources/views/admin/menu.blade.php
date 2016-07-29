@@ -23,25 +23,6 @@
 
         <b class="arrow"></b>
     </li>
-
-    <li class="">
-        <a href="{{URL::to('admin/news')}}">
-            <i class="menu-icon fa fa-camera-retro"></i>
-            <span class="menu-text"> Фотоотчеты </span>
-        </a>
-
-        <b class="arrow"></b>
-    </li>
-
-    <li class="">
-        <a href="{{URL::to('admin/news')}}">
-            <i class="menu-icon fa fa-youtube-square"></i>
-            <span class="menu-text"> Видео </span>
-        </a>
-
-        <b class="arrow"></b>
-    </li>
-
     <li class="">
         <a href="{{URL::to('admin/content')}}">
             <i class="menu-icon fa fa-file-text-o"></i>
@@ -60,7 +41,23 @@
         <b class="arrow"></b>
     </li>
 
-
+    <li class="">
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-cutlery"></i>
+            <span class="menu-text"> Меню</span>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
+        <b class="arrow"></b>
+        <ul class="submenu">
+            <li class="">
+                <a href="{{URL::to('admin/menucategories')}}">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Категории
+                </a>
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>
 
     <li class="">
         <a href="#" class="dropdown-toggle">

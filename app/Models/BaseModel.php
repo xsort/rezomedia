@@ -117,7 +117,15 @@ class BaseModel extends Model
     public function photos(){
         return $this->hasMany('App\Models\Photos','table_id')->where('table', $this->getTable())->orderBy('sort');
     }
-    
+
+    public function galleries() {
+        return $this->belongsToMany('App\Models\Galleries', 'galleries_xref', 'table_id', 'galleries_id')->where('table', $this->getTable());
+    }
+
+    public function videos() {
+        return $this->belongsToMany('App\Models\Videos', 'videos_xref', 'table_id', 'videos_id')->where('table', $this->getTable());
+    }
+
     public function meta(){
         return $this->hasOne('App\Models\Meta','table_id')->where('table', $this->getTable());
     }

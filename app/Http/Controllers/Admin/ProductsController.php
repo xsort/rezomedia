@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Products;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Models\Categories;
 
@@ -64,6 +62,29 @@ class ProductsController extends Controller
             $data->parents()->sync($request->parent);
         }
 
+        //galleries
+        if ($request->galleries) {
+            $pivot = [];
+            foreach($request->galleries as $gallery_id){
+                $pivot[$gallery_id] = ['table' => 'products'];
+            }
+            $data->galleries()->sync($pivot);
+        }
+
+        //videos
+        if ($request->videos) {
+            $pivot = [];
+            foreach($request->videos as $video_id){
+                $pivot[$video_id] = ['table' => 'products'];
+            }
+            $data->videos()->sync($pivot);
+        }
+
+        //news
+        if ($request->news) {
+            $data->news()->sync($request->news);
+        }
+
         // redirect
         Session::flash('message', trans('common.saved'));
         return redirect('admin/products');
@@ -87,16 +108,10 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $data = Products::find($id);
-        //$tags = Tags::all();
-        $categories = Categories::lists('name','id')->toArray();
-        $parents = $data->parents->pluck('id')->toArray();
+        $data           = Products::find($id);
+        $categories     = Categories::lists('name','id')->toArray();
+        $parents        = $data->parents->pluck('id')->toArray();
         return view('admin.products.edit')->with('data', $data)->with('categories', $categories)->with('parents',$parents);
-        
-        
- 
-        //$parents = $data->parents->pluck('id')->toArray();
-        //return view('admin.categories.edit')->with('data', $data)->with('categories', $categories)->with('parents',$parents);
     }
 
     /**
@@ -109,7 +124,7 @@ class ProductsController extends Controller
     {
         $rules = array(
             'name'          => 'required',
-            'slug'          => 'required|unique:news,id,{$id}'
+            'slug'          => 'required|unique:products,id,{$id}'
         );
 
         $this->validate($request, $rules);
@@ -125,7 +140,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Content::destroy($id);
+        Products::destroy($id);
         Session::flash('message', trans('common.deleted'));
         return back();
     }

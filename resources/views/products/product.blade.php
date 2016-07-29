@@ -1,5 +1,183 @@
 @extends('body')
 @section('centerbox')
+        <!-- QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="modal-up">
+                           <table class="shop-container cart">
+                                <thead>
+                                    <tr>
+                                        <th class="item-nom">&nbsp;</th>
+                                        
+                                        <!-- <th class="item-thumb">&nbsp;</th> -->
+                                        <th class="item-name">Продукт</th>
+                                        
+                                        <th class="item-quantity">Количество</th>
+                                        <th class="item-subtotal">Всего</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    <tr class="item-row">
+                                        <td class="item-nom">
+                                            1 <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <!-- <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td> -->
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Кассовый аппарат</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">3000 лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+                                        <td class="item-nom">
+                                            2 <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <!-- <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/15905-200.png">
+                                            </a>
+                                        </td> -->
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Технический журнал</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">200 лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+                                        <td class="item-nom">
+                                            3 <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <!-- <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://www.plomba.ru/images/1-0906.png">
+                                            </a>
+                                        </td> -->
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Пломба</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">50 лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+                                        <td class="item-nom">
+                                            4 <input type="checkbox" checked>
+                                        </td>
+
+                                        <!-- <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/files/175155.png">
+                                            </a>
+                                        </td> -->
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Журнал кассира</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">100 лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+                                        <td class="item-nom">
+                                            5 <input type="checkbox" checked>
+                                        </td>
+
+                                       <!--  <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="https://cdn4.iconfinder.com/data/icons/books-booklets-and-manuals/400/manualrbook-512.png">
+                                            </a>
+                                        </td> -->
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Ввод в эксплуатацию</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">50 лей</span> 
+                                        </td>
+
+                                    </tr>
+                                    </div>
+
+                                    
+                                </tbody>
+                            </table>    
+                        </div>
+                                    <div class="modal-down">
+                                        
+                                    </div>
+                        </div><!-- .modal-body -->
+                    </div><!-- .modal-content -->
+                </div><!-- .modal-dialog -->
+            </div>
+            <!-- END Modal -->
+        </div>
+        <!-- END QUICKVIEW PRODUCT -->
+
+
 <!-- mobile-menu-area end -->
         <div class="top-contact">
             <div class="container">
@@ -12,10 +190,10 @@
                                 </a>
                             </li>
                             <li class="p-none si-no">
-                                <a href="#">Кассовые аппараты</a>
+                                <a href="/shop">Кассовые аппараты</a>
                             </li>
                             <li>
-                                <a class="current" href="#">Кассовый Аппарат ККМ ОКА-МК</a>
+                                <a class="current" href="javascript:void(0)">Кассовый Аппарат ККМ ОКА-МК</a>
                             </li>
                         </ul>
                     </div>
@@ -104,7 +282,7 @@
                                             <input id="qty" class="input-text qty" type="text" name="qty" maxlength="12" value="1" title="Qty">
                                         </div>
                                         <div class="product-icon product-icon-buy">
-                                            <a href="#">
+                                            <a href="#productModal" data-toggle="modal" data-original-title="Quick View">
                                                 Счет на оплату
                                             </a>
                                             <!-- <a href="#">

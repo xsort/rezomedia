@@ -251,3 +251,7 @@ $(".pro-img-tab-slider").owlCarousel({
     
  
 })(jQuery); 
+
+$( ".item_filter" ).click(function() {
+	$(this).closest("li").toggleClass('active');
+});

@@ -10,4 +10,7 @@ class Products extends BaseModel
 	    return $this->belongsToMany('App\Models\Categories', 'products_categories',  'products_id', 'categories_id');
     }
 
+	public function news(){
+		return $this->belongsToMany('App\Models\News', 'products_news');
+	}
 }

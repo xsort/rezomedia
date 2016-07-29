@@ -2,33 +2,29 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Content;
-use App\Models\News;
-use App\Models\Tags;
+use App\Http\Controllers\Controller;
+use App\Models\Galleries;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 use Validator;
 
-class NewsController extends Controller
+class GalleriesController extends Controller
 {
     public function index(){
-        $data = News::all();
-        return view('admin.news.index')->with(compact('data'));
+        $data = Galleries::all();
+        return view('admin.galleries.index')->with(compact('data'));
     }
 
     public function create(){
-        $tags = Tags::all();
-        return view('admin.news.edit')->with(compact('tags'));
+        return view('admin.galleries.edit');
     }
 
     public function store(Request $request)
     {
         $rules = array(
             'name'          => 'required',
-            'slug'          => 'required|unique:content'
+            'slug'          => 'required|unique:galleries'
         );
 
         $validator = Validator::make($request->all(), $rules);
@@ -44,37 +40,27 @@ class NewsController extends Controller
     }
 
     private function save(Request $request, $id = null){
-        //photos
-        //dd($request->photos);
-
         // store
         if (!isset($id)) {
-            $data = new News();
+            $data = new Galleries();
         }else{
-            $data = News::find($id);
+            $data = Galleries::find($id);
         }
 
         $data->name              = $request->name;
-        $data->top               = $request->top;
         $data->created_at        = $request->date;
         $data->slug              = $request->slug;
         $data->description       = $request->description;
-        $data->description_short = $request->description_short;
         $data->meta_description  = $request->meta_description;
         $data->meta_keywords     = $request->meta_keywords;
         $data->title             = $request->title;
         $data->save();
 
-        //tags
-        if ($request->chosencat) {
-            $data->tags()->sync($request->chosencat);
-        }
-
         $this->UpdatePhotos($request, $data->id);
 
         return response()->json([
             'success' => true,
-            'data'    => ['table' => 'news', 'id' => $data->id, 'name' => $data->name]
+            'data'    => ['table' => 'galleries', 'id' => $data->id, 'name' => $data->name]
         ]);
     }
     /**
@@ -96,10 +82,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $data = News::find($id);
-        $tags = Tags::all();
-        return view('admin.news.edit')->with(compact('data'))
-                                      ->with(compact('tags'));
+        $data = Galleries::find($id);
+        return view('admin.galleries.edit')->with('data',$data);
     }
 
     /**
@@ -112,7 +96,7 @@ class NewsController extends Controller
     {
         $rules = array(
             'name'          => 'required',
-            'slug'          => 'required|unique:news,id,{$id}'
+            'slug'          => 'required|unique:galleries,id,{$id}'
         );
 
         $validator = Validator::make($request->all(), $rules);
@@ -135,9 +119,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        Content::destroy($id);
-        Session::flash('message', trans('common.deleted'));
-        return back();
+        return response()->json([
+            'success' => true,
+            'data'    => null
+        ]);
     }
-
 }
