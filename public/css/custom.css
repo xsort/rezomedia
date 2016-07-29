@@ -525,3 +525,36 @@ table.cart .item-name > * {
         height: 30px;
     }
 }
+
+.discount{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    display: flex;
+}
+
+.discount .price-old{
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+    color: #777777;
+    position: relative;
+}
+
+.discount .price-old:before{
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    background: #777777;
+}
+
+.discount .price-new{
+    color: #019cb2;
+    font-size: 36px;
+    font-weight: 600;
+}

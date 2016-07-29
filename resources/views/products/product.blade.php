@@ -14,12 +14,13 @@
                            <table class="shop-container cart">
                                 <thead>
                                     <tr>
-                                        <th class="item-nom">&nbsp;</th>
                                         
-                                        <!-- <th class="item-thumb">&nbsp;</th> -->
+                                        
+                                        <th class="item-thumb">&nbsp;</th>
                                         <th class="item-name">Продукт</th>
                                         
                                         <th class="item-quantity">Количество</th>
+                                        <th class="item-nom">&nbsp;</th>
                                         <th class="item-subtotal">Всего</th>
                                         
                                     </tr>
@@ -27,15 +28,14 @@
                                 <tbody>
                                 
                                     <tr class="item-row">
-                                        <td class="item-nom">
-                                            1 <input type="checkbox" disabled checked>
-                                        </td>
 
-                                        <!-- <td class="item-thumb">
+                                        
+
+                                        <td class="item-thumb">
                                             <a href="javascript:void(0)">
                                                 <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
                                             </a>
-                                        </td> -->
+                                        </td>
 
                                         <td class="item-name">
                                             <a href="javascript:void(0)">Кассовый аппарат</a> 
@@ -46,6 +46,10 @@
                                                 <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox" disabled checked>
+                                        </td>
 
                                         <td class="item-subtotal">
                                             <span class="amount ng-binding">3000 лей</span> 
@@ -53,116 +57,6 @@
 
                                     </tr>
 
-                                    <tr class="item-row">
-                                        <td class="item-nom">
-                                            2 <input type="checkbox" disabled checked>
-                                        </td>
-
-                                        <!-- <td class="item-thumb">
-                                            <a href="javascript:void(0)">
-                                                <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/15905-200.png">
-                                            </a>
-                                        </td> -->
-
-                                        <td class="item-name">
-                                            <a href="javascript:void(0)">Технический журнал</a> 
-                                        </td>
-
-                                        <td class="item-quantity">
-                                            <div class="quantity">
-                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
-                                            </div>
-                                        </td>
-
-                                        <td class="item-subtotal">
-                                            <span class="amount ng-binding">200 лей</span> 
-                                        </td>
-
-                                    </tr>
-
-                                    <tr class="item-row">
-                                        <td class="item-nom">
-                                            3 <input type="checkbox" disabled checked>
-                                        </td>
-
-                                        <!-- <td class="item-thumb">
-                                            <a href="javascript:void(0)">
-                                                <img src="http://www.plomba.ru/images/1-0906.png">
-                                            </a>
-                                        </td> -->
-
-                                        <td class="item-name">
-                                            <a href="javascript:void(0)">Пломба</a> 
-                                        </td>
-
-                                        <td class="item-quantity">
-                                            <div class="quantity">
-                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
-                                            </div>
-                                        </td>
-
-                                        <td class="item-subtotal">
-                                            <span class="amount ng-binding">50 лей</span> 
-                                        </td>
-
-                                    </tr>
-
-                                    <tr class="item-row">
-                                        <td class="item-nom">
-                                            4 <input type="checkbox" checked>
-                                        </td>
-
-                                        <!-- <td class="item-thumb">
-                                            <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/files/175155.png">
-                                            </a>
-                                        </td> -->
-
-                                        <td class="item-name">
-                                            <a href="javascript:void(0)">Журнал кассира</a> 
-                                        </td>
-
-                                        <td class="item-quantity">
-                                            <div class="quantity">
-                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
-                                            </div>
-                                        </td>
-
-                                        <td class="item-subtotal">
-                                            <span class="amount ng-binding">100 лей</span> 
-                                        </td>
-
-                                    </tr>
-
-                                    <tr class="item-row">
-                                        <td class="item-nom">
-                                            5 <input type="checkbox" checked>
-                                        </td>
-
-                                       <!--  <td class="item-thumb">
-                                            <a href="javascript:void(0)">
-                                                <img src="https://cdn4.iconfinder.com/data/icons/books-booklets-and-manuals/400/manualrbook-512.png">
-                                            </a>
-                                        </td> -->
-
-                                        <td class="item-name">
-                                            <a href="javascript:void(0)">Ввод в эксплуатацию</a> 
-                                        </td>
-
-                                        <td class="item-quantity">
-                                            <div class="quantity">
-                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
-                                            </div>
-                                        </td>
-
-                                        <td class="item-subtotal">
-                                            <span class="amount ng-binding">50 лей</span> 
-                                        </td>
-
-                                    </tr>
-                                    </div>
-
-                                    
                                 </tbody>
                             </table>    
                         </div>
@@ -271,8 +165,12 @@
                                 <p>Незаменима при выездной торговле. Имеет влагостойкую клавиатуру, светодиодный индикатор, калькулятор, работает от встроенного аккумулятора (с подзарядкой от сети переменного тока 220 В) или от любого внешнего источника тока напряжением 12-16 В. Элементная база К-МОП, процессор Winbond.  
 Потребляемая мощность при средней эксплуатационной нагрузке - не более 6 Вт.</p>
                             </div>
-                            <div class="pre-box">
+<!--                             <div class="pre-box">
                                 <span class="special-price">3000 лей</span>
+                            </div> -->
+                            <div class="pre-box discount">
+                                <span class="price-old">3000 лей</span>
+                                <span class="price-new">2500 лей</span>
                             </div>
                             <div class="add-to-box1">
                                 <div class="add-to-box add-to-box2">
