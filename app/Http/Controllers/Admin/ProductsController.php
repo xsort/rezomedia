@@ -56,6 +56,7 @@ class ProductsController extends Controller
         $data->meta_description  = $request->meta_description;
         $data->meta_keywords     = $request->meta_keywords;
         $data->title             = $request->title;
+        $data->price             = $request->price;
         $data->save();
         
         $this->UpdatePhotos($request, $data->id);
