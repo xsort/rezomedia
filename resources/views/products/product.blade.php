@@ -3,7 +3,7 @@
         <!-- QUICKVIEW PRODUCT -->
         <div id="quickview-wrapper">
             <!-- Modal -->
-            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog" ng-app="modal_app">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -43,7 +43,7 @@
 
                                         <td class="item-quantity">
                                             <div class="quantity">
-                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                                <input min="1" type="number" ng-model="value_prod" ng-init="value_prod='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
                                         
@@ -52,16 +52,178 @@
                                         </td>
 
                                         <td class="item-subtotal">
-                                            <span class="amount ng-binding">3000 лей</span> 
+                                            <span class="amount ng-binding" ng-model="price_prod" ng-init="price_prod='3260'">@{{product=value_prod*price_prod}} лей</span> 
+                                        </td>
+
+                                    </tr>
+                                    <tr class="item-row">
+
+                                        
+
+                                        <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td>
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Технический журнал</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='320'">@{{tech=value_prod*price_tech}} лей</span> 
+                                        </td>
+
+                                    </tr>
+                                    <tr class="item-row">
+
+                                        
+
+                                        <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td>
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Пломба</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='280'">
+                                            <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+
+                                        <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td>
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Журнал кассира</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value_journal" ng-init="value_journal='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox" checked >
+                                        </td>
+
+
+
+                                        <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='50'">
+                                            <span class="amount ng-binding"> @{{journal=value_journal*price_journal}} лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="item-row">
+
+                                        
+
+                                        <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td>
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Ввод в эксплуатацию</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value_instr" ng-init="value_instr='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox"  checked>
+                                        </td>
+
+                                        <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='190'">
+                                            <span class="amount ng-binding">@{{instr=value_instr*price_instr}} лей</span> 
                                         </td>
 
                                     </tr>
 
                                 </tbody>
-                            </table>    
+                            </table>  
+                            <span class="col-xs-12 text-center">
+                                <span class="pull-right total-price">Итого: @{{total=product+tech+plomb+journal+instr}}</span>
+                            </span>  
                         </div>
                                     <div class="modal-down">
-                                        
+
+                                        <form id="product-form" class="prod-fisc" role="form" method="post" action="index.php?action=main_cart&a=sendcart">
+                                            <div class="form-container">
+                                            <div class="row">
+
+                                            <div class="title-group-parent grp-three">
+                                                <div class="featured-slider-title title-group">
+                                                    <h2>Оформить</h2>
+                                                    <div class="after-title">
+                                                        <span class="content-after-title"></span>
+                                                    </div>
+                                                    <div class="before-title after-title">
+                                                        <span class="content-before-title content-after-title"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><input class="form-control" placeholder="Контактный телефон *" type="text" value="" name="tel"></div>
+                                                    <div class="col-md-6"><input class="form-control" placeholder="Фискальный код *" type="text" value="" name="fisc"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6"><input class="form-control" placeholder="Название фирмы *" type="text" value="" name="firm"></div>
+                                                    <div class="col-md-6"><input class="form-control" placeholder="Имя *" type="text" value="" name="name"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><input class="form-control" placeholder="Адрес установки *" type="text" value="" name="adres"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12"><input class="form-control" placeholder="Комментарий *" type="text" value="" name="comm"></div>
+                                                </div>
+                                            
+
+                                            <div class="col-md-12">
+                                                    <div class="buttons">
+                                                        <div class="pull-right">
+                                                            <input class="btn btn-primary" type="submit" value="Отправить">
+                                                        </div>
+                                                    </div>
+                                            </div></div>
+</div>
+                                        </form>
+
                                     </div>
                         </div><!-- .modal-body -->
                     </div><!-- .modal-content -->
@@ -240,8 +402,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$155.00</span>
-                                            <span class="old-price">$170.00 </span>
+                                            <span class="special-price">155</span>
+                                            <span class="old-price">170 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -277,8 +439,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$699.00</span>
-                                            <span class="old-price">$800.00 </span>
+                                            <span class="special-price">699</span>
+                                            <span class="old-price">800 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -314,8 +476,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$88.00</span>
-                                            <span class="old-price">$99.00</span>
+                                            <span class="special-price">88</span>
+                                            <span class="old-price">99</span>
                                         </div>
                                     </div>
                                 </div>
@@ -351,8 +513,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$99.00</span>
-                                            <span class="old-price">$111.00</span>
+                                            <span class="special-price">99</span>
+                                            <span class="old-price">111</span>
                                         </div>
                                     </div>
                                 </div>
@@ -390,8 +552,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$155.00</span>
-                                            <span class="old-price">$170.00 </span>
+                                            <span class="special-price">155</span>
+                                            <span class="old-price">170 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -427,8 +589,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$699.00</span>
-                                            <span class="old-price">$800.00 </span>
+                                            <span class="special-price">699</span>
+                                            <span class="old-price">800 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -464,8 +626,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$88.00</span>
-                                            <span class="old-price">$99.00</span>
+                                            <span class="special-price">88</span>
+                                            <span class="old-price">99</span>
                                         </div>
                                     </div>
                                 </div>
@@ -501,8 +663,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$99.00</span>
-                                            <span class="old-price">$111.00</span>
+                                            <span class="special-price">99</span>
+                                            <span class="old-price">111</span>
                                         </div>
                                     </div>
                                 </div>
@@ -693,7 +855,7 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price">
-                                            <span class="price-new new2">$70.00</span>
+                                            <span class="price-new new2">70 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -723,7 +885,7 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price">
-                                            <span class="price-new new2">$90.00</span>
+                                            <span class="price-new new2">90 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -753,8 +915,8 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price non">
-                                            <span class="price-new">$70.00</span>
-                                            <span class="price-old">$100.00</span>
+                                            <span class="price-new">70 лей</span>
+                                            <span class="price-old">100 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -784,8 +946,8 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price non">
-                                            <span class="price-new">$90.00</span>
-                                            <span class="price-old">$100.00</span>
+                                            <span class="price-new">90 лей</span>
+                                            <span class="price-old">100 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -815,7 +977,7 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price">
-                                            <span class="price-new new2">$110.00</span>
+                                            <span class="price-new new2">110 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -845,8 +1007,8 @@
                                 <div class="single-product">
                                     <div class="products-top">
                                         <p class="price special-price non">
-                                            <span class="price-new">$60.00</span>
-                                            <span class="price-old">$70.00</span>
+                                            <span class="price-new">60 лей</span>
+                                            <span class="price-old">70 лей</span>
                                         </p>
                                         <div class="product-img">
                                             <a href="#">
@@ -894,4 +1056,126 @@
             </div>
         </div> -->
 
+@stop
+
+@section('productValidation_angular')
+<script src="js/angular.min.js" ></script>
+    <script src="js/formValidation.min.js"></script>
+    <script src="js/validate_bootstrap.js"></script>
+    <script>
+        $('#product-form') //инициализируем валидатор форм
+                .formValidation({
+                    fields: {
+                        comm: {
+                            validators: {
+                                notEmpty: {
+                                   message: 'Введите ваш комментарий'
+                                },
+                            
+                            stringLength: {
+                                 min: 5,
+                                 max: 200,
+                                 message: 'Комментарий должен содержать не меньше 5 символов.'
+                                }
+                                }
+                            },
+                        
+                        firm: {
+                            validators: {
+                                notEmpty: {
+                                   message: 'Введите название фирмы'
+                                }
+                            }
+                        },
+                        name: {
+                             validators: {
+                                notEmpty: {
+                                    message: 'Введите ваше имя'
+                                },
+                                 stringLength: {
+                                 min: 3,
+                                 max: 20,
+                                 message: 'Имя должно содержать не меньше 3 символов.'
+                                },
+                                regexp: {
+                                   regexp: /^[a-zA-Zа-яА-Я ]+$/,
+                                   message: 'Имя должно содержать только буквы'
+                                }
+                             }
+                         },
+                        adres: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Введите адрес.'
+                                },
+                                stringLength: {
+                                 min: 3,
+                                 max: 20,
+                                 message: 'Адрес должен содержать не меньше 3 символов.'
+                                }
+                             }
+                         },
+                        tel: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Введите телефон.'
+                                },
+                                numeric: {
+                                    message: 'Телефон должен состоять только из цифр.'
+                                },
+                                stringLength: {
+                                 min: 5,
+                                 max: 20,
+                                 message: 'Телефон должен содержать не меньше 5 цифр.'
+                                }
+                            }
+                         },
+                         fisc: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Введите фискальный код.'
+                                },
+                                numeric: {
+                                    message: 'Фискальный код должен состоять только из цифр.'
+                                },
+                                stringLength: {
+                                 min: 5,
+                                 max: 20,
+                                 message: 'Фискальный код должен содержать не меньше 5 цифр.'
+                                }
+                            }
+                         }
+                    }
+                })
+                .on('success.form.fv', function(e) {
+                    // Prevent form submission
+                    e.preventDefault();
+        
+                    var $form = $(e.target),
+                        formData = new FormData(),
+                        params   = $form.serializeArray(),
+                        fv    = $(e.target).data('formValidation');
+                        
+                    $.each(params, function(i, val) {
+                        formData.append(val.name, val.value);
+                    });
+                    
+                    $.ajax({
+                            url: $form.attr('action'),
+                            data: formData,
+                            async: false,
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            type: 'POST',
+                            success: function(result) {
+//                              alert("Вы подписаны!");
+                                var confirmlink = lg+"/order-confirmed";
+                                window.location.replace(confirmlink);
+                                    
+                            }   
+                        });
+
+                });
+    </script>
 @stop

@@ -345,12 +345,13 @@ td.item-nom input[type="checkbox"]  {
 }
 
 .modal-up{
-    padding-bottom: 20px;
+/*    padding-bottom: 20px;
+        border: 1px solid #7e7e7e;*/
 }
 
 .modal-down{
-    padding-top: 20px;
-    border-top:1px solid #a4a4a4;
+/*    padding-top: 20px;
+    border-top:1px solid #a4a4a4;*/
 }
 
 .modal-down input{
@@ -388,7 +389,7 @@ td.item-nom input{
 }
 
 table.shop-container th:first-child {
-    padding-right: 40px;
+        padding-right: 55px;
 }
 
 table.shop-container tbody{
@@ -416,6 +417,7 @@ table.shop-container .item-row td.item-check{
 table.shop-container .item-row td.item-thumb{
     display: flex;
     justify-content: center;
+    min-width: 100%;
 }
 
 table.shop-container .item-row td.item-name{
@@ -557,4 +559,136 @@ table.cart .item-name > * {
     color: #019cb2;
     font-size: 36px;
     font-weight: 600;
+}
+
+.price .price-old{
+    width: 100%;
+    display: block;
+}
+
+.price .price-new{
+        width: 100%;
+    display: block;
+    font-size: 17px;
+}
+
+.rnf > img{
+        height: 10px;
+    margin-right: 3px;
+}
+
+.sub-lang li a img{
+    height: 10px;
+    margin-right: 3px;
+    }
+
+@media (max-width: 767px){
+    .input-bun-top{
+        top:0px !important;
+    }
+
+}
+
+.menu-search-mid input:focus{
+    outline: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.has-success .form-control{
+        border-color: #dddddd;
+}
+
+.has-success .form-control:focus{
+    border-color: #dddddd;
+    box-shadow: none;
+    -webkit-box-shadow:none;
+}
+
+.has-error .form-control{
+    border-color: #a94442 !important;
+}
+
+.prod-fisc{
+/*    border: 1px dashed #222222;
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;*/
+}
+
+.prod-fisc .form-group{
+    float: left;
+    width: 100%;
+    margin-top: 0;
+}
+
+.prod-fisc input.btn{
+    background: #222 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 15px;
+    padding: 10px 12px;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+    font-weight: bold; 
+}
+
+.prod-fisc input.btn:hover{
+background: #019cb2 none repeat scroll 0 0;
+    color: #fff;
+}
+
+.prod-fisc .form-group .form-control{
+padding: 19px 15px;
+    border-radius: 0px;
+    border-color: #7e7e7e;
+}
+
+.form-container{
+        float: left;
+    width: 100%;
+    padding-top: 15px;
+    /*border: 1px dashed #222222;*/
+        /*margin-bottom: 15px;*/
+}
+
+.form-container .title-group-parent.grp-three{
+        margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+.modal-up .total-price{
+        font-size: 14px;
+    color: rgb(91, 91, 91);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 1px solid #a4a4a4;
+    padding: 5px 10px;
+}
+
+@media(max-width: 767px){
+    .prod-fisc .form-group .form-control{
+        margin-bottom: 10px;
+    }
+    table.shop-container .item-row td:first-child{
+        display: none;
+    }
+}
+
+table.shop-container th.item-quantity{
+        padding: 0 20px;
+    text-align: center;
+}
+
+table.shop-container th.item-nom{
+            padding-right: 43px;
+
+}
+
+table.shop-container td.item-quantity{
+    text-align: center;
 }
