@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Lang;
 use Jenssegers\Date\Date;
 
 class BaseModel extends Model
@@ -33,13 +34,6 @@ class BaseModel extends Model
         }
     }
     
-    public function getSlugAttribute($value) {
-        $lang = "";
-        if ($lang == "ro") return "ro/".$value;
-        if ($lang == "en") return "en/".$value;
-        return $value;
-    }
-    
     public function setMetaDescriptionAttribute($values) {
         $this->saveMeta($values, "meta_description");
     }
@@ -51,6 +45,103 @@ class BaseModel extends Model
     public function setTitleAttribute($values) {
         $this->saveMeta($values, "title");
     }
+
+
+
+    public function setNameAttribute($values) {
+        foreach($values as $key=>$value){
+            if ($key == "ru") {
+                $this->attributes['name'] = $value;
+                continue;
+            }
+            $this->attributes['name_' . $key] = $value;
+        }
+    }
+
+    public function setDescriptionAttribute($values) {
+        foreach($values as $key=>$value){
+            if ($key == "ru") {
+                $this->attributes['description'] = $value;
+                continue;
+            }
+            $this->attributes['description_' . $key] = $value;
+        }
+    }
+
+    public function setDescriptionShortAttribute($values) {
+        foreach($values as $key=>$value){
+            if ($key == "ru") {
+                $this->attributes['description_short'] = $value;
+                continue;
+            }
+            $this->attributes['description_short_' . $key] = $value;
+        }
+    }
+
+    public function setUpdatedAtAttribute($value)
+    {
+        $this->attributes['updated_at'] = Carbon::now();
+    }
+
+    public function getUpdatedAtAttribute($date)
+    {
+        return Date::parse($date)->format($this->dateFormat);
+    }
+
+    public function getDescriptionAttribute()
+    {
+        $locale = Lang::locale();
+        if ($locale == "ru"){
+            return $this->attributes['description'];
+        }else{
+            return $this->attributes['description_' . $locale];
+        }
+    }
+
+    public function getDescriptionShortAttribute()
+    {
+        $locale = Lang::locale();
+        if ($locale == "ru"){
+            return $this->attributes['description_short'];
+        }else{
+            return $this->attributes['description_short_' . $locale];
+        }
+    }
+
+    public function getNameAttribute()
+    {
+        $locale = Lang::locale();
+        if ($locale == "ru"){
+            return $this->attributes['name'];
+        }else{
+            return $this->attributes['name_' . $locale];
+        }
+    }
+
+    public function photos(){
+        return $this->hasMany('App\Models\Photos','table_id')->where('table', $this->getTable())->orderBy('sort');
+    }
+
+    public function galleries() {
+        return $this->belongsToMany('App\Models\Galleries', 'galleries_xref', 'table_id', 'galleries_id')->where('table', $this->getTable());
+    }
+
+    public function getVisibleGalleriesAttribute(){
+        return $this->galleries()->where("enabled", true)->get();
+    }
+
+    public function videos() {
+        return $this->belongsToMany('App\Models\Videos', 'videos_xref', 'table_id', 'videos_id')->where('table', $this->getTable());
+    }
+
+    public function getVisibleVideosAttribute(){
+        return $this->videos()->where("enabled", true)->get();
+    }
+
+    public function meta(){
+        return $this->hasOne('App\Models\Meta','table_id')->where('table', $this->getTable());
+    }
+
 
     private function saveMeta($values, $type){
         $table    = $this->getTable();
@@ -74,59 +165,4 @@ class BaseModel extends Model
         $meta->save();
     }
 
-    public function setNameAttribute($values) {
-        foreach($values as $key=>$value){
-            if ($key == "ru") {
-                $this->attributes['name'] = $value;
-                continue;
-            }
-            $this->attributes['name_' . $key] = $value;
-        }
-    }
-
-    public function setDescriptionAttribute($values) {
-        foreach($values as $key=>$value){
-            if ($key == "ru") {
-                $this->attributes['description'] = $value;
-                continue;
-            }
-            $this->attributes['description_' . $key] = $value;
-        }
-    }
-    
-    public function setDescriptionShortAttribute($values) {
-        foreach($values as $key=>$value){
-            if ($key == "ru") {
-                $this->attributes['description_short'] = $value;
-                continue;
-            }
-            $this->attributes['description_short_' . $key] = $value;
-        }
-    }
-
-    public function setUpdatedAtAttribute($value)
-    {
-        $this->attributes['updated_at'] = Carbon::now();
-    }
-
-    public function getUpdatedAtAttribute($date)
-    {
-        return Date::parse($date)->format($this->dateFormat);
-    }
-
-    public function photos(){
-        return $this->hasMany('App\Models\Photos','table_id')->where('table', $this->getTable())->orderBy('sort');
-    }
-
-    public function galleries() {
-        return $this->belongsToMany('App\Models\Galleries', 'galleries_xref', 'table_id', 'galleries_id')->where('table', $this->getTable());
-    }
-
-    public function videos() {
-        return $this->belongsToMany('App\Models\Videos', 'videos_xref', 'table_id', 'videos_id')->where('table', $this->getTable());
-    }
-
-    public function meta(){
-        return $this->hasOne('App\Models\Meta','table_id')->where('table', $this->getTable());
-    }
 }

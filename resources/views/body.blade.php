@@ -112,9 +112,7 @@
         ============================================ -->  
 
         <script src="js/plugins.js"></script>
-        
-        @yield('contactGmap_validation')
-        @yield('productValidation_angular')
+        @yield('contactGmap')
         <!-- main JS
         ============================================ -->        
         <script src="js/main.js"></script>

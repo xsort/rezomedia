@@ -94,8 +94,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$155</span>
-                                            <span class="old-price">$170 </span>
+                                            <span class="special-price">$155.00</span>
+                                            <span class="old-price">$170.00 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +131,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$699</span>
-                                            <span class="old-price">$800 </span>
+                                            <span class="special-price">$699.00</span>
+                                            <span class="old-price">$800.00 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -168,8 +168,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$88</span>
-                                            <span class="old-price">$99</span>
+                                            <span class="special-price">$88.00</span>
+                                            <span class="old-price">$99.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -205,8 +205,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$99</span>
-                                            <span class="old-price">$111</span>
+                                            <span class="special-price">$99.00</span>
+                                            <span class="old-price">$111.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -242,8 +242,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$70</span>
-                                            <span class="old-price">$100</span>
+                                            <span class="special-price">$70.00</span>
+                                            <span class="old-price">$100.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -281,8 +281,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$155</span>
-                                            <span class="old-price">$170 </span>
+                                            <span class="special-price">$155.00</span>
+                                            <span class="old-price">$170.00 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -318,8 +318,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$699</span>
-                                            <span class="old-price">$800 </span>
+                                            <span class="special-price">$699.00</span>
+                                            <span class="old-price">$800.00 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -355,8 +355,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$88</span>
-                                            <span class="old-price">$99</span>
+                                            <span class="special-price">$88.00</span>
+                                            <span class="old-price">$99.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -392,8 +392,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$99</span>
-                                            <span class="old-price">$111</span>
+                                            <span class="special-price">$99.00</span>
+                                            <span class="old-price">$111.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -429,8 +429,8 @@
                                             </div>
                                         </div>
                                         <div class="price-box h2">
-                                            <span class="special-price">$70</span>
-                                            <span class="old-price">$100</span>
+                                            <span class="special-price">$70.00</span>
+                                            <span class="old-price">$100.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -465,7 +465,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$1500</span>
+                                                    <span class="price-new new2">$1500.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -496,8 +496,8 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price non">
-                                                    <span class="price-new">$70</span>
-                                                    <span class="price-old">$100</span>
+                                                    <span class="price-new">$70.00</span>
+                                                    <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -528,7 +528,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$70</span>
+                                                    <span class="price-new new2">$70.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -559,8 +559,8 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price non">
-                                                    <span class="price-new">$70</span>
-                                                    <span class="price-old">$100</span>
+                                                    <span class="price-new">$70.00</span>
+                                                    <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="#">
@@ -591,7 +591,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$90</span>
+                                                    <span class="price-new new2">$90.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -622,7 +622,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$150</span>
+                                                    <span class="price-new new2">$150.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -676,7 +676,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$70</span>
+                                                    <span class="price-new new2">$70.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -707,8 +707,8 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price non">
-                                                    <span class="price-new">$70</span>
-                                                    <span class="price-old">$100</span>
+                                                    <span class="price-new">$70.00</span>
+                                                    <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -739,7 +739,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$120</span>
+                                                    <span class="price-new new2">$120.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -770,8 +770,8 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price non">
-                                                    <span class="price-new">$70</span>
-                                                    <span class="price-old">$100</span>
+                                                    <span class="price-new">$70.00</span>
+                                                    <span class="price-old">$100.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -802,7 +802,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$140</span>
+                                                    <span class="price-new new2">$140.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -833,7 +833,7 @@
                                         <div class="single-product">
                                             <div class="products-top">
                                                 <p class="price special-price">
-                                                    <span class="price-new new2">$150</span>
+                                                    <span class="price-new new2">$150.00</span>
                                                 </p>
                                                 <div class="product-img">
                                                     <a href="/product">
@@ -877,7 +877,7 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price">
-                                                <span class="price-new new2">120 лей</span>
+                                                <span class="price-new new2">$120.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">
@@ -907,8 +907,8 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price non">
-                                                <span class="price-new">70 лей</span>
-                                                <span class="price-old">100 лей</span>
+                                                <span class="price-new">$70.00</span>
+                                                <span class="price-old">$100.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">
@@ -938,7 +938,7 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price">
-                                                <span class="price-new new2">140 лей</span>
+                                                <span class="price-new new2">$140.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">
@@ -968,8 +968,8 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price non">
-                                                <span class="price-new">80 лей</span>
-                                                <span class="price-old">110 лей</span>
+                                                <span class="price-new">$80.00</span>
+                                                <span class="price-old">$110.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">
@@ -999,7 +999,7 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price">
-                                                <span class="price-new new2">170 лей</span>
+                                                <span class="price-new new2">$170.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">
@@ -1029,7 +1029,7 @@
                                     <div class="single-product">
                                         <div class="products-top">
                                             <p class="price special-price">
-                                                <span class="price-new new2">100 лей</span>
+                                                <span class="price-new new2">$100.00</span>
                                             </p>
                                             <div class="product-img">
                                                 <a href="/product">

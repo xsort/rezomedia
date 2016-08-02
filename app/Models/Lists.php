@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MenuProducts extends BaseModel
+class Lists extends Model
 {
-
+    //
 }

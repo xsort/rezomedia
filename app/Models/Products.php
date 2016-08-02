@@ -10,7 +10,13 @@ class Products extends BaseModel
 	    return $this->belongsToMany('App\Models\Categories', 'products_categories',  'products_id', 'categories_id');
     }
 
-	public function news(){
-		return $this->belongsToMany('App\Models\News', 'products_news');
+	public function contacts(){
+		return $this->belongsToMany('App\Models\Contacts', 'products_contacts', 'product_id', 'contact_id')->withPivot(['name','name_ro','name_en']);
 	}
+
+	public function features(){
+		return $this->belongsToMany('App\Models\Features')->withPivot(['value']);
+	}
+
+
 }

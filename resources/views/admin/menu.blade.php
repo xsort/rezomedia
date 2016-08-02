@@ -9,6 +9,13 @@
         <b class="arrow"></b>
     </li>
     <li class="">
+        <a href="{{ URL::to('admin/lists') }}">
+            <i class="menu-icon fa fa-list"></i>
+            <span class="menu-text"> Справочники</span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+    <li class="">
         <a href="admin/categories">
             <i class="menu-icon fa fa-book"></i>
             <span class="menu-text"> Категории</span>
@@ -18,7 +25,7 @@
     <li class="">
         <a href="admin/products">
             <i class="menu-icon fa fa-film"></i>
-            <span class="menu-text"> Объекты </span>
+            <span class="menu-text"> Товары </span>
         </a>
 
         <b class="arrow"></b>
@@ -27,15 +34,6 @@
         <a href="{{URL::to('admin/content')}}">
             <i class="menu-icon fa fa-file-text-o"></i>
             <span class="menu-text"> Страницы </span>
-        </a>
-
-        <b class="arrow"></b>
-    </li>
-
-    <li class="">
-        <a href="{{URL::to('admin/news')}}">
-            <i class="menu-icon fa fa-newspaper-o"></i>
-            <span class="menu-text"> Новости </span>
         </a>
 
         <b class="arrow"></b>

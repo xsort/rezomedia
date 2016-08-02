@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Contacts;
+use App\Models\Features;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,7 +22,9 @@ class ProductsController extends Controller
 
     public function create(){
         $categories = Categories::lists('name','id')->toArray();
-        return view('admin.products.edit')->with('categories', $categories);
+        $contacts   = Contacts::all();
+        $features   = Features::all();
+        return view('admin.products.edit')->with(compact('categories','contacts','features'));
     }
 
     public function store(Request $request)
@@ -42,7 +46,7 @@ class ProductsController extends Controller
         }else{
             $data = Products::find($id);
         }
-		//dd($request);
+
 
         $data->name              = $request->name;
         $data->top               = $request->top;
@@ -62,27 +66,13 @@ class ProductsController extends Controller
             $data->parents()->sync($request->parent);
         }
 
-        //galleries
-        if ($request->galleries) {
+        //features
+        if ($request->features_ids) {
             $pivot = [];
-            foreach($request->galleries as $gallery_id){
-                $pivot[$gallery_id] = ['table' => 'products'];
+            foreach($request->features_ids as $key => $feature_id){
+                $pivot[$feature_id] = ['value' => $request->features_values[$key]];
             }
-            $data->galleries()->sync($pivot);
-        }
-
-        //videos
-        if ($request->videos) {
-            $pivot = [];
-            foreach($request->videos as $video_id){
-                $pivot[$video_id] = ['table' => 'products'];
-            }
-            $data->videos()->sync($pivot);
-        }
-
-        //news
-        if ($request->news) {
-            $data->news()->sync($request->news);
+            $data->features()->sync($pivot);
         }
 
         // redirect
@@ -108,10 +98,16 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $data           = Products::find($id);
-        $categories     = Categories::lists('name','id')->toArray();
-        $parents        = $data->parents->pluck('id')->toArray();
-        return view('admin.products.edit')->with('data', $data)->with('categories', $categories)->with('parents',$parents);
+        $data              = Products::find($id);
+        $categories        = Categories::lists('name','id')->toArray();
+        $parents           = $data->parents->pluck('id')->toArray();
+        $features          = Features::all();
+        $features_values   = [];
+        foreach($data->features as $f){
+            $features_values[] = $f->pivot->value;
+        }
+
+        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values'));
     }
 
     /**

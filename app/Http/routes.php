@@ -26,23 +26,38 @@ Route::group(['middleware' => ['web']], function () {
         'uses'  => 'HomeController@index'
     ]);
 
+    Route::get('news/{slug}', [
+        'as'    => 'get-news',
+        'uses'  => 'NewsController@getNews'
+    ]);
+    
+    Route::get('news', 'NewsController@getNewsList');
+    
+    Route::get('categories', 'CategoriesController@getCategoriesList');
+    
+    Route::get('{slug}/photo', ['uses'=>'ProductsController@getPhotos', 'as' => 'get_galleries']);
+
+    Route::get('{slug}/photo/{name}', ['uses'=>'ProductsController@getGallery', 'as' => 'get_gallery']);
+
+    Route::get('{slug}/video', ['uses'=>'ProductsController@getVideos', 'as' => 'get_videos']);
+    
+    Route::get('{slug}/promo', ['uses'=>'ProductsController@getPromo', 'as' => 'get_promo']);
+    
+    Route::get('{slug}/menu', ['uses'=>'ProductsController@getMenu', 'as' => 'get_menu']);
+    
+    Route::get('{slug}/plan', ['uses'=>'ProductsController@getPlan', 'as' => 'get_plan']);
+
+    Route::get('{slug}/reservation', ['uses'=>'ProductsController@getReservation', 'as' => 'get_reservation']);
+
     Route::get('card', 'ProductsController@getCard');
 
-    Route::get('product', 'ProductsController@getProduct');
+    Route::get('search', 'CommonController@getSearch');
+    
+    Route::get('admin', 'Admin\AdminController@index');
+    
+    Route::get('{slug}', ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
 
-    Route::get('checkout', 'ProductsController@getCheckout');
-
-    Route::get('shop', 'ProductsController@getProductlist');
-
-    Route::get('news', 'NewsController@getNewsList');
-
-    Route::get('news-details', 'NewsController@getNews');
-
-    Route::get('contact', 'CommonController@getContact');
-
-    Route::get('account', 'CommonController@getAccount');
-
-    Route::get('wishlist', 'ProductsController@getProductWishlist');
+    Route::get('tag/{id}', 'NewsController@getNewsByTagID');
 
 });
 
@@ -80,18 +95,7 @@ Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin', 'as' => 'ad
     
     Route::resource('products',         'Admin\ProductsController');
 
-    Route::resource('galleries',        'Admin\GalleriesController');
-
-    Route::resource('videos',           'Admin\VideosController');
-
-    Route::resource('menucategories',   'Admin\MenuCategoriesController');
-
-    Route::get('menu/{id}',             ['uses' => 'Admin\MenuProductsController@index',    'as' => 'menu']);
-    Route::get('menu/create/{id}',      ['uses' => 'Admin\MenuProductsController@create',   'as' => 'menu.create']);
-    Route::get('menu/edit/{id}',        ['uses' => 'Admin\MenuProductsController@edit',     'as' => 'menu.edit']);
-    Route::post('menu/{id}',            ['uses' => 'Admin\MenuProductsController@store',    'as' => 'menu.store']);
-    Route::put('menu/{id}',             ['uses' => 'Admin\MenuProductsController@update',   'as' => 'menu.update']);
-    Route::delete('menu/{id}',          ['uses' => 'Admin\MenuProductsController@delete',   'as' => 'menu.delete']);
+    Route::resource('lists',            'Admin\ListsController');
 
 });
 

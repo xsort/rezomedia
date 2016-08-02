@@ -2,28 +2,24 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\MenuCategories;
-use App\Models\MenuProducts;
-use App\Models\Products;
+use App\Models\Lists;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
-class MenuProductsController extends Controller
+class ListsController extends Controller
 {
-    public function index($id){
+    public function index(){
 
-        $product    = Products::find($id);
-        $data       = $product->menu;
-        return view('admin.menu.index')->with(compact('data', 'product'));
+        $data    = Lists::all();
+        return view('admin.lists.index')->with(compact('data'));
     }
 
-    public function create($id){
-        $product    = Products::find($id);
-        $categories = MenuCategories::lists('name', 'id')->toArray();
-        return view('admin.menu.edit')->with(compact('categories', 'product'));
+    public function create(){
+        $parents    = Lists::where('parent_id', 0)->lists('name', 'id')->toArray();
+        return view('admin.lists.edit')->with(compact('parents'));
     }
 
     public function store(Request $request, $id)

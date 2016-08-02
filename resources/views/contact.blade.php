@@ -13,7 +13,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="current" href="/contacts">Контакты</a>
+                                <a class="current" href="#">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -34,19 +34,21 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="page-title">
-                            <h2>Контакты</h2>
-                            <h3>Наш адрес</h3>
+                            <h2>Contact Us</h2>
+                            <h3>Our Location</h3>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <address> Адрес: MD-2060, mun.Chisinau, str.Albisoara, 4 oficiul № 114 </address>
+                                        <strong>http://tt_cendo.com/</strong>
+                                        <br>
+                                        <address> Address: 123 Main Street, Anytown,CA 12345 USA. </address>
                                     </div>
                                     <div class="col-sm-3">
-                                        <strong>Телефон</strong>
+                                        <strong>Telephone</strong>
                                         <br>
-                                        +373 22 884739
+                                        (800) 0123 456 789
                                         <br>
                                     </div>
                                 </div>
@@ -54,42 +56,42 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Контактная форма</h3>
+                                <h3>Contact Form</h3>
                             </div>
-
-                            <form data-toggle="validator__"  id="contact-form" class="cendo fv-form fv-form-bootstrap" novalidate="novalidate" role="form" method="post" action="index.php?action=main_cart&a=sendcart">
+                            <form class="cendo" action="mail.php" method="post">
                                 
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label">Ваше имя</label>
-                                    <div class="col-md-10"><input class="form-control" type="text" value="" name="name"></div>
+                                <div class="form-group required">
+                                    <label class="col-md-2 control-label">Your Name</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" value="" name="name">
+                                    </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label">E-Mail</label>
-                                    <div class="col-md-10"><input class="form-control" type="email" value="" name="email"></div>
+                                <div class="form-group required">
+                                    <label class="col-md-2 control-label">E-Mail Address</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" value="" name="email">
+                                    </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label">Ваше сообщение</label>
-                                    <div class="col-md-10"><textarea class="form-control" type="text" rows="10" name="message"></textarea></div>
+                                <div class="form-group required">
+                                    <label class="col-md-2 control-label">Enquiry</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" rows="10" name="message"></textarea>
+                                    </div>
                                 </div>
-
                                 <div class="col-md-12">
                                     <div class="buttons">
                                         <div class="pull-right">
-                                            <input class="btn btn-primary" type="submit" value="Отправить">
+                                            <input class="btn btn-primary" type="submit" value="Submit">
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- <div class="icon-slider-area">
+        <div class="icon-slider-area">
             <div class="container">
                 <div class="row">          
                     <div class="col-md-12">
@@ -107,95 +109,15 @@
                 </div>
             </div>
         </div>
- -->
+
 @stop
 
-@section('contactGmap_validation')
+@section('contactGmap')
         <!-- google map api
         ============================================ -->
-    
-    <script src="js/formValidation.min.js"></script>
-    <script src="js/validate_bootstrap.js"></script>
-     <script>
-        $('#contact-form') //инициализируем валидатор форм
-                .formValidation({
-                    fields: {
-                        name: {
-                             validators: {
-                                notEmpty: {
-                                    message: 'Введите имя.'
-                                },
-                                 stringLength: {
-                                 min: 3,
-                                 max: 20,
-                                 message: 'Имя должно содержать не меньше 3 символов.'
-                                },
-                                regexp: {
-                                   regexp: /^[a-zA-Zа-яА-Я ]+$/,
-                                   message: 'Имя должно содержать только буквы'
-                                }
-                             }
-                         },
-
-                        email: {
-                            validators: {
-                                notEmpty: {
-                                   message: 'Введите Адрес электронной почты.'
-                                },
-                                emailAddress: {
-                                   message: 'Адрес электронной почты был введен неправильно.'
-                                }
-                            }
-                        },
-                        
-                        message: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Введите ваше сообщение.'
-                                },
-                                stringLength: {
-                                 min: 5,
-                                 max: 20,
-                                 message: 'Ваше сообщение должен содержать не меньше 5 символов.'
-                                }
-                            }
-                         }
-                    }
-                })
-                .on('success.form.fv', function(e) {
-                    // Prevent form submission
-                    e.preventDefault();
-        
-                    var $form = $(e.target),
-                        formData = new FormData(),
-                        params   = $form.serializeArray(),
-                        fv    = $(e.target).data('formValidation');
-                        
-                    $.each(params, function(i, val) {
-                        formData.append(val.name, val.value);
-                    });
-                    
-                    $.ajax({
-                            url: $form.attr('action'),
-                            data: formData,
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            type: 'POST',
-                            success: function(result) {
-//                              alert("Вы подписаны!");
-                                var confirmlink = lg+"/order-confirmed";
-                                window.location.replace(confirmlink);
-                                    
-                            }   
-                        });
-
-                });
-    </script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFvnaQ4d5-UsONtpw9s5zPHPdVQ4Ee20k&callback=initMap" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
  <script>
-            var myCenter=new google.maps.LatLng(47.0149368, 28.8533526);
+            var myCenter=new google.maps.LatLng(23.763523, 90.431098);
             function initialize()
             {
                 var mapProp = {
