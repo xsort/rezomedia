@@ -22,7 +22,6 @@ class ProductsController extends Controller
 
     public function create(){
         $categories = Categories::lists('name','id')->toArray();
-        $contacts   = Contacts::all();
         $features   = Features::all();
         return view('admin.products.edit')->with(compact('categories','contacts','features'));
     }
