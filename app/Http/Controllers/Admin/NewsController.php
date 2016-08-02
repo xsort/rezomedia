@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Validator;
 
 class NewsController extends Controller
 {
@@ -30,12 +31,19 @@ class NewsController extends Controller
             'slug'          => 'required|unique:content'
         );
 
-        $this->validate($request, $rules);
+        $validator = Validator::make($request->all(), $rules);
 
-        return $this->save($request, null);
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'data'    => $validator->messages()
+            ]);
+        }
+
+        return $this->save($request);
     }
 
-    private function save(Request $request, $id){
+    private function save(Request $request, $id = null){
         //photos
         //dd($request->photos);
 
@@ -64,9 +72,10 @@ class NewsController extends Controller
 
         $this->UpdatePhotos($request, $data->id);
 
-        // redirect
-        Session::flash('message', trans('common.saved'));
-        return redirect('admin/news');
+        return response()->json([
+            'success' => true,
+            'data'    => ['table' => 'news', 'id' => $data->id, 'name' => $data->name]
+        ]);
     }
     /**
      * Display the specified resource.
@@ -106,7 +115,14 @@ class NewsController extends Controller
             'slug'          => 'required|unique:news,id,{$id}'
         );
 
-        $this->validate($request, $rules);
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'data'    => $validator->messages()
+            ]);
+        }
 
         return $this->save($request, $id);
     }

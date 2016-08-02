@@ -79,4 +79,22 @@
     </div><!-- /.row -->
 @endsection
 
+@section('styles')
+    {{HTML::style('ace/assets/css/dataTables.responsive.css')}}
+@endsection
+
+@section('scripts')
+
 @include('admin.partials.datatable-init')
+
+@include('admin.partials.visibility')
+
+<script>
+    $(document).ready(function(){
+        $('.category-select').change(function(){
+            location.href="admin/{{ $model }}?id=" + $( this ).val();
+        });
+    });
+</script>
+
+@endsection

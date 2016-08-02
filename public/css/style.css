@@ -61,8 +61,7 @@ padding: 0
 .clear{clear:both}
 body {
     background-color: #ffffff;
-    color: #444444;
-    font-family: 'Raleway', sans-serif;
+    color: #444444;     
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -652,7 +651,7 @@ h2.title6 {
 }
 .title-group .content-after-title::after {
     color: #fff;
-    content: "";
+    content: "\f005";
     font-family: FontAwesome;
     font-size: 14px;
     margin-top: -10px;
@@ -700,7 +699,7 @@ h2.title6 {
     border-radius: 100%;
     bottom: 68px;
     color: #fff;
-    font-family: "aleo-regular";
+    
     font-size: 20px;
     height: 86px;
     line-height: 86px;
@@ -716,7 +715,7 @@ h2.title6 {
 }
 .featured-container .price, .best-seller .price {
     color: #fff;
-    font-family: "aleo-regular";
+    
     font-size: 20px;
     line-height: 40px;
     z-index: 999;
@@ -742,7 +741,7 @@ h2.title6 {
     border-radius: 100%;
     bottom: 68px;
     color: #fff;
-    font-family: "aleo-regular";
+    
     font-size: 20px;
     height: 86px;
     line-height: 86px;
@@ -758,7 +757,7 @@ h2.title6 {
 }
 .price {
     color: #fff;
-    font-family: "aleo-regular";
+    
     font-size: 20px;
     line-height: 40px;
     z-index: 999;
@@ -2261,7 +2260,7 @@ a.list-group-item:focus, a.list-group-item:hover{
 }
 .breadcrumb li.p-none.si-no::before {
     color: #fff;
-    content: "";
+        content: "\f105";
     display: block;
     font-family: FontAwesome;
     font-size: 15px;
@@ -2393,7 +2392,7 @@ a.list-group-item:focus, a.list-group-item:hover{
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
     color: #019cb2;
-    font-family: aleo-regular;
+    
     text-align: left;
     width: 100%;
     margin-bottom: 20px;

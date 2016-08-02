@@ -187,21 +187,9 @@
 
 @include('admin.partials.ckeditor')
 
-@include('admin.partials.slug',['input_name'=>'name'])
+@include('admin.partials.slug',['input_name'=>'name[ru]'])
 
-{!! HTML::script('ace/assets/js/date-time/bootstrap-datepicker.js') !!}
-<script type="text/javascript">
-jQuery(function($) {
-    var mydate = $('#mydate')[0];
-    if(mydate.type !== 'date') {//if browser doesn't support "date" input
-        $(mydate).datepicker({
-            weekStart: 1,
-            autoclose:true,
-            language: 'ru'
-        })
-    }
-})
-</script>
+@include('admin.partials.datepicker')
 
 <script>
 if($(window).width() < 640){
@@ -215,37 +203,6 @@ if($(window).width() < 640){
 $("#chosencat").chosen();
 </script>
 
-    <script>
 
-        $(document).ready(function(){
-         initSEFonEnter();   
-        });
 
-        transliterate = (
-        function() {
-            var
-                rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
-                eng = "shh sh ch cz yu ya yo zh i  y  e  a b v g d e z i j k l m n o p r s t u f x i".split(/ +/g)
-            ;
-            return function(text, engToRus) {
-                var x;
-                for(x = 0; x < rus.length; x++) {
-                    text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
-                    text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
-                }
-                text = text.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
-                return text;
-            }
-        }
-    )();
-
-    function initSEFonEnter(){
-        $("input.name_ru").keyup(function() {
-            var a = $(this).val();
-            var b = transliterate(a);
-            $("input[name=slug]").val(b);
-        });
-    }
-
-    </script>
 @endsection

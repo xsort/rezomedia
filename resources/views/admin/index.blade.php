@@ -17,30 +17,22 @@
 
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12 center">
-                <a href="index.php?action=admin_products&a=products" class="btn btn-primary btn-app radius-4">
-                    <i class="ace-icon fa fa-film bigger-230"></i>
-                    Фильмы
+                <a href="admin/products" class="btn btn-primary btn-app radius-4">
+                    <i class="ace-icon fa fa-gift bigger-230"></i>
+                    Товары
                 </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 center">
-                <a href="index.php?action=admin_comments&a=spam" class="btn btn-pink btn-app radius-4">
-                    <i class="ace-icon fa fa-bug bigger-230"></i>
-                    СПАМ
-                    {if $num_spam > 0}<span class="badge badge-warning">+{$num_spam}</span>{/if}
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 center">
-                <a href="index.php?action=admin_news" class="btn btn-success btn-app radius-4">
-                    <i class="ace-icon fa fa-newspaper-o bigger-230"></i>
-                    Новости
+                <a href="{{ URL::to('admin/lists') }}" class="btn btn-success btn-app radius-4">
+                    <i class="ace-icon fa fa-list bigger-230"></i>
+                    Справочники
                 </a>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12 center">
-                <a href="index.php?action=admin_comments&a=new" class="btn btn-warning btn-app radius-4">
-                    <i class="ace-icon fa fa-file-o bigger-230"></i>
-                    Новые рецензии
-                    <span class="badge badge-pink">+4</span>
+                <a href="{{URL::to('admin/content')}}" class="btn btn-warning btn-app radius-4">
+                    <i class="ace-icon fa fa-file-text-o bigger-230"></i>
+                    Страницы
                 </a>
             </div>
         </div><!-- /.row -->

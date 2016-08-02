@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
+use App\Models\Contacts;
+use App\Models\Features;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Products;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Models\Categories;
 
@@ -22,7 +22,9 @@ class ProductsController extends Controller
 
     public function create(){
         $categories = Categories::lists('name','id')->toArray();
-        return view('admin.products.edit')->with('categories', $categories);
+        $contacts   = Contacts::all();
+        $features   = Features::all();
+        return view('admin.products.edit')->with(compact('categories','contacts','features'));
     }
 
     public function store(Request $request)
@@ -44,7 +46,7 @@ class ProductsController extends Controller
         }else{
             $data = Products::find($id);
         }
-		//dd($request);
+
 
         $data->name              = $request->name;
         $data->top               = $request->top;
@@ -62,6 +64,15 @@ class ProductsController extends Controller
         //categories
         if ($request->parent) {
             $data->parents()->sync($request->parent);
+        }
+
+        //features
+        if ($request->features_ids) {
+            $pivot = [];
+            foreach($request->features_ids as $key => $feature_id){
+                $pivot[$feature_id] = ['value' => $request->features_values[$key]];
+            }
+            $data->features()->sync($pivot);
         }
 
         // redirect
@@ -87,16 +98,16 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $data = Products::find($id);
-        //$tags = Tags::all();
-        $categories = Categories::lists('name','id')->toArray();
-        $parents = $data->parents->pluck('id')->toArray();
-        return view('admin.products.edit')->with('data', $data)->with('categories', $categories)->with('parents',$parents);
-        
-        
- 
-        //$parents = $data->parents->pluck('id')->toArray();
-        //return view('admin.categories.edit')->with('data', $data)->with('categories', $categories)->with('parents',$parents);
+        $data              = Products::find($id);
+        $categories        = Categories::lists('name','id')->toArray();
+        $parents           = $data->parents->pluck('id')->toArray();
+        $features          = Features::all();
+        $features_values   = [];
+        foreach($data->features as $f){
+            $features_values[] = $f->pivot->value;
+        }
+
+        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values'));
     }
 
     /**
@@ -109,7 +120,7 @@ class ProductsController extends Controller
     {
         $rules = array(
             'name'          => 'required',
-            'slug'          => 'required|unique:news,id,{$id}'
+            'slug'          => 'required|unique:products,id,{$id}'
         );
 
         $this->validate($request, $rules);
@@ -125,7 +136,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Content::destroy($id);
+        Products::destroy($id);
         Session::flash('message', trans('common.deleted'));
         return back();
     }

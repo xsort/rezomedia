@@ -1,5 +1,77 @@
 @extends('body')
 @section('centerbox')
+        <!-- QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="modal-up">
+                           <table class="shop-container cart">
+                                <thead>
+                                    <tr>
+                                        
+                                        
+                                        <th class="item-thumb">&nbsp;</th>
+                                        <th class="item-name">Продукт</th>
+                                        
+                                        <th class="item-quantity">Количество</th>
+                                        <th class="item-nom">&nbsp;</th>
+                                        <th class="item-subtotal">Всего</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    <tr class="item-row">
+
+                                        
+
+                                        <td class="item-thumb">
+                                            <a href="javascript:void(0)">
+                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                            </a>
+                                        </td>
+
+                                        <td class="item-name">
+                                            <a href="javascript:void(0)">Кассовый аппарат</a> 
+                                        </td>
+
+                                        <td class="item-quantity">
+                                            <div class="quantity">
+                                                <input min="1" type="number" ng-model="value" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                            </div>
+                                        </td>
+                                        
+                                        <td class="item-nom">
+                                            <input type="checkbox" disabled checked>
+                                        </td>
+
+                                        <td class="item-subtotal">
+                                            <span class="amount ng-binding">3000 лей</span> 
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>    
+                        </div>
+                                    <div class="modal-down">
+                                        
+                                    </div>
+                        </div><!-- .modal-body -->
+                    </div><!-- .modal-content -->
+                </div><!-- .modal-dialog -->
+            </div>
+            <!-- END Modal -->
+        </div>
+        <!-- END QUICKVIEW PRODUCT -->
+
+
 <!-- mobile-menu-area end -->
         <div class="top-contact">
             <div class="container">
@@ -12,10 +84,10 @@
                                 </a>
                             </li>
                             <li class="p-none si-no">
-                                <a href="#">Кассовые аппараты</a>
+                                <a href="/shop">Кассовые аппараты</a>
                             </li>
                             <li>
-                                <a class="current" href="#">Кассовый Аппарат ККМ ОКА-МК</a>
+                                <a class="current" href="javascript:void(0)">Кассовый Аппарат ККМ ОКА-МК</a>
                             </li>
                         </ul>
                     </div>
@@ -93,8 +165,12 @@
                                 <p>Незаменима при выездной торговле. Имеет влагостойкую клавиатуру, светодиодный индикатор, калькулятор, работает от встроенного аккумулятора (с подзарядкой от сети переменного тока 220 В) или от любого внешнего источника тока напряжением 12-16 В. Элементная база К-МОП, процессор Winbond.  
 Потребляемая мощность при средней эксплуатационной нагрузке - не более 6 Вт.</p>
                             </div>
-                            <div class="pre-box">
+<!--                             <div class="pre-box">
                                 <span class="special-price">3000 лей</span>
+                            </div> -->
+                            <div class="pre-box discount">
+                                <span class="price-old">3000 лей</span>
+                                <span class="price-new">2500 лей</span>
                             </div>
                             <div class="add-to-box1">
                                 <div class="add-to-box add-to-box2">
@@ -104,7 +180,7 @@
                                             <input id="qty" class="input-text qty" type="text" name="qty" maxlength="12" value="1" title="Qty">
                                         </div>
                                         <div class="product-icon product-icon-buy">
-                                            <a href="#">
+                                            <a href="#productModal" data-toggle="modal" data-original-title="Quick View">
                                                 Счет на оплату
                                             </a>
                                             <!-- <a href="#">
