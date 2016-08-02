@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 @extends('body')
 @section('centerbox')
         <!-- QUICKVIEW PRODUCT -->
@@ -1181,4 +1180,3 @@
                 });
     </script>
 @stop
->>>>>>> origin/master
