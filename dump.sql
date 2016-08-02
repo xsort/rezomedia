@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 23 2016 г., 12:05
+-- Время создания: Авг 02 2016 г., 10:10
 -- Версия сервера: 10.1.10-MariaDB
 -- Версия PHP: 5.6.19
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `allevents`
+-- База данных: `rezomedia`
 --
 
 -- --------------------------------------------------------
@@ -237,7 +237,7 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`id`, `name`, `name_en`, `name_ro`, `description`, `description_en`, `description_ro`, `enabled`, `views`, `slug`, `created_at`, `updated_at`) VALUES
-(3, 'Об Allevents', 'Об Allevents', 'Об Allevents', '<p>Здесь будет описание о сайте Allevents</p>\r\n', '<p>Здесь будет описание о сайте Allevents</p>\r\n', '<p>Здесь будет описание о сайте Allevents</p>\r\n', 1, 0, 'about', '2016-06-26 21:00:00', '2016-06-29 08:18:15'),
+(3, 'Об Allevents', 'Об Allevents', 'Об Allevents', '<p>Здесь будет описание о сайте Allevents</p>\r\n', '<p>Здесь будет описание о сайте Allevents EN</p>\r\n', '<p>Здесь будет описание о сайте Allevents RO</p>\r\n', 1, 0, 'about', '2016-06-26 21:00:00', '2016-08-02 05:07:46'),
 (4, 'Отчеты', '', '', '<p>Здесь будут отчеты</p>\r\n', '<p>Здесь будут отчеты</p>\r\n', '<p>Здесь будут отчеты</p>\r\n', 1, 0, 'reports', '2016-06-26 09:59:26', '2016-06-26 09:59:26'),
 (5, 'Акции', '', '', '<p>Здесь будут акции</p>\r\n', '<p>Здесь будут акции</p>\r\n', '<p>Здесь будут акции</p>\r\n', 1, 0, 'promo', '2016-06-26 10:00:07', '2016-06-26 10:00:07'),
 (6, 'Экслюзив', 'Экслюзив', 'Экслюзив', '<p>Здесь будет выводиться экслюзив</p>\r\n', '<p>Здесь будет выводиться экслюзив</p>\r\n', '<p>Здесь будет выводиться экслюзив</p>\r\n', 1, 0, 'exclusive', '2016-06-26 10:00:55', '2016-06-26 10:00:55'),
@@ -245,6 +245,91 @@ INSERT INTO `content` (`id`, `name`, `name_en`, `name_ro`, `description`, `descr
 (8, 'Реклама', 'Реклама', 'Реклама', '<p>Сдесь будет реклама</p>\r\n', '<p>Сдесь будет реклама</p>\r\n', '<p>Сдесь будет реклама</p>\r\n', 1, 0, 'advert', '2016-06-26 10:04:56', '2016-06-26 10:04:56'),
 (9, 'Права', 'Права', 'Права', '<p>здесь будут права</p>\r\n', '<p>здесь будут права</p>\r\n', '<p>здесь будут права</p>\r\n', 1, 0, 'copyright', '2016-06-26 10:06:19', '2016-06-26 10:06:19'),
 (10, 'Карта сайта', 'Карта сайта', 'Карта сайта', '<p>Сдесь будет карта сайта</p>\r\n', '<p>Сдесь будет карта сайта</p>\r\n', '<p>Сдесь будет карта сайта</p>\r\n', 1, 0, 'sitemap', '2016-06-26 10:07:09', '2016-06-26 10:07:09');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `features`
+--
+
+CREATE TABLE `features` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_ro` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_ro` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_en` text COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `sort` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `features`
+--
+
+INSERT INTO `features` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `enabled`, `sort`, `created_at`, `updated_at`) VALUES
+(1, 'Ширина ленты', '', '', '', '', '', 1, 0, NULL, NULL),
+(2, 'Тип аппарата', '', '', '', '', '', 1, 0, NULL, NULL),
+(3, 'Питание', '', '', '', '', '', 1, 0, NULL, NULL),
+(4, 'Интерфейс', '', '', '', '', '', 1, 0, NULL, NULL),
+(5, 'Бренд', '', '', '', '', '', 1, 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `features_products`
+--
+
+CREATE TABLE `features_products` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `products_id` int(10) UNSIGNED NOT NULL,
+  `features_id` int(10) UNSIGNED NOT NULL,
+  `value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `features_products`
+--
+
+INSERT INTO `features_products` (`id`, `products_id`, `features_id`, `value`) VALUES
+(1, 7, 1, 3),
+(2, 7, 2, 0),
+(3, 7, 3, 0),
+(4, 7, 4, 0),
+(5, 7, 5, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `features_values`
+--
+
+CREATE TABLE `features_values` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `features_id` int(11) NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_ro` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `features_values`
+--
+
+INSERT INTO `features_values` (`id`, `features_id`, `name`, `name_ro`, `name_en`) VALUES
+(1, 1, '28+28', '28+28', '28+28'),
+(2, 1, '35+20', '35+20', '35+20'),
+(3, 1, '38+38', '38+38', '38+38'),
+(4, 1, '57', '57', '57'),
+(5, 1, '80', '80', '80'),
+(7, 5, 'Datex', 'Datex', 'Datex'),
+(8, 5, 'Tremol', 'Tremol', 'Tremol'),
+(9, 5, 'Daisy', 'Daisy', 'Daisy'),
+(10, 5, 'Elicom', 'Elicom', 'Elicom'),
+(11, 5, 'Aclas', 'Aclas', 'Aclas');
 
 -- --------------------------------------------------------
 
@@ -290,6 +375,41 @@ CREATE TABLE `galleries_xref` (
   `table_id` int(11) NOT NULL,
   `table` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `lists`
+--
+
+CREATE TABLE `lists` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_ro` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_ro` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_en` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_short` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_short_ro` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_short_en` text COLLATE utf8_unicode_ci NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `views` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `slug` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `lists`
+--
+
+INSERT INTO `lists` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `parent_id`, `enabled`, `views`, `sort`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'Слайдер', '', '', '<p>123</p>\r\n', '<p>456</p>\r\n', '<p>789</p>\r\n', 'dsaasdasdas', '', '', 0, 1, 0, 0, 'slider', '2016-08-01 21:00:00', '2016-08-02 04:45:06'),
+(2, 'Слайд 1', '', '', '', '', '', '', '', '', 1, 1, 0, 0, 'slide1', '2016-08-01 21:00:00', '2016-08-02 04:45:39'),
+(3, 'Слайд 2', '', '', '', '', '', '', '', '', 1, 1, 0, 0, 'slide2', '2016-08-01 21:00:00', '2016-08-02 04:46:19');
 
 -- --------------------------------------------------------
 
@@ -466,7 +586,10 @@ INSERT INTO `meta` (`id`, `meta_description`, `meta_description_ro`, `meta_descr
 (76, '', '', '', '', '', '', '', '', '', 2, 'menu_categories'),
 (77, 'вцувцу', '', '', 'вцувцу', '', '', 'вцувцу', '', '', 1, 'menu_products'),
 (78, 'вцувцу', '', '', 'вцувцу', '', '', 'вцувцу', '', '', 2, 'menu_products'),
-(79, '', '', '', '', '', '', '', '', '', 3, 'menu_products');
+(79, '', '', '', '', '', '', '', '', '', 3, 'menu_products'),
+(80, '', '', '', '', '', '', '', '', '', 1, 'lists'),
+(81, '', '', '', '', '', '', '', '', '', 2, 'lists'),
+(82, '', '', '', '', '', '', '', '', '', 3, 'lists');
 
 -- --------------------------------------------------------
 
@@ -568,7 +691,13 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_05_25_122240_menu_products', 1),
 ('2016_05_25_122425_menu_categories', 1),
 ('2016_06_23_074721_products_categories', 2),
-('2016_07_23_062337_create_videos_xref', 3);
+('2016_07_23_062337_create_videos_xref', 3),
+('2016_08_01_083752_update_products', 4),
+('2016_08_01_084150_create_recommended_xref', 5),
+('2016_08_01_084433_create_features', 6),
+('2016_08_01_084832_create_features_products', 6),
+('2016_08_01_085333_create_features_values', 6),
+('2016_08_01_114433_create_lists', 7);
 
 -- --------------------------------------------------------
 
@@ -799,7 +928,10 @@ INSERT INTO `photos` (`id`, `source`, `table_id`, `table`, `sort`, `token`) VALU
 (137, '57933da1e4a43.jpg', 2, 'menu_products', 137, ''),
 (138, '57933da1b5c6d.jpg', 2, 'menu_products', 138, ''),
 (139, '57933da199672.jpg', 2, 'menu_products', 139, ''),
-(140, '57933ed4f24d2.jpg', 3, 'menu_products', 140, '');
+(140, '57933ed4f24d2.jpg', 3, 'menu_products', 140, ''),
+(141, 'slider_141.jpg', 1, 'lists', 141, ''),
+(143, 'slide1_143.jpg', 2, 'lists', 143, ''),
+(144, 'slide2_144.jpg', 3, 'lists', 144, '');
 
 -- --------------------------------------------------------
 
@@ -826,25 +958,26 @@ CREATE TABLE `products` (
   `sort` int(11) NOT NULL,
   `slug` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `price_discount` double(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`) VALUES
-(7, 'Andy''s Pizza', 'Andy''s Pizza', 'Andy''s Pizza', '<p>В меню&nbsp;Andys Pizza&nbsp;самые вкусные блюда! Закажите еду в офис, на дом или оформите предварительный заказ. Приятного аппетита!</p>\r\n', '', '', 'Andy''s Pizza - самый вкусный заказ еды онлайн! Быстрая доставка днем и ночью!', 'Andys Pizza - comanda online cele mai delicioase bucate! Livrarea rapidă ziua și noaptea!', 'Andys Pizza - the most delicious food order online! Fast delivery day and night!', 0.00, '', 0, 1, 0, 0, 'andys-pizza', '2016-06-24 21:00:00', '2016-07-16 07:33:42'),
-(8, 'Krysha', 'Krysha', 'Krysha', '<p>Отдельного внимания заслуживает наша терраса под открытым небом. Уникальная терраса&nbsp;<strong>LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;</strong>, которая располагается на пятом этаже коммерческого центра&nbsp;<strong>&laquo;Sun City&raquo;</strong>, позволит Вам полюбоваться уникальными пейзажами городского центрального парка и ночными огнями столицы. Уютные диванные зоны, легкая музыка, стильный интерьер и свежий воздух &ndash; поистине отдых &laquo;НА ВЫСОТЕ&raquo;.<br />\r\n<br />\r\nК организации праздничного вечера в&nbsp;<strong>LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;</strong>&nbsp;подойдут профессионально: разработают план мероприятия, подберут ведущего, составят шоу-программу, пригласят артистов, оформят зал, продумают и разработают меню для фуршета и подарят массу приятных впечатлений.</p>\r\n', '<p>O atenție specială merită terasa noastră &icirc;n aer liber. Unice Terasa LOUNGE-CAF&Eacute; &laquo;Krysha&raquo;, care este situat la etajul cinci al &laquo;Sun City&raquo; centru comercial vă va permite să se bucure de peisajul unic al parcului central de oraș și luminile de noapte ale capitalei. zonă confortabilă canapea, muzica usoara, aer curat interior si elegant - cu adevărat o vacanță de &quot;sus&quot;.</p>\r\n\r\n<p>Prin organizarea unei seri festive &icirc;n LOUNGE-CAF&Eacute; &laquo;Krysha&raquo; profesionale adecvate: artiștii să elaboreze un plan de acțiune, se va ridica la conducere, face un program de spectacol, invitați vor desena o cameră, cred că peste și de a lucra din meniul pentru bufet și va da o mulțime de experiențe plăcute.</p>\r\n', '<p>Special attention deserves our terrace in the open air. Unique terrace LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;, which is located on the fifth floor of &laquo;Sun City&raquo; shopping center, will allow you to enjoy the unique scenery of the city central park and the night lights of the capital. Cozy sofa area, light music, stylish interior and fresh air - truly a vacation &quot;on high&quot;.</p>\r\n\r\n<p>By organizing a festive evening in the LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo; suitable professional: develop an action plan, will pick up the lead, make a show program, invited artists will draw room, think over and work out the menu for the buffet and will give a lot of pleasant experiences.</p>\r\n', 'Атмосфера в стиле LOUNGE-CAFÉ «KRYSHA» не отвлекает от повседневности, а скорее украшает её.', 'Atmosfera din stilul LOUNGE-CAFÉ «Krysha» nu distrage de la viața de zi cu zi, ci mai degrabă o împodobește.', 'The atmosphere in the style LOUNGE-CAFÉ «KRYSHA» does not distract from everyday life, but rather adorns it.', 0.00, '', 1, 1, 0, 0, 'krysha', '2016-06-08 21:00:00', '2016-06-29 06:12:48'),
-(10, 'Mojito', 'Mojito', 'Mojito', '<p>Если вы в поиске места для романтического ужина при свете фонарей, или пре-пати с друзьями, вы его найдете здесь, в&nbsp;<strong>MOJITO</strong>, около Театра Оперы и Балета.<br />\r\n<br />\r\n<strong>Мы очень ценим наших клиентов, поэтому всегда предлагаем только самое лучшее:</strong></p>\r\n\r\n<ul>\r\n	<li>Рабочее время&nbsp;<strong>24/24</strong></li>\r\n	<li>Аргентинская и Японская кухня</li>\r\n	<li>Самый большой выбор коктейлей Мохито:&nbsp; алкогольных и безалкогольных</li>\r\n	<li>Терраса в тени для курящих и некурящих</li>\r\n	<li>Живая музыка каждую пятницу и воскресенье</li>\r\n	<li>Комфортабельный ресторан&nbsp; с расслабляющей атмосферой</li>\r\n	<li>Быстрое и&nbsp; качественное обслуживание</li>\r\n</ul>\r\n\r\n<p><br />\r\nЗайдите к нам, чтобы расслабиться&nbsp; на мягких креслах с чашечкой кофе или чая на завтрак, отведав&nbsp; мисо-суп или стейк на обед, либо коктейль на ужин.<br />\r\n<br />\r\nШагните на территорию, где сочетаются вкусное с&nbsp; приятным, прохлада с удовольствием &ndash; на территорию</p>\r\n', '', '', 'Если вы в поиске места для романтического ужина при свете фонарей, или пре-пати с друзьями, вы его найдете здесь.', '', '', 0.00, '', 1, 1, 0, 0, 'mojito', '2016-01-04 22:00:00', '2016-06-29 07:11:59'),
-(11, 'Caffe Graffiti', 'Caffe Graffiti', 'Caffe Graffiti', '', '', '', 'Caffe Graffiti ждет "Филе форели на пару с овощами и соусом из Tartaro" и желаем Вам приятного аппетита!', 'Caffe Graffiti va asteapta cu "Fileu de păstrăv la abur cu legume și sos tartaro" si va ureaza POFTA BUNA!', 'Caffe Graffiti awaits "Trout fillet steamed with vegetables and sauce Tartaro" and wish you bon appétit!', 0.00, '', 1, 1, 0, 0, 'caffe-graffiti', '2016-06-23 09:46:56', '2016-06-23 09:46:56'),
-(12, 'CLUB LUXOR', 'CLUB LUXOR', 'CLUB LUXOR', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'club-luxor', '2016-06-23 09:49:42', '2016-06-23 09:49:42'),
-(13, 'La Plăcinte', 'La Plăcinte', 'La Plăcinte', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'la-plcinte', '2016-06-23 09:51:18', '2016-06-23 09:51:18'),
-(14, 'PARADYSE CLUB', 'PARADYSE CLUB', 'PARADYSE CLUB', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'paradyse-club', '2016-06-23 09:52:36', '2016-06-23 09:52:36'),
-(16, 'Chocolate Karaoke Club', 'Chocolate Karaoke Club', 'Chocolate Karaoke Club', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'chocolate-karaoke-club', '2016-06-23 10:01:44', '2016-06-23 10:01:44'),
-(17, 'Drive', 'Drive', 'Drive', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'drive', '2016-06-23 10:02:21', '2016-06-23 10:02:21'),
-(18, 'Cocos Prive', 'Cocos Prive', 'Cocos Prive', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'cocos-prive', '2016-06-23 10:03:04', '2016-06-23 10:03:04'),
-(21, 'BARHAT', 'BARHAT', 'BARHAT', '<p>В отличии от других салонов, Ваrhat предоставляет платье в прокат на два дня,а не на сутки. Если вы берёте в прокат вечернее платье,все аксессуары к нему:бижутерия,сумочка,шубка,будут предоставлены вам,бесплатно. Цены у нас очень демократичные,на любой бюджет,выбор платьев,огромный,практически на любой размер,а если учесть,что мы постоянно,шьем что-то новенькое,то вполне понятно,что у нас сложно, не найти себе платье. Опытные консультанты помогут вам в выборе платья для вашего торжества. Будь то свадьба или крестины,выпускной или корпоративная вечеринка,даже тематическая,мы непременно, подберём вам платье,в котором вы будите неотразимы.&nbsp;</p>\r\n', '<p>Spre deosebire de alte saloane, Varhat oferă rochie pentru &icirc;nchiriere de două zile, nu pe zi. Dacă ați luat &icirc;ntr-o rochie de seara de &icirc;nchiriere, toate accesoriile sale: bijuterii, geantă de m&acirc;nă, paltoane, va fi furnizat &icirc;n mod gratuit. Prețurile s-au foarte accesibile cu privire la orice buget, selecție de rochii, un imens, aproape orice dimensiune, dar atunci c&acirc;nd considerați că suntem &icirc;n mod constant, coase ceva nou, este destul de clar că avem o problemă dificilă, nu pentru a găsi o rochie. consultanți cu experiență vă va ajuta &icirc;n alegerea rochiei pentru celebrarea ta. Fie ca este vorba de o nunta sau un botez, absolvire sau petrecere corporate, chiar și de actualitate, vom cu siguranță, vă va ridica o rochie in care vei fi irezistibil.</p>\r\n', '<p>Unlike other salons, Varhat provides Dress for two days rental, not per day. If you take in an evening dress rental, all its accessories: jewelry, handbag, coat, will be provided to you free of charge. Prices have very affordable on any budget, selection of dresses, a huge, virtually any size, but when you consider that we are constantly, sew something new, it is quite clear that we have a difficult, not to find a dress. Experienced consultants will help you in choosing the dress for your celebration. Whether it is a wedding or a christening, graduation or corporate party, even topical, we will certainly, you will pick up a dress in which you&#39;ll be irresistible.</p>\r\n', 'Салон BARHAT предлагает уникальные платья,авторской работы.Здесь вы найдёте платье на любой вкус. Мы поможем создать вам неповторимый образ, о котором вы мечтали!', 'BARHAT Salonul ofera rochii unice, autor raboty.Zdes găsiți o rochie pentru a se potrivi cu fiecare gust. Vă vom ajuta să creați o imagine unică, care ai visat!', 'BARHAT Salon offers unique dresses, author raboty.Zdes you find a dress to suit every taste. We will help you create a unique image of which you dreamed!', 0.00, '', 1, 1, 0, 0, 'barhat', '2016-06-28 21:00:00', '2016-07-01 05:23:05');
+INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`, `price_discount`) VALUES
+(7, 'Andy''s Pizza', 'Andy''s Pizza', 'Andy''s Pizza', '<p>В меню&nbsp;Andys Pizza&nbsp;самые вкусные блюда! Закажите еду в офис, на дом или оформите предварительный заказ. Приятного аппетита!</p>\r\n', '', '', 'Andy''s Pizza - самый вкусный заказ еды онлайн! Быстрая доставка днем и ночью!', 'Andys Pizza - comanda online cele mai delicioase bucate! Livrarea rapidă ziua și noaptea!', 'Andys Pizza - the most delicious food order online! Fast delivery day and night!', 0.00, '', 0, 1, 0, 0, 'andys-pizza', '2016-06-24 21:00:00', '2016-07-16 07:33:42', 0.00),
+(8, 'Krysha', 'Krysha', 'Krysha', '<p>Отдельного внимания заслуживает наша терраса под открытым небом. Уникальная терраса&nbsp;<strong>LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;</strong>, которая располагается на пятом этаже коммерческого центра&nbsp;<strong>&laquo;Sun City&raquo;</strong>, позволит Вам полюбоваться уникальными пейзажами городского центрального парка и ночными огнями столицы. Уютные диванные зоны, легкая музыка, стильный интерьер и свежий воздух &ndash; поистине отдых &laquo;НА ВЫСОТЕ&raquo;.<br />\r\n<br />\r\nК организации праздничного вечера в&nbsp;<strong>LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;</strong>&nbsp;подойдут профессионально: разработают план мероприятия, подберут ведущего, составят шоу-программу, пригласят артистов, оформят зал, продумают и разработают меню для фуршета и подарят массу приятных впечатлений.</p>\r\n', '<p>O atenție specială merită terasa noastră &icirc;n aer liber. Unice Terasa LOUNGE-CAF&Eacute; &laquo;Krysha&raquo;, care este situat la etajul cinci al &laquo;Sun City&raquo; centru comercial vă va permite să se bucure de peisajul unic al parcului central de oraș și luminile de noapte ale capitalei. zonă confortabilă canapea, muzica usoara, aer curat interior si elegant - cu adevărat o vacanță de &quot;sus&quot;.</p>\r\n\r\n<p>Prin organizarea unei seri festive &icirc;n LOUNGE-CAF&Eacute; &laquo;Krysha&raquo; profesionale adecvate: artiștii să elaboreze un plan de acțiune, se va ridica la conducere, face un program de spectacol, invitați vor desena o cameră, cred că peste și de a lucra din meniul pentru bufet și va da o mulțime de experiențe plăcute.</p>\r\n', '<p>Special attention deserves our terrace in the open air. Unique terrace LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo;, which is located on the fifth floor of &laquo;Sun City&raquo; shopping center, will allow you to enjoy the unique scenery of the city central park and the night lights of the capital. Cozy sofa area, light music, stylish interior and fresh air - truly a vacation &quot;on high&quot;.</p>\r\n\r\n<p>By organizing a festive evening in the LOUNGE-CAF&Eacute; &laquo;KRYSHA&raquo; suitable professional: develop an action plan, will pick up the lead, make a show program, invited artists will draw room, think over and work out the menu for the buffet and will give a lot of pleasant experiences.</p>\r\n', 'Атмосфера в стиле LOUNGE-CAFÉ «KRYSHA» не отвлекает от повседневности, а скорее украшает её.', 'Atmosfera din stilul LOUNGE-CAFÉ «Krysha» nu distrage de la viața de zi cu zi, ci mai degrabă o împodobește.', 'The atmosphere in the style LOUNGE-CAFÉ «KRYSHA» does not distract from everyday life, but rather adorns it.', 0.00, '', 1, 1, 0, 0, 'krysha', '2016-06-08 21:00:00', '2016-06-29 06:12:48', 0.00),
+(10, 'Mojito', 'Mojito', 'Mojito', '<p>Если вы в поиске места для романтического ужина при свете фонарей, или пре-пати с друзьями, вы его найдете здесь, в&nbsp;<strong>MOJITO</strong>, около Театра Оперы и Балета.<br />\r\n<br />\r\n<strong>Мы очень ценим наших клиентов, поэтому всегда предлагаем только самое лучшее:</strong></p>\r\n\r\n<ul>\r\n	<li>Рабочее время&nbsp;<strong>24/24</strong></li>\r\n	<li>Аргентинская и Японская кухня</li>\r\n	<li>Самый большой выбор коктейлей Мохито:&nbsp; алкогольных и безалкогольных</li>\r\n	<li>Терраса в тени для курящих и некурящих</li>\r\n	<li>Живая музыка каждую пятницу и воскресенье</li>\r\n	<li>Комфортабельный ресторан&nbsp; с расслабляющей атмосферой</li>\r\n	<li>Быстрое и&nbsp; качественное обслуживание</li>\r\n</ul>\r\n\r\n<p><br />\r\nЗайдите к нам, чтобы расслабиться&nbsp; на мягких креслах с чашечкой кофе или чая на завтрак, отведав&nbsp; мисо-суп или стейк на обед, либо коктейль на ужин.<br />\r\n<br />\r\nШагните на территорию, где сочетаются вкусное с&nbsp; приятным, прохлада с удовольствием &ndash; на территорию</p>\r\n', '', '', 'Если вы в поиске места для романтического ужина при свете фонарей, или пре-пати с друзьями, вы его найдете здесь.', '', '', 0.00, '', 1, 1, 0, 0, 'mojito', '2016-01-04 22:00:00', '2016-06-29 07:11:59', 0.00),
+(11, 'Caffe Graffiti', 'Caffe Graffiti', 'Caffe Graffiti', '', '', '', 'Caffe Graffiti ждет "Филе форели на пару с овощами и соусом из Tartaro" и желаем Вам приятного аппетита!', 'Caffe Graffiti va asteapta cu "Fileu de păstrăv la abur cu legume și sos tartaro" si va ureaza POFTA BUNA!', 'Caffe Graffiti awaits "Trout fillet steamed with vegetables and sauce Tartaro" and wish you bon appétit!', 0.00, '', 1, 1, 0, 0, 'caffe-graffiti', '2016-06-23 09:46:56', '2016-06-23 09:46:56', 0.00),
+(12, 'CLUB LUXOR', 'CLUB LUXOR', 'CLUB LUXOR', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'club-luxor', '2016-06-23 09:49:42', '2016-06-23 09:49:42', 0.00),
+(13, 'La Plăcinte', 'La Plăcinte', 'La Plăcinte', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'la-plcinte', '2016-06-23 09:51:18', '2016-06-23 09:51:18', 0.00),
+(14, 'PARADYSE CLUB', 'PARADYSE CLUB', 'PARADYSE CLUB', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'paradyse-club', '2016-06-23 09:52:36', '2016-06-23 09:52:36', 0.00),
+(16, 'Chocolate Karaoke Club', 'Chocolate Karaoke Club', 'Chocolate Karaoke Club', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'chocolate-karaoke-club', '2016-06-23 10:01:44', '2016-06-23 10:01:44', 0.00),
+(17, 'Drive', 'Drive', 'Drive', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'drive', '2016-06-23 10:02:21', '2016-06-23 10:02:21', 0.00),
+(18, 'Cocos Prive', 'Cocos Prive', 'Cocos Prive', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'cocos-prive', '2016-06-23 10:03:04', '2016-06-23 10:03:04', 0.00),
+(21, 'BARHAT', 'BARHAT', 'BARHAT', '<p>В отличии от других салонов, Ваrhat предоставляет платье в прокат на два дня,а не на сутки. Если вы берёте в прокат вечернее платье,все аксессуары к нему:бижутерия,сумочка,шубка,будут предоставлены вам,бесплатно. Цены у нас очень демократичные,на любой бюджет,выбор платьев,огромный,практически на любой размер,а если учесть,что мы постоянно,шьем что-то новенькое,то вполне понятно,что у нас сложно, не найти себе платье. Опытные консультанты помогут вам в выборе платья для вашего торжества. Будь то свадьба или крестины,выпускной или корпоративная вечеринка,даже тематическая,мы непременно, подберём вам платье,в котором вы будите неотразимы.&nbsp;</p>\r\n', '<p>Spre deosebire de alte saloane, Varhat oferă rochie pentru &icirc;nchiriere de două zile, nu pe zi. Dacă ați luat &icirc;ntr-o rochie de seara de &icirc;nchiriere, toate accesoriile sale: bijuterii, geantă de m&acirc;nă, paltoane, va fi furnizat &icirc;n mod gratuit. Prețurile s-au foarte accesibile cu privire la orice buget, selecție de rochii, un imens, aproape orice dimensiune, dar atunci c&acirc;nd considerați că suntem &icirc;n mod constant, coase ceva nou, este destul de clar că avem o problemă dificilă, nu pentru a găsi o rochie. consultanți cu experiență vă va ajuta &icirc;n alegerea rochiei pentru celebrarea ta. Fie ca este vorba de o nunta sau un botez, absolvire sau petrecere corporate, chiar și de actualitate, vom cu siguranță, vă va ridica o rochie in care vei fi irezistibil.</p>\r\n', '<p>Unlike other salons, Varhat provides Dress for two days rental, not per day. If you take in an evening dress rental, all its accessories: jewelry, handbag, coat, will be provided to you free of charge. Prices have very affordable on any budget, selection of dresses, a huge, virtually any size, but when you consider that we are constantly, sew something new, it is quite clear that we have a difficult, not to find a dress. Experienced consultants will help you in choosing the dress for your celebration. Whether it is a wedding or a christening, graduation or corporate party, even topical, we will certainly, you will pick up a dress in which you&#39;ll be irresistible.</p>\r\n', 'Салон BARHAT предлагает уникальные платья,авторской работы.Здесь вы найдёте платье на любой вкус. Мы поможем создать вам неповторимый образ, о котором вы мечтали!', 'BARHAT Salonul ofera rochii unice, autor raboty.Zdes găsiți o rochie pentru a se potrivi cu fiecare gust. Vă vom ajuta să creați o imagine unică, care ai visat!', 'BARHAT Salon offers unique dresses, author raboty.Zdes you find a dress to suit every taste. We will help you create a unique image of which you dreamed!', 0.00, '', 1, 1, 0, 0, 'barhat', '2016-06-28 21:00:00', '2016-07-01 05:23:05', 0.00);
 
 -- --------------------------------------------------------
 
@@ -877,6 +1010,18 @@ CREATE TABLE `products_news` (
   `id` int(10) UNSIGNED NOT NULL,
   `products_id` int(10) UNSIGNED NOT NULL,
   `news_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `recommended_xref`
+--
+
+CREATE TABLE `recommended_xref` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `recommended_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1018,6 +1163,27 @@ ALTER TABLE `content`
   ADD KEY `idx_slug` (`slug`);
 
 --
+-- Индексы таблицы `features`
+--
+ALTER TABLE `features`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `features_products`
+--
+ALTER TABLE `features_products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `features_products_products_id_foreign` (`products_id`),
+  ADD KEY `features_products_features_id_foreign` (`features_id`),
+  ADD KEY `features_products_value_index` (`value`);
+
+--
+-- Индексы таблицы `features_values`
+--
+ALTER TABLE `features_values`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `galleries`
 --
 ALTER TABLE `galleries`
@@ -1031,6 +1197,14 @@ ALTER TABLE `galleries_xref`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_table_id` (`table_id`),
   ADD KEY `idx_table` (`table`);
+
+--
+-- Индексы таблицы `lists`
+--
+ALTER TABLE `lists`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lists_parent_id_index` (`parent_id`),
+  ADD KEY `lists_slug_index` (`slug`);
 
 --
 -- Индексы таблицы `menu_categories`
@@ -1119,6 +1293,14 @@ ALTER TABLE `products_news`
   ADD KEY `products_news_news_id_foreign` (`news_id`);
 
 --
+-- Индексы таблицы `recommended_xref`
+--
+ALTER TABLE `recommended_xref`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `recommended_xref_product_id_index` (`product_id`),
+  ADD KEY `recommended_xref_recommended_id_index` (`recommended_id`);
+
+--
 -- Индексы таблицы `tags`
 --
 ALTER TABLE `tags`
@@ -1178,6 +1360,21 @@ ALTER TABLE `constants`
 ALTER TABLE `content`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT для таблицы `features`
+--
+ALTER TABLE `features`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `features_products`
+--
+ALTER TABLE `features_products`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `features_values`
+--
+ALTER TABLE `features_values`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT для таблицы `galleries`
 --
 ALTER TABLE `galleries`
@@ -1187,6 +1384,11 @@ ALTER TABLE `galleries`
 --
 ALTER TABLE `galleries_xref`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `lists`
+--
+ALTER TABLE `lists`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `menu_categories`
 --
@@ -1201,7 +1403,7 @@ ALTER TABLE `menu_products`
 -- AUTO_INCREMENT для таблицы `meta`
 --
 ALTER TABLE `meta`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT для таблицы `news`
 --
@@ -1221,7 +1423,7 @@ ALTER TABLE `news_types`
 -- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
@@ -1236,6 +1438,11 @@ ALTER TABLE `products_categories`
 -- AUTO_INCREMENT для таблицы `products_news`
 --
 ALTER TABLE `products_news`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `recommended_xref`
+--
+ALTER TABLE `recommended_xref`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `tags`
@@ -1265,6 +1472,12 @@ ALTER TABLE `videos_xref`
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
+
+--
+-- Ограничения внешнего ключа таблицы `features_products`
+--
+ALTER TABLE `features_products`
+  ADD CONSTRAINT `features_products_features_id_foreign` FOREIGN KEY (`features_id`) REFERENCES `features` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `news_tags`

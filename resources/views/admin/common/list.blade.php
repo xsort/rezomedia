@@ -89,4 +89,12 @@
 
 @include('admin.partials.visibility')
 
+<script>
+    $(document).ready(function(){
+        $('.category-select').change(function(){
+            location.href="admin/{{ $model }}?id=" + $( this ).val();
+        });
+    });
+</script>
+
 @endsection

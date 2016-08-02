@@ -11,18 +11,25 @@ use Illuminate\Support\Facades\Session;
 
 class ListsController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $id      = $request->id;
 
-        $data    = Lists::all();
-        return view('admin.lists.index')->with(compact('data'));
+       if ($id > 0){
+           $data    = Lists::find($id)->children;
+       }else{
+           $data    = Lists::all();
+       }
+
+        $parents = $this->getParentsArray();
+        return view('admin.lists.index')->with(compact('data','parents','id'));
     }
 
     public function create(){
-        $parents    = Lists::where('parent_id', 0)->lists('name', 'id')->toArray();
+        $parents    = $this->getParentsArray();
         return view('admin.lists.edit')->with(compact('parents'));
     }
 
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $rules = array(
             'name'          => 'required'
@@ -30,23 +37,23 @@ class ListsController extends Controller
 
         $this->validate($request, $rules);
 
-        return $this->save($request, $id);
+        return $this->save($request);
     }
 
-    private function save(Request $request, $product_id, $id = null){
+    private function save(Request $request, $id = null){
         // store
         if (!isset($id)) {
-            $data = new MenuProducts();
+            $data = new Lists();
         }else{
-            $data = MenuProducts::find($id);
+            $data = Lists::find($id);
         }
 
         $data->name              = $request->name;
         $data->created_at        = $request->date;
+        $data->slug              = $request->slug;
+        $data->parent_id         = $request->parent_id;
         $data->description       = $request->description;
-        $data->price             = $request->price;
-        $data->product_id        = $product_id;
-        $data->category_id       = $request->category_id;
+        $data->description_short = $request->description_short;
         $data->meta_description  = $request->meta_description;
         $data->meta_keywords     = $request->meta_keywords;
         $data->title             = $request->title;
@@ -57,7 +64,7 @@ class ListsController extends Controller
 
         // redirect
         Session::flash('message', trans('common.saved'));
-        return redirect()->route('admin.menu', $product_id);
+        return redirect('admin/lists');
     }
 
 
@@ -69,11 +76,10 @@ class ListsController extends Controller
      */
     public function edit($id)
     {
-        $data       = MenuProducts::find($id);
-        $categories = MenuCategories::lists('name','id')->toArray();
-        $product    = Products::find($data->product_id);
+        $data       = Lists::find($id);
+        $parents    = $this->getParentsArray();
 
-        return view('admin.menu.edit')->with(compact('data', 'categories', 'product'));
+        return view('admin.lists.edit')->with(compact('data', 'parents'));
 
 
 
@@ -95,9 +101,7 @@ class ListsController extends Controller
 
         $this->validate($request, $rules);
 
-        $data       = MenuProducts::find($id);
-
-        return $this->save($request, $data->product_id, $id);
+        return $this->save($request, $id);
     }
 
     /**
@@ -111,6 +115,10 @@ class ListsController extends Controller
         MenuProducts::destroy($id);
         Session::flash('message', trans('common.deleted'));
         return back();
+    }
+
+    private function getParentsArray(){
+        return Lists::where('parent_id', 0)->lists('name', 'id')->toArray();
     }
 
 }

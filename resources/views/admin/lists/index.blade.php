@@ -7,3 +7,11 @@
         'data'        =>  $data
     ]
 )
+
+@section('listbuttons')
+
+    {{ Form::select('parent_id', array("0" => "Не выбрано") + $parents, $id, ['class'=>'category-select']) }}
+
+@stop
+
+
