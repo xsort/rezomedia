@@ -1,10 +1,10 @@
 @extends('admin.body')
-@section('title', 'Объекты')
+@section('title', 'Товары')
 
 
 @section('centerbox')
     <div class="page-header">
-        <h1> <a href="{{ URL::to('admin/products') }}">Объекты</a> <small><i class="ace-icon fa fa-angle-double-right"></i> Клубы, салоны, фотографы и пр. </small> </h1>
+        <h1> <a href="{{ URL::to('admin/products') }}">Товары</a> <small><i class="ace-icon fa fa-angle-double-right"></i> </small> </h1>
     </div>
 
     @include('admin.partials.errors')

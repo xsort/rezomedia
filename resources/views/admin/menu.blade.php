@@ -1,7 +1,7 @@
 
 <ul class="nav nav-list">
     <li class="">
-        <a href="{{ URL::to('/') }}">
+        <a href="{{ URL::to('/admin') }}">
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Главная </span>
         </a>
@@ -24,7 +24,7 @@
     </li>
     <li class="">
         <a href="admin/products">
-            <i class="menu-icon fa fa-film"></i>
+            <i class="menu-icon fa fa-gift"></i>
             <span class="menu-text"> Товары </span>
         </a>
 
@@ -39,25 +39,7 @@
         <b class="arrow"></b>
     </li>
 
-    <li class="">
-        <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-cutlery"></i>
-            <span class="menu-text"> Меню</span>
-            <b class="arrow fa fa-angle-down"></b>
-        </a>
-        <b class="arrow"></b>
-        <ul class="submenu">
-            <li class="">
-                <a href="{{URL::to('admin/menucategories')}}">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Категории
-                </a>
-                <b class="arrow"></b>
-            </li>
-        </ul>
-    </li>
-
-    <li class="">
+    <li class="hide">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-cogs"></i>
             <span class="menu-text"> Администр.</span>
