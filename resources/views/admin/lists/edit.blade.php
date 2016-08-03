@@ -51,17 +51,17 @@
                 </div>
             </div>
             <div class="form-group">
-                {{ Form::label('name', 'Заголовок рум', ['class'=>'col-sm-3 control-label no-padding-right']) }}
+                {{ Form::label('name', 'Заголовок RO', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[ro]', (isset($data->name_ro) ? $data->name_ro : old('name_ro')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 {{ Form::label('name', 'Заголовок англ', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[en]', (isset($data->name_en) ? $data->name_en : old('name_en')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group">
                 {{ Form::label('parent', 'Родитель', ['class'=>'col-sm-3 control-label no-padding-right']) }}
@@ -100,7 +100,14 @@
 
                 </div>
             </div>
-
+        </div><!-- /.col-sm-6 -->
+    </div><!-- /.row -->
+<hr>
+    <div class="row">
+          
+    <div class="col-xs-12">
+        <div class="col-xs-6 col-xs-offset-6">
+            
             <div class="form-group">
                 <div class="col-xs-12">
                     <div class="tabbable">
@@ -113,9 +120,9 @@
                                 <a href="#short_ro" data-toggle="tab" aria-expanded="false">Рум. яз.</a>
                             </li>
 
-                            <li class="">
+                            <!-- <li class="">
                                 <a href="#short_en" data-toggle="tab" aria-expanded="false">Англ. яз.</a>
-                            </li>
+                            </li> -->
 
                             <div class="center"> <span class="label label-xlg label-purple">Текстовое поле</span></div>
                         </ul>
@@ -127,25 +134,26 @@
                             <div class="tab-pane" id="short_ro">
                                 {{ Form::textarea('description_short[ro]', (isset($data->description_short_ro) ? $data->description_short_ro : old('description_short_ro')), array('style'=>'width:100%', 'rows'=>'3')) }}
                             </div>
-                            <div class="tab-pane" id="short_en">
+                            <!-- <div class="tab-pane" id="short_en">
                                 {{ Form::textarea('description_short[en]', (isset($data->description_short_en) ? $data->description_short_en : old('description_short_en')), array('style'=>'width:100%', 'rows'=>'3')) }}
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div><!-- /.col-sm-6 -->
+        </div>
+    </div>
+    </div>
 
-    </div><!-- /.row -->
-
+<hr>
     <div class="tabbable">
         <ul id="myTab4" class="nav nav-tabs padding-12 tab-color-blue background-blue">
-            <li class="active">
+           <!--  <li class="active">
                 <a href="#ru" data-toggle="tab">Описание</a>
-            </li>
+            </li> -->
 
-            <li>
+            <li class="active">
                 <a href="#photos" data-toggle="tab">Фото</a>
             </li>
 
@@ -159,7 +167,7 @@
     </div>
 
     <div class="tab-content">
-        <div class="tab-pane active" id="ru">
+  <!--       <div class="tab-pane active" id="ru">
 
             <div class="tabbable  tabs-left">
 
@@ -172,7 +180,7 @@
                     </li>
                     <li>
                         <a href="#descEn" data-toggle="tab">Описание на английском</a>
-                    </li>
+                    </li> 
                 </ul>
 
                 <div class="tab-content">
@@ -182,14 +190,14 @@
                     <div class="tab-pane" id="descRo">
                         {{ Form::textarea('description[ro]', (isset($data->description_ro) ? $data->description_ro : old('description_ro')), array('class' => 'ckeditor', 'id' => 'description_ro')) }}
                     </div>
-                    <div class="tab-pane" id="descEn">
+                    <<div class="tab-pane" id="descEn">
                         {{ Form::textarea('description[en]', (isset($data->description_en) ? $data->description_en : old('description_en')), array('class' => 'ckeditor', 'id' => 'description_en')) }}
-                    </div>
+                    </div> 
 
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
         @include('admin.partials.photos', ['table' => 'lists', 'class' => 'active', 'table_id' => isset($data->id) ? $data->id : 0] )
 

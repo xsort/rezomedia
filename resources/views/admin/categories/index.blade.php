@@ -1,7 +1,7 @@
 @extends('admin.common.list',
     [
         'title'       =>  'Категории ',
-        'desc'        =>  'список категорий',
+        'desc'        =>  'Список категорий',
         'model'       =>  'categories',
         'fields'      =>  ['name' => 'Наименование'],
         'data'        =>  $data

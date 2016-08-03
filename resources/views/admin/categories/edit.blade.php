@@ -28,12 +28,12 @@
             <div class="col-sm-2">
                 <button id="submit_button1" type="submit" class="btn  btn-yellow btn-block btn-responsive" ><i class="ace-icon fa fa-floppy-o  bigger-120"></i> Сохранить и закрыть</button>
             </div>-->
-            <div class="col-sm-2 ">
+<!--             <div class="col-sm-2 ">
                 <label>
                 	{{ Form::checkbox('top',  1, (isset($data) && $data->top == 1 ? true : false), ['class' => 'ace']) }}
                     <span class="lbl"> На главную </span>
                 </label>
-            </div>
+            </div> -->
             <div class="col-sm-4">
                 <div class="profile-contact-info">
                     <div class="profile-links align-left">
@@ -65,17 +65,17 @@
                 </div>
             </div>
             <div class="form-group">
-                {{ Form::label('name[ro]', 'Заголовок рум', ['class'=>'col-sm-3 control-label no-padding-right']) }}
+                {{ Form::label('name[ro]', 'Заголовок RO', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[ro]', (isset($data->name_ro) ? $data->name_ro : old('name_ro')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
             </div>
-            <div class="form-group">
+           <!--  <div class="form-group">
                 {{ Form::label('name[en]', 'Заголовок англ', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[en]', (isset($data->name_en) ? $data->name_en : old('name_en')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
-            </div>
+            </div> -->
             
             
 				
@@ -104,7 +104,7 @@
                 </div>
             </div>
             
-            <div class="form-group">
+<!--             <div class="form-group">
                 {{ Form::label('parent', 'родитель', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 
                 <div class="col-sm-9">
@@ -114,7 +114,7 @@
 	                {{ Form::select('parent[]', $categories, '', ['multiple'=>'multiple','id'=>'chosencat','class'=>'tag-input-style col-sm-11 control-label no-padding-right']) }}
 	                @endif
                 </div>
-            </div>
+            </div> -->
         </div><!-- /.col-sm-6 -->
     </div><!-- /.row -->
     <hr>
@@ -124,16 +124,16 @@
             <li class="active">
                 <a href="#ru" data-toggle="tab">Описание</a>
             </li>
-            <li>
+           <!--  <li>
                 <a href="#photos" data-toggle="tab">Фото</a>
-            </li>
+            </li> -->
             <li>
                 <a href="#meta" data-toggle="tab">META</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane active" id="ru">
+           <!--  <div class="tab-pane active" id="ru">
 
                 <div class="tabbable  tabs-left">
 
@@ -144,9 +144,9 @@
                    <li>
                       <a href="#descRo" data-toggle="tab">Описание на румынском</a>
                    </li>
-                   <li>
+                    <li>
                       <a href="#descEn" data-toggle="tab">Описание на английском</a>
-                   </li>
+                   </li> 
                  </ul>
 
                  <div class="tab-content">
@@ -156,17 +156,18 @@
                    <div class="tab-pane" id="descRo">
                      {{ Form::textarea('description[ro]', (isset($data->description_ro) ? $data->description_ro : old('description_ro')), array('class' => 'ckeditor', 'id' => 'editorRo')) }}
                    </div>
-                   <div class="tab-pane" id="descEn">
+                    <div class="tab-pane" id="descEn">
                      {{ Form::textarea('description[en]', (isset($data->description_en) ? $data->description_en : old('description_en')), array('class' => 'ckeditor', 'id' => 'editorEn')) }}
-                   </div>
+                   </div> 
 
                  </div>
 
                 </div>
-             </div>
+             </div> -->
 
             @include('admin.partials.meta')
-            @include('admin.partials.photos', ['table' => 'categories', 'table_id' => isset($data->id) ? $data->id : 0])
+            
+            @include('admin.partials.photos', ['table' => 'categories','class' => 'active', 'table_id' => isset($data->id) ? $data->id : 0])
         </div>
 
 </div>

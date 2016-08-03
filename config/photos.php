@@ -2,8 +2,8 @@
 return [
     'images_dir'         => 'public/uploaded/',
     'images_url'         => '/uploaded/',
-    'width'              => 1024,
-    'height'             => 768,
+    'width'              => 1170,
+    'height'             => 800,
 
     'thumbs'            =>  [
                                 ['path'=>'thumbs',  'width' => 150, 'height' => 150],

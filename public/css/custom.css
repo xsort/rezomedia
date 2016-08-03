@@ -114,6 +114,9 @@ body{
         width: 100%;
         margin-left: 0;
     }
+    .home2-all-area{
+        padding-bottom: 20px;
+    }
 }
 
 .table_carac tr td{
@@ -691,4 +694,16 @@ table.shop-container th.item-nom{
 
 table.shop-container td.item-quantity{
     text-align: center;
+}
+
+#home p {
+    margin-bottom: 0;
+}
+
+.pro-img-tab-slider .item a img{
+    background:none;
+}
+
+.content-page{
+    margin: 30px 0;
 }

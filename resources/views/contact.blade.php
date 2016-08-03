@@ -13,7 +13,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="current" href="/contacts">Контакты</a>
+                                <a class="current" href="{{route('get-contacts')}}">{{ trans('common.contacts') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -34,17 +34,17 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="page-title">
-                            <h2>Контакты</h2>
-                            <h3>Наш адрес</h3>
+                            <h2>{{ trans('common.contacts') }}</h2>
+                            <h3>{{ trans('common.our-adres') }}</h3>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <address> Адрес: MD-2060, mun.Chisinau, str.Albisoara, 4 oficiul № 114 </address>
+                                        <address> {{ trans('common.adres') }}: <br> MD-2060, mun.Chisinau, str.Albisoara, 4 oficiul № 114 </address>
                                     </div>
                                     <div class="col-sm-3">
-                                        <strong>Телефон</strong>
+                                        <strong>{{ trans('common.phone') }}</strong>
                                         <br>
                                         +373 22 884739
                                         <br>
@@ -54,30 +54,30 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Контактная форма</h3>
+                                <h3>{{ trans('common.contact-form') }}</h3>
                             </div>
 
                             <form data-toggle="validator__"  id="contact-form" class="cendo fv-form fv-form-bootstrap" novalidate="novalidate" role="form" method="post" action="index.php?action=main_cart&a=sendcart">
                                 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label">Ваше имя</label>
+                                    <label class="col-md-2 control-label">{{ trans('common.your-name') }}</label>
                                     <div class="col-md-10"><input class="form-control" type="text" value="" name="name"></div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label">E-Mail</label>
+                                    <label class="col-md-2 control-label">{{ trans('common.email') }}</label>
                                     <div class="col-md-10"><input class="form-control" type="email" value="" name="email"></div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label">Ваше сообщение</label>
+                                    <label class="col-md-2 control-label">{{ trans('common.your-message') }}</label>
                                     <div class="col-md-10"><textarea class="form-control" type="text" rows="10" name="message"></textarea></div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="buttons">
                                         <div class="pull-right">
-                                            <input class="btn btn-primary" type="submit" value="Отправить">
+                                            <input class="btn btn-primary" type="submit" value="{{ trans('common.submit') }}">
                                         </div>
                                     </div>
                                 </div>

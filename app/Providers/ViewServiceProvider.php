@@ -21,7 +21,8 @@ class ViewServiceProvider extends ServiceProvider
         //проверяем если есть таблица миграций
         if (!Schema::hasTable('migrations')) return;
 
-        $categories = Categories::where('top',false)->get();
+        $categories = Categories::all();
+
         view()->share('categories', $categories);
 
     }

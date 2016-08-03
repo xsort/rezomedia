@@ -52,7 +52,7 @@ class ListsController extends Controller
         $data->created_at        = $request->date;
         $data->slug              = $request->slug;
         $data->parent_id         = $request->parent_id;
-        $data->description       = $request->description;
+        
         $data->description_short = $request->description_short;
         $data->meta_description  = $request->meta_description;
         $data->meta_keywords     = $request->meta_keywords;
@@ -112,7 +112,7 @@ class ListsController extends Controller
      */
     public function destroy($id)
     {
-        MenuProducts::destroy($id);
+        Lists::destroy($id);
         Session::flash('message', trans('common.deleted'));
         return back();
     }

@@ -62,17 +62,17 @@
                 </div>
             </div>
             <div class="form-group">
-                {{ Form::label('name[ro]', 'Заголовок рум', ['class'=>'col-sm-3 control-label no-padding-right']) }}
+                {{ Form::label('name[ro]', 'Заголовок RO', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[ro]', (isset($data->name_ro) ? $data->name_ro : old('name_ro')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 {{ Form::label('name[en]', 'Заголовок англ', ['class'=>'col-sm-3 control-label no-padding-right']) }}
                 <div class="col-sm-9">
                     {{ Form::text('name[en]', (isset($data->name_en) ? $data->name_en : old('name_en')), array('class' => 'col-sm-11 col-xs-12')) }}
                 </div>
-            </div>
+            </div> -->
 
         </div><!-- /.col-sm-6 -->
 
@@ -122,9 +122,9 @@
                    <li>
                       <a href="#descRo" data-toggle="tab">Описание на румынском</a>
                    </li>
-                   <li>
+                 <!--   <li>
                       <a href="#descEn" data-toggle="tab">Описание на английском</a>
-                   </li>
+                   </li> -->
                  </ul>
 
                  <div class="tab-content">
@@ -134,9 +134,10 @@
                    <div class="tab-pane" id="descRo">
                      {{ Form::textarea('description[ro]', (isset($data->description_ro) ? $data->description_ro : old('description_ro')), array('class' => 'ckeditor', 'id' => 'editor_ro')) }}
                    </div>
-                   <div class="tab-pane" id="descEn">
+                   
+                 <!--   <div class="tab-pane" id="descEn">
                      {{ Form::textarea('description[en]', (isset($data->description_en) ? $data->description_en : old('description_en')), array('class' => 'ckeditor', 'id' => 'editor_en')) }}
-                   </div>
+                   </div> -->
 
                  </div>
 
@@ -178,7 +179,7 @@
             }
         })
     </script>
-    <script>
+    <!-- <script>
 
         $(document).ready(function(){
          initSEFonEnter();   
@@ -210,5 +211,5 @@
         });
     }
 
-    </script>
+    </script> -->
 @endsection

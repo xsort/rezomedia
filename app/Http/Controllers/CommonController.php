@@ -34,7 +34,7 @@ class CommonController extends Controller
 		    if ($category->children->count() > 0) {
 			    return view('products.categories')->with('data', $category);
 			} else { 
-				return view('products.products')->with('data', $products);
+				return view('products.products')->with('data', $products)->with('category', $category);
 			}
 	    }
 	    
@@ -48,8 +48,4 @@ class CommonController extends Controller
         return view('contact');
     }
 
-        public function getAccount()
-    {    
-        return view('account');
-    }
 }

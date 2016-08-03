@@ -51,6 +51,11 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('card', 'ProductsController@getCard');
 
+    Route::get('contacts', [
+        'as'    => 'get-contacts',
+        'uses'  => 'CommonController@getContact'
+    ]);
+
     Route::get('search', 'CommonController@getSearch');
     
     Route::get('admin', 'Admin\AdminController@index');

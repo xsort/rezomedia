@@ -44,7 +44,7 @@ class CategoriesController extends Controller
 
         $data->name              = $request->name;
         $data->slug              = $request->slug;
-        $data->description       = $request->description;
+        
         $data->created_at        = $request->date;
         $data->title             = $request->title;
         $data->meta_keywords     = $request->meta_keywords;
@@ -119,7 +119,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        Content::destroy($id);
+        Categories::destroy($id);
         Session::flash('message', trans('common.deleted'));
         return back();
     }

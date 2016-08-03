@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Categories;
 use App\Models\Products;
 use App\Models\Tags;
+use App\Models\Lists;
 
 class HomeController extends Controller
 {
@@ -18,12 +19,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //$news  = News::orderBy('created_at', 'desc')->paginate(5);
-        //return view('news.list')->with('news', $news);
-		$categories = Categories::where('top',true)->get();
+
 		$products = Products::where('enabled',true)->where('top',true)->get();
-		$tags = Products::where('top',true)->get();
-		$news = News::where('top',true)->get();
-		return view('index')->with('categories', $categories)->with('products', $products)->with('newslist',$news);
+        $slider   = Lists::where('slug', 'slider')->first()->children;
+        $banners  = Lists::where('slug', 'banners')->first()->children;
+        $partners = Lists::where('slug', 'partners')->first()->children;
+		return view('index')->with(compact('products', 'slider', 'banners', 'partners'));
     }
 }
