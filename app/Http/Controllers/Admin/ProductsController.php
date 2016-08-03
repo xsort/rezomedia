@@ -22,7 +22,6 @@ class ProductsController extends Controller
 
     public function create(){
         $categories = Categories::lists('name','id')->toArray();
-        $contacts   = Contacts::all();
         $features   = Features::all();
         return view('admin.products.edit')->with(compact('categories','contacts','features'));
     }
@@ -57,6 +56,7 @@ class ProductsController extends Controller
         $data->meta_description  = $request->meta_description;
         $data->meta_keywords     = $request->meta_keywords;
         $data->title             = $request->title;
+        $data->price             = $request->price;
         $data->save();
         
         $this->UpdatePhotos($request, $data->id);
