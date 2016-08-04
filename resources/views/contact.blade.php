@@ -41,12 +41,12 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <address> {{ trans('common.adres') }}: <br> MD-2060, mun.Chisinau, str.Albisoara, 4 oficiul № 114 </address>
+                                        <address> {{ trans('common.adres') }}: <br> {{ trans('common.main-adres') }} </address>
                                     </div>
                                     <div class="col-sm-3">
-                                        <strong>{{ trans('common.phone') }}</strong>
+                                        <strong>{{ trans('common.phone') }}:</strong>
                                         <br>
-                                        +373 22 884739
+                                        {{ trans('common.main-phone') }}
                                         <br>
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
     </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFvnaQ4d5-UsONtpw9s5zPHPdVQ4Ee20k&callback=initMap" type="text/javascript"></script>
  <script>
-            var myCenter=new google.maps.LatLng(47.0149368, 28.8533526);
+            var myCenter=new google.maps.LatLng(47.014659, 28.8556382);
             function initialize()
             {
                 var mapProp = {
