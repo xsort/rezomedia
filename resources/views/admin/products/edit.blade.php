@@ -213,19 +213,27 @@
             </li>
 
             <li>
+                <a href="#recommended" data-toggle="tab">Рекомендуемые</a>
+            </li>
+
+            <li>
+                <a href="#instructionsTab" data-toggle="tab">Инструкции</a>
+            </li>
+
+            <li>
+                <a href="#softTab" data-toggle="tab">Софт</a>
+            </li>
+
+            <li>
                 <a href="#meta" data-toggle="tab">META</a>
             </li>
 
         </ul>
-
-       
     </div>
 
         <div class="tab-content">
             <div class="tab-pane active" id="ru">
-
                 <div class="tabbable  tabs-left">
-
                  <ul id="myTab" class="nav nav-tabs">
                    <li class="active">
                       <a href="#descRu" data-toggle="tab">Описание на русском</a>
@@ -252,7 +260,21 @@
                  </div>
 
                 </div>
-             </div>
+            </div>
+
+            <div class="tab-pane" id="recommended">
+                <div class="row">
+                    <div class="col-sm-12">
+                        @if(isset($products))
+                            @if(isset($recommended))
+                                {{ Form::select('recommended[]', $products, $recommended, ['multiple'=>'multiple','id'=>'chosencat2','class'=>'chosen tag-input-style col-sm-11 control-label no-padding-right']) }}
+                            @else
+                                {{ Form::select('recommended[]', $products, '', ['multiple'=>'multiple','id'=>'chosencat2','class'=>'chosen tag-input-style col-sm-11 control-label no-padding-right']) }}
+                            @endif
+                        @endif
+                    </div>
+                </div>
+            </div>
 
             <div class="tab-pane" id="features">
                 <div class="row">
@@ -276,6 +298,25 @@
 
 
             @include('admin.partials.meta')
+
+
+            <div class="tab-pane" id="instructionsTab">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ Form::textarea('instructions', (isset($data->instructions) ? $data->instructions : old('instructions')), array('class' => 'ckeditor', 'id' => 'instructions')) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="softTab">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div>
+                            {{ Form::textarea('soft', (isset($data->soft) ? $data->soft : old('soft')), ['class' => 'ckeditor', 'id' => 'soft']) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </div>
 

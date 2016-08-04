@@ -18,5 +18,8 @@ class Products extends BaseModel
 		return $this->belongsToMany('App\Models\Features')->withPivot(['value']);
 	}
 
+	public function recommended() {
+		return $this->belongsToMany('App\Models\Products', 'recommended_xref', 'product_id', 'recommended_id');
+	}
 
 }

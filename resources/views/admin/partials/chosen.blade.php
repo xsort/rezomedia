@@ -2,4 +2,5 @@
 {!! HTML::script('ace/assets/js/chosen.jquery.min.js') !!}
 <script>
     $("#chosencat").chosen();
+    $(".chosen").chosen();
 </script>

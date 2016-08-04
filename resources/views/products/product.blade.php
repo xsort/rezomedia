@@ -276,37 +276,12 @@
                                 @if ($key == 0) @continue @endif
                                 <div class="tab-pane" id="image-{{$key+1}}">
                                 <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="uploaded/{{isset($photo->photos{0}) ? $photo->photos{0}->source : 'nophoto.png'}}" href="uploaded/{{isset($photo->photos{0}) ? $photo->photos{0}->source : 'nophoto.png'}}">
-                                        <img src="uploaded/{{isset($photo->photos{0}) ? $photo->photos{0}->source : 'nophoto.png'}}" alt="" class="simpleLens-big-image">
+                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="uploaded/{{isset($photo->source) ? $photo->source : 'nophoto.png'}}" href="uploaded/{{isset($photo->source) ? $photo->source : 'nophoto.png'}}">
+                                        <img src="uploaded/{{isset($photo->source) ? $photo->source : 'nophoto.png'}}" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
                             @endforeach
-                            
-                            <!-- <div class="tab-pane" id="image-2">
-                                <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" href="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg">
-                                        <img src="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" alt="" class="simpleLens-big-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane" id="image-3">
-                                <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" href="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg">
-                                        <img src="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" alt="" class="simpleLens-big-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane" id="image-4">
-                                <div class="simpleLens-big-image-container">
-                                    <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image=http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg href="ihttp://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg">
-                                        <img src="http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg" alt="" class="simpleLens-big-image">
-                                    </a>
-                                </div>
-                            </div> -->
-
                         </div>
 
                         <div class="pro-img-tab-slider indicator-style2 product_img_min">
@@ -314,7 +289,7 @@
                             @foreach($data->photos as $key=>$photo)
                             <div class="item">
                                 <a href="#image-{{$key+1}}" data-toggle="tab">
-                                    <img src="uploaded/{{isset($photo->photos{0}) ? $photo->photos{0}->source : 'nophoto.png'}}" alt="" />
+                                    <img src="uploaded/{{isset($photo->source) ? $photo->source : 'nophoto.png'}}" alt="" />
                                 </a>
                             </div>
 
@@ -397,12 +372,17 @@
                                 </li>
                                 @endif
 
+                                @if ($data->instructions != "")
                                 <li role="presentation">
                                     <a href="#instructions" aria-controls="profile" role="tab" data-toggle="tab">{{ trans('common.instructions') }}</a>
                                 </li>
+                                @endif
+
+                                @if ($data->soft != "")
                                 <li role="presentation">
                                     <a href="#software" aria-controls="profile" role="tab" data-toggle="tab">{{ trans('common.soft') }}</a>
                                 </li>
+                                @endif
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -411,48 +391,27 @@
                                 </div>
                                 @if ( $data->parents{0}->id == 40)
                                 <div role="tabpanel" class="tab-pane" id="characteristic">
-
                                     <table class="table table-bordered table_carac">
                                         <tbody>
+                                            @foreach($data->features as $feature)
+                                            @if (!isset($feature->getValuesArrayAttribute()[$feature->pivot->value]))
+                                                @continue
+                                            @endif
                                             <tr>
-                                                <td style="width: 35%;">{{ trans('common.width') }}</td>
-                                                <td>57 мм</td>
+                                                <td style="width: 35%;">{{ $feature->name }}</td>
+                                                <td>{{ $feature->getValuesArrayAttribute()[$feature->pivot->value] }}</td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 35%;">{{ trans('common.type-product') }}</td>
-                                                <td>стационарный </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 35%;">{{ trans('common.power') }}</td>
-                                                <td>аккумулятор 7.4V, 2200mA Li-Ion, от сети (220В)</td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 35%;">{{ trans('common.interface') }}</td>
-                                                <td>USB, RS232 (COM), Bluetooth, GSM/GPRS (опционально)</td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 35%;">{{ trans('common.brand') }}</td>
-                                                <td>Tremol</td>
-                                            </tr>
-                                        </tbody>
-
                                     </table>
                                 </div>
                                 @endif
 
                                 <div role="tabpanel" class="tab-pane" id="instructions">
-                                    Инструкции
+                                    {!! $data->instructions !!}
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="software">
-                                    Софт
+                                    {!! $data->soft !!}
                                 </div>
 
                             </div>
@@ -461,6 +420,8 @@
                 </div>
             </div>
         </section>
+
+        @if ($data->recommended->count() > 0))
         <section class="mostview-area mostview-area2">
             <div class="container">
                 <div class="row">
@@ -480,36 +441,16 @@
                 </div>
                 <div class="row">
                     <div class="active-slider active3 indicator-style2">
-                       
-                        <div class="col-md-3">
-                            <div class="slider-one">
-                                <div class="single-product">
-                                    <div class="products-top">
-                                        <p class="price special-price non">
-                                            <span class="price-new">70 {{ trans('common.valut') }}</span>
-                                            <span class="price-old">100 {{ trans('common.valut') }}</span>
-                                        </p>
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img class="primary-image" alt="" src="http://alkir-service.ru/wp-content/uploads/2013/07/EC-410.jpeg">
-                                            </a>
-                                        </div>
-                                       
-                                    </div>
-                                    <div class="content-box again">
-                                        <h2 class="name">
-                                            <a href="#">денежные ящики</a>
-                                        </h2>
-                                      
-                                    </div>
-                                </div>
+                        @foreach($data->recommended as $product)
+                            <div class="col-md-3">
+                                @include('partials.oneproduct')
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </section>
-
+        @endif
 
 @stop
 

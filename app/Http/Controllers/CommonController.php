@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Features;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,17 +29,18 @@ class CommonController extends Controller
 	    if (isset($content)) return view('content.content')->with('data', $content);
 	    
 	    $category = Categories::where('slug',$slug)->where('enabled',true)->first();
-	    $products = Products::where('enabled',true)->get();
+
 	    if (isset($category)) {
 		    
 		    if ($category->children->count() > 0) {
 			    return view('products.categories')->with('data', $category);
-			} else { 
+			} else {
+				$products = Products::where('enabled', true)->get();
 				return view('products.products')->with('data', $products)->with('category', $category);
 			}
 	    }
 	    
-	    $product = Products::where('slug',$slug)->where('enabled',true)->firstOrFail();
+	    $product 	 = Products::where('slug',$slug)->where('enabled',true)->firstOrFail();
 		return view('products.product')->with('data', $product);
     }
 

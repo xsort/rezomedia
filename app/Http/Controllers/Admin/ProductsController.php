@@ -21,9 +21,10 @@ class ProductsController extends Controller
     }
 
     public function create(){
+        $products   = Products::lists('name','id')->toArray();
         $categories = Categories::lists('name','id')->toArray();
         $features   = Features::all();
-        return view('admin.products.edit')->with(compact('categories','contacts','features'));
+        return view('admin.products.edit')->with(compact('categories','contacts','features','products'));
     }
 
     public function store(Request $request)
@@ -46,7 +47,6 @@ class ProductsController extends Controller
             $data = Products::find($id);
         }
 
-
         $data->name              = $request->name;
         $data->top               = $request->top;
         $data->created_at        = $request->date;
@@ -58,6 +58,8 @@ class ProductsController extends Controller
         $data->title             = $request->title;
         $data->price             = $request->price;
         $data->price_discount    = $request->price_discount;
+        $data->instructions      = $request->instructions;
+        $data->soft              = $request->soft;
         $data->save();
         
         $this->UpdatePhotos($request, $data->id);
@@ -65,6 +67,11 @@ class ProductsController extends Controller
         //categories
         if ($request->parent) {
             $data->parents()->sync($request->parent);
+        }
+
+        //recommended
+        if ($request->recommended) {
+            $data->recommended()->sync($request->recommended);
         }
 
         //features
@@ -101,14 +108,16 @@ class ProductsController extends Controller
     {
         $data              = Products::find($id);
         $categories        = Categories::lists('name','id')->toArray();
+        $products          = Products::lists('name','id')->toArray();
         $parents           = $data->parents->pluck('id')->toArray();
+        $recommended       = $data->recommended->pluck('id')->toArray();
         $features          = Features::all();
         $features_values   = [];
         foreach($data->features as $f){
             $features_values[] = $f->pivot->value;
         }
 
-        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values'));
+        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values','products','recommended'));
     }
 
     /**

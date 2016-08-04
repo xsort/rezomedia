@@ -156,7 +156,7 @@
                                                             <div class="single-product">
                                                                 <div class="products-top">
 
-                                                                    
+
                                                                     @if ($product->price_discount != 0)
                                                                      <p class="price special-price non">
                                                                         <span class="price-new">{{$product->price_discount}} {{ trans('common.valut') }}</span>

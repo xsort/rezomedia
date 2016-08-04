@@ -9,15 +9,15 @@
                             <div class="bend niceties preview-2">
 
                                 <div id="ensign-nivoslider-2" class="slides"> 
-                                @foreach($slider as $sp)
-                                    <img src="uploaded/{{isset($sp->photos{0}) ? $sp->photos{0}->source : 'nophoto.png'}}" alt="" title="#slider-direction-3"/>
+                                @foreach($slider as $key=>$sp)
+                                    <img src="uploaded/{{isset($sp->photos{0}) ? $sp->photos{0}->source : 'nophoto.png'}}" alt="" title="#slider-direction-{{$key}}"/>
                                     
                                     
                                 @endforeach
                                 </div>
                                 <!-- direction 1 -->
-                                @foreach($slider as $slide)
-                                <div id="slider-direction-3" class="t-cn slider-direction Builder">
+                                @foreach($slider as $key=>$slide)
+                                <div id="slider-direction-{{$key}}" class="t-cn slider-direction Builder">
                                     <div class="slide-all slide3">
                                         <!-- layer 1 -->
                                         <div class="layer-1">
@@ -34,23 +34,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <!-- <div id="slider-direction-1" class="t-cn slider-direction Builder">
-                                    <div class="slide-all slide3">
-                                        
-                                        <div class="layer-1">
-                                            <h2 class="title5 h2">AFFORDABLE LUXURY</h2>
-                                        </div>
-                                       
-                                        <div class="layer-2">
-                                            <h2 class="title6">SAVE UP TO 70% A HUGE SELECTION OF FURNITURE</h2>
-                                        </div>
-                                        
-                                        <div class="layer-3">
-                                            <a class="min1" href="#">Purchase now</a>
-                                        </div>
-                                    </div>
-                                </div> -->
-
                             </div>
                         </div>
                     </div>
@@ -87,37 +70,10 @@
                         <div class="col-md-12">
                             <div class="active-slider9 indicator-style2">
                             @foreach ($products as $product)
-                            <div class="col-md-3">
-                                <div class="slider-one">
-                                    <div class="single-product">
-                                        <div class="products-top">
-                                            @if ($product->price_discount != 0)
-                                                <p class="price special-price non">
-                                                    <span class="price-new">{{$product->price_discount}} {{ trans('common.valut') }}</span>
-                                                    <span class="price-old">{{$product->price}} {{ trans('common.valut') }}</span>
-                                                </p>
-                                                @else
-                                                <p class="price special-price">
-                                                    <span class="price-new new2">{{$product->price}} {{ trans('common.valut') }}</span>
-                                                </p>
-                                            @endif
-                                            <div class="product-img">
-                                                <a href="{{route('get_slug', $product->slug)}}">
-                                                    <img class="primary-image" alt="" src="uploaded/{{isset($product->photos{0}) ? $product->photos{0}->source : 'nophoto.png'}}">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="content-box again">
-                                            <h2 class="name h2">
-                                                <a href="{{route('get_slug', $product->slug)}}">{{$product->name}}</a>
-                                            </h2>
-                                           
-                                        </div>
-                                    </div>
+                                <div class="col-md-3">
+                                    @include('partials.oneproduct')
                                 </div>
-                            </div>
                             @endforeach
-
                         </div>
                         </div>
                     </div>
