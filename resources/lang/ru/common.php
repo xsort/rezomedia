@@ -1,7 +1,9 @@
 <?php
 
 return [
-
+    'main-phone'        => '+373 22 884739',
+    'main-adres'        => 'MD-2060, mun.Chisinau, str.Albisoara, 4 oficiul № 114',
+    'main-email'        => 'info@rezomedia.md',
     'saved'     		=> 'Сохранено!',
     'deleted'   		=> 'Удалено!',
     'meta_description'	=> 'мета описание сайта',
