@@ -26,7 +26,7 @@
                            <div class="all-shop2-area">
                                 <div class="filter-attribute-container ">
                                     <div class="block-title">
-                                        <h2>{{ trans('common.contacts') }}</h2>
+                                        <h2>{{ trans('common.product-category') }}</h2>
                                     </div>
                                     <div class="layered-content no_cb">
                                         <div class="cen-shop">
@@ -189,6 +189,7 @@
                                         </div>
 
                                     </div>
+                                    <!--
                                     <div class="row">
                                         <div class="col-sm-6 text-left">
                                             <ul class="pagination">
@@ -210,6 +211,7 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>

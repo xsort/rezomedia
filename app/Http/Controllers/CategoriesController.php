@@ -17,4 +17,5 @@ class CategoriesController extends Controller
 		return view('products.all-categories')->with('data',$categories);
     }
 
+
 }

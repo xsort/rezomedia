@@ -35,8 +35,8 @@ class CommonController extends Controller
 		    if ($category->children->count() > 0) {
 			    return view('products.categories')->with('data', $category);
 			} else {
-				$products = Products::where('enabled', true)->get();
-				return view('products.products')->with('data', $products)->with('category', $category);
+				$products = Categories::find($category->id)->products()->where('enabled', true)->get();
+				return view('products.products')->with('data', $products)->with(compact('category'));
 			}
 	    }
 	    

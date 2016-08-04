@@ -14,7 +14,12 @@ class Categories extends BaseModel
     public function parents() {
 	    return $this->belongsToMany('App\Models\Categories', 'categories_xref',  'child_id', 'parent_id');
     }
-    
+
+
+    public function products(){
+        return $this->belongsToMany('App\Models\Products', 'products_categories', 'categories_id', 'products_id');
+    }
+
 /*
     public function getParentCategories() {
 	    $temp = $this->belongsToMany('App\Models\Categories', 'categories_xref', 'parent_id', 'child_id');

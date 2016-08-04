@@ -191,6 +191,7 @@ body {
 
 .simpleLens-big-image {
     max-height: 400px;
+    width: 100%;
 }
 
 .product_img_min a {
