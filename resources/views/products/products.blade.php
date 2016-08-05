@@ -10,9 +10,11 @@
                                     <i class="fa fa-home"></i>
                                 </a>
                             </li>
+                            @if(isset($category))
                             <li>
                                 <a class="current" href="{{route('get_slug', $category->slug)}}">{{$category->name}}</a>
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -43,97 +45,26 @@
                             </div>
                         </div>
                                     
-                                @if ($category->id == 40)
-                                    <div class="shop-around margin-b-20">
-                                        <div class="all-shop2-area">
-                                            <div class="filter-attribute-container">
-
+                        @if (isset($category) && $category->id == 40)
+                        <div class="shop-around margin-b-20">
+                            <div class="all-shop2-area">
+                                <div class="filter-attribute-container">
+                                    @foreach($features as $feature)
                                     <div class="block-title">
-                                        <h2>{{ trans('common.width') }}</h2>
+                                        <h2>{{ $feature->name }}</h2>
                                     </div>
                                     <div class="layered-content">
                                         <div class="cen-shop">
                                              <ul>
+                                                 @foreach($feature->values as $value)
                                                 <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">28+28</a>
+                                                    <a class="a-filter add-filter" href="javascript:void(0);" data-id="{{$value->id}}">{{ $value->name }}</a>
                                                 </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">35+20</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">38+38</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">57</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">80</a>
-                                                </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <div class="block-title">
-                                        <h2>{{ trans('common.type-product') }}</h2>
-                                    </div>
-                                    <div class="layered-content">
-                                        <div class="cen-shop">
-                                            <ul>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.tip-port') }}</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.tip-stat') }}</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.tip-fisc') }}</a>
-                                                </li>
-                                                <li class="item_filter">
-                                                    <a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.tip-reg') }}</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="block-title">
-                                        <h2>{{ trans('common.power') }}</h2>
-                                    </div>
-                                    <div class="layered-content">
-                                        <div class="cen-shop">
-                                            <ul>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.acum-with') }}</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">{{ trans('common.acum-without') }}</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="block-title">
-                                        <h2>{{ trans('common.interface') }}</h2>
-                                    </div>
-                                    <div class="layered-content">
-                                        <div class="cen-shop">
-                                            <ul>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">USB</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">LAN</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">rs232</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="block-title">
-                                        <h2>{{ trans('common.brand') }}</h2>
-                                    </div>
-                                    <div class="layered-content">
-                                        <div class="cen-shop">
-                                            <ul>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Datex</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Tremol</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Daisy</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Elicom</a></li>
-                                                <li class="item_filter"><a class="a-filter add-filter" href="javascript:void(0);">Aclas</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                            </div>
 
@@ -152,35 +83,7 @@
                                                     <!-- single-product start -->
                                                 @foreach ($data as $product)
                                                     <div class="col-md-4 col-sm-6">
-                                                        <div class="slider-one">
-                                                            <div class="single-product">
-                                                                <div class="products-top">
-
-
-                                                                    @if ($product->price_discount != 0)
-                                                                     <p class="price special-price non">
-                                                                        <span class="price-new">{{$product->price_discount}} {{ trans('common.valut') }}</span>
-                                                                        <span class="price-old">{{$product->price}} {{ trans('common.valut') }}</span>
-                                                                    </p>
-                                                                    @else
-                                                                    <p class="price special-price">
-                                                                        <span class="price-new new2">{{$product->price}} {{ trans('common.valut') }}</span>
-                                                                    </p>
-                                                                    @endif
-
-                                                                    <div class="product-img">
-                                                                        <a href="{{route('get_slug', $product->slug)}}">
-                                                                            <img class="primary-image" alt="" src="uploaded/{{isset($product->photos{0}) ? $product->photos{0}->source : 'nophoto.png'}}">
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="content-box again">
-                                                                    <h2 class="name">
-                                                                        <a href="{{route('get_slug', $product->slug)}}">{{$product->name}}</a>
-                                                                    </h2>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        @include('partials.oneproduct')
                                                     </div>
                                                 @endforeach
                                   
@@ -219,4 +122,114 @@
                 </div>
             </div>
         </section>
+
+        <script id="oneProductTemplate" type="text/x-jquery-tmpl">
+            <div class="col-md-4 col-sm-6">
+                <div class="slider-one">
+                    <div class="single-product">
+                        <div class="products-top">
+                             {%if (price_discount != 0)%}
+                                <p class="price special-price non">
+                                    <span class="price-new">${price_discount} {{ trans('common.valut') }}</span>
+                                    <span class="price-old">${price} {{ trans('common.valut') }}</span>
+                                </p>
+                             {%else%}
+                                <p class="price special-price">
+                                    <span class="price-new new2">${price} {{ trans('common.valut') }}</span>
+                                </p>
+                             {%/if%}
+                            <div class="product-img">
+                                <a href="${link}" title="${name}">
+                                    <img class="primary-image" alt="${name}" src="uploaded/${photo}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="content-box again">
+                            <h2 class="name h2">
+                                <a href="${link}">${name}</a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+@stop
+
+
+@section('scripts')
+
+    <script src="js/jquery.tmpl.js"></script>
+
+    <script>
+        var mainfilter = [];
+        $(document).ready(function(){
+            $('.filter-attribute-container a').click(function(){
+                var id = $(this).data('id');
+                if(!$(this).parent().hasClass('active')){
+                    addID(id);
+                }else{
+                    removeID(id);
+                }
+            });
+        });
+
+        function addID(cur_id){
+            mainfilter[mainfilter.length] = cur_id;
+            UpdatePage();
+        }
+
+        function removeID(cur_id){
+            var index = mainfilter.indexOf(cur_id);
+            if (index != -1){
+                mainfilter.remove(index);
+            }
+            UpdatePage();
+        }
+
+        function UpdatePage(){
+           $.get('{{ route('get-json-products') }}',
+                    {
+                        category_id: '@if(isset($category)){{ $category->id }}@endif',
+                        filter     : JSON.stringify(mainfilter)
+                    },
+                    function(response){
+                        if(response.success  == false){
+                            alert('Some error');
+                        }
+
+                        var movies = [
+                            { price_discount: "666", price: "555" },
+                            { Name: "Eyes Wide Shut", ReleaseYear: "1999" },
+                            { Name: "The Inheritance", ReleaseYear: "1976" }
+                        ];
+
+                        $(".shop-tab").empty();
+                        $("#oneProductTemplate").tmpl(response.data).appendTo(".shop-tab");
+
+                    });
+        }
+
+        // Array Remove - By John Resig (MIT Licensed)
+        Array.prototype.remove = function(from, to) {
+            var rest = this.slice((to || from) + 1 || this.length);
+            this.length = from < 0 ? this.length + from : from;
+            return this.push.apply(this, rest);
+        };
+
+        //indexOf Array for IE
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function (obj, fromIndex) {
+                if (fromIndex == null) {
+                    fromIndex = 0;
+                } else if (fromIndex < 0) {
+                    fromIndex = Math.max(0, this.length + fromIndex);
+                }
+                for (var i = fromIndex, j = this.length; i < j; i++) {
+                    if (this[i] === obj)
+                        return i;
+                }
+                return -1;
+            };
+        }
+    </script>
 @stop

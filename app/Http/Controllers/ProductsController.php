@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\FeaturesValues;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
-use App\Models\Products;
+use Illuminate\Database\Eloquent\Collection;
 
 class ProductsController extends Controller
 {
@@ -35,5 +35,39 @@ class ProductsController extends Controller
         public function getCheckout()
     {
         return view('products.product-checkout');
+    }
+
+    public function getFilterJson(Request $request){
+        $filter         = json_decode($request->filter);
+        $category_id    = $request->category_id;
+
+        $data     = [];
+        if(count($filter) == 0){
+            $products = Categories::find($category_id)->products()->where('enabled', true)->get();
+            foreach($products as $p) {
+                $data = $this->setData($p, $data);
+            }
+        }else{
+            $features = FeaturesValues::whereIn('id', $filter)->get();
+            foreach($features as $f){
+                $products = $f->products()->where('enabled', true)->wherePivot('value','=', $f->id)->get();
+                foreach($products as $p) {
+                    $data = $this->setData($p, $data);
+                }
+            }
+        }
+
+        return response()->json(['success' => 'true', 'data' => $data]);
+    }
+
+    function setData($p, $data){
+        $data[] = [
+            'photo'            => $p->photos{0}->source,
+            'link'             => route('get_slug', $p->slug),
+            'price'            => $p->price,
+            'price_discount'   => $p->price_discount,
+            'name'             => $p->name
+        ];
+        return $data;
     }
 }

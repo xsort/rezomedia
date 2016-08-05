@@ -2,10 +2,10 @@
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 03, 2016 at 06:01 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 7.0.4
+-- Хост: 127.0.0.1
+-- Время создания: Авг 05 2016 г., 14:31
+-- Версия сервера: 10.1.10-MariaDB
+-- Версия PHP: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rezomedia`
+-- База данных: `rezomedia`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Структура таблицы `categories`
 --
 
 CREATE TABLE `categories` (
@@ -48,7 +48,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Дамп данных таблицы `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `menu_type_id`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `categories` (`id`, `name`, `name_ro`, `name_en`, `description`, `de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories_xref`
+-- Структура таблицы `categories_xref`
 --
 
 CREATE TABLE `categories_xref` (
@@ -76,7 +76,7 @@ CREATE TABLE `categories_xref` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `constants`
+-- Структура таблицы `constants`
 --
 
 CREATE TABLE `constants` (
@@ -88,7 +88,7 @@ CREATE TABLE `constants` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `content`
+-- Структура таблицы `content`
 --
 
 CREATE TABLE `content` (
@@ -107,7 +107,7 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `content`
+-- Дамп данных таблицы `content`
 --
 
 INSERT INTO `content` (`id`, `name`, `name_en`, `name_ro`, `description`, `description_en`, `description_ro`, `enabled`, `views`, `slug`, `created_at`, `updated_at`) VALUES
@@ -125,7 +125,7 @@ INSERT INTO `content` (`id`, `name`, `name_en`, `name_ro`, `description`, `descr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `features`
+-- Структура таблицы `features`
 --
 
 CREATE TABLE `features` (
@@ -143,7 +143,7 @@ CREATE TABLE `features` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `features`
+-- Дамп данных таблицы `features`
 --
 
 INSERT INTO `features` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `enabled`, `sort`, `created_at`, `updated_at`) VALUES
@@ -156,7 +156,7 @@ INSERT INTO `features` (`id`, `name`, `name_ro`, `name_en`, `description`, `desc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `features_products`
+-- Структура таблицы `features_products`
 --
 
 CREATE TABLE `features_products` (
@@ -167,7 +167,7 @@ CREATE TABLE `features_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `features_products`
+-- Дамп данных таблицы `features_products`
 --
 
 INSERT INTO `features_products` (`id`, `products_id`, `features_id`, `value`) VALUES
@@ -177,9 +177,9 @@ INSERT INTO `features_products` (`id`, `products_id`, `features_id`, `value`) VA
 (4, 7, 4, 0),
 (5, 7, 5, 8),
 (6, 22, 1, 1),
-(7, 22, 2, 0),
-(8, 22, 3, 0),
-(9, 22, 4, 0),
+(7, 22, 2, 12),
+(8, 22, 3, 15),
+(9, 22, 4, 17),
 (10, 22, 5, 7),
 (11, 23, 1, 0),
 (12, 23, 2, 0),
@@ -190,7 +190,7 @@ INSERT INTO `features_products` (`id`, `products_id`, `features_id`, `value`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `features_values`
+-- Структура таблицы `features_values`
 --
 
 CREATE TABLE `features_values` (
@@ -202,7 +202,7 @@ CREATE TABLE `features_values` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `features_values`
+-- Дамп данных таблицы `features_values`
 --
 
 INSERT INTO `features_values` (`id`, `features_id`, `name`, `name_ro`, `name_en`) VALUES
@@ -215,12 +215,20 @@ INSERT INTO `features_values` (`id`, `features_id`, `name`, `name_ro`, `name_en`
 (8, 5, 'Tremol', 'Tremol', 'Tremol'),
 (9, 5, 'Daisy', 'Daisy', 'Daisy'),
 (10, 5, 'Elicom', 'Elicom', 'Elicom'),
-(11, 5, 'Aclas', 'Aclas', 'Aclas');
+(11, 5, 'Aclas', 'Aclas', 'Aclas'),
+(12, 2, 'портативный', 'портативный', 'портативный'),
+(13, 2, 'стационарный', 'стационарный', 'стационарный'),
+(14, 2, 'фискальный регистратор', 'фискальный регистратор', 'фискальный регистратор'),
+(15, 3, 'с АКБ', 'с АКБ', 'с АКБ'),
+(16, 3, 'без АКБ', 'без АКБ', 'без АКБ'),
+(17, 4, 'USB', 'USB', 'USB'),
+(18, 4, 'LAN', 'LAN', 'LAN'),
+(19, 4, 'rs232', 'rs232', 'rs232');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galleries`
+-- Структура таблицы `galleries`
 --
 
 CREATE TABLE `galleries` (
@@ -245,7 +253,7 @@ CREATE TABLE `galleries` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galleries_xref`
+-- Структура таблицы `galleries_xref`
 --
 
 CREATE TABLE `galleries_xref` (
@@ -258,7 +266,7 @@ CREATE TABLE `galleries_xref` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lists`
+-- Структура таблицы `lists`
 --
 
 CREATE TABLE `lists` (
@@ -282,7 +290,7 @@ CREATE TABLE `lists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `lists`
+-- Дамп данных таблицы `lists`
 --
 
 INSERT INTO `lists` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `parent_id`, `enabled`, `views`, `sort`, `slug`, `created_at`, `updated_at`) VALUES
@@ -292,12 +300,13 @@ INSERT INTO `lists` (`id`, `name`, `name_ro`, `name_en`, `description`, `descrip
 (6, 'banner-left', '', '', '', '', '', 'xsort.md', 'xsort.md', '', 4, 1, 0, 0, 'banner-left', '2016-08-02 21:00:00', '2016-08-03 07:57:05'),
 (7, 'MIcrosoft', '', '', '', '', '', 'xsort.md', 'xsort.md', '', 5, 1, 0, 0, 'microsoft', '2016-08-02 21:00:00', '2016-08-03 07:44:20'),
 (8, 'banner-red', '', '', '', '', '', 'google.ru', 'google.ru', '', 4, 1, 0, 0, 'bannerred', '2016-08-02 21:00:00', '2016-08-03 07:53:49'),
-(9, 'Тестовый заголовок', 'Title test', '', '', '', '', 'Тестовое описание', 'Descrierea test', '', 1, 1, 0, 0, 'testovyj-zagolovok', '2016-08-02 21:00:00', '2016-08-03 09:56:02');
+(9, 'Тестовый заголовок', 'Title test', '', '', '', '', 'Тестовое описание', 'Descrierea test', '', 1, 1, 0, 0, 'testovyj-zagolovok', '2016-08-02 21:00:00', '2016-08-03 09:56:02'),
+(10, 'Заголовок 2', '', '', '', '', '', 'описание лрпшгыыв авы агш ывршщга', '', '', 1, 1, 0, 0, 'zagolovok2', '2016-08-03 21:00:00', '2016-08-04 11:29:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_categories`
+-- Структура таблицы `menu_categories`
 --
 
 CREATE TABLE `menu_categories` (
@@ -323,7 +332,7 @@ CREATE TABLE `menu_categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_products`
+-- Структура таблицы `menu_products`
 --
 
 CREATE TABLE `menu_products` (
@@ -351,7 +360,7 @@ CREATE TABLE `menu_products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `meta`
+-- Структура таблицы `meta`
 --
 
 CREATE TABLE `meta` (
@@ -370,7 +379,7 @@ CREATE TABLE `meta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `meta`
+-- Дамп данных таблицы `meta`
 --
 
 INSERT INTO `meta` (`id`, `meta_description`, `meta_description_ro`, `meta_description_en`, `meta_keywords`, `meta_keywords_ro`, `meta_keywords_en`, `title`, `title_ro`, `title_en`, `table_id`, `table`) VALUES
@@ -403,12 +412,13 @@ INSERT INTO `meta` (`id`, `meta_description`, `meta_description_ro`, `meta_descr
 (27, '', '', '', '', '', '', '', '', '', 7, 'lists'),
 (28, '', '', '', '', '', '', '', '', '', 8, 'lists'),
 (29, '', '', '', '', '', '', '', '', '', 3, 'lists'),
-(30, '', '', '', '', '', '', '', '', '', 9, 'lists');
+(30, '', '', '', '', '', '', '', '', '', 9, 'lists'),
+(31, '', '', '', '', '', '', '', '', '', 10, 'lists');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Структура таблицы `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -417,7 +427,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Дамп данных таблицы `migrations`
 --
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
@@ -511,12 +521,13 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_08_01_084433_create_features', 6),
 ('2016_08_01_084832_create_features_products', 6),
 ('2016_08_01_085333_create_features_values', 6),
-('2016_08_01_114433_create_lists', 7);
+('2016_08_01_114433_create_lists', 7),
+('2016_08_04_132810_update_products', 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Структура таблицы `news`
 --
 
 CREATE TABLE `news` (
@@ -542,7 +553,7 @@ CREATE TABLE `news` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news_tags`
+-- Структура таблицы `news_tags`
 --
 
 CREATE TABLE `news_tags` (
@@ -554,7 +565,7 @@ CREATE TABLE `news_tags` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news_types`
+-- Структура таблицы `news_types`
 --
 
 CREATE TABLE `news_types` (
@@ -566,7 +577,7 @@ CREATE TABLE `news_types` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Структура таблицы `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -578,7 +589,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `photos`
+-- Структура таблицы `photos`
 --
 
 CREATE TABLE `photos` (
@@ -591,7 +602,7 @@ CREATE TABLE `photos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `photos`
+-- Дамп данных таблицы `photos`
 --
 
 INSERT INTO `photos` (`id`, `source`, `table_id`, `table`, `sort`, `token`) VALUES
@@ -605,12 +616,13 @@ INSERT INTO `photos` (`id`, `source`, `table_id`, `table`, `sort`, `token`) VALU
 (11, '57a1e67077a23.jpg', 3, 'lists', 11, ''),
 (12, '57a1e7120d094.jpg', 0, 'lists', 12, 'bd6a42c8dd9de2f585a77fb8f82df4bcd1f355ba'),
 (13, '57a1e749db3fa.jpg', 0, 'lists', 13, '489ffb6707c9bdf2189049cc752dc88905955963'),
-(14, 'testovyj-zagolovok_14.jpg', 9, 'lists', 14, '');
+(14, 'testovyj-zagolovok_14.jpg', 9, 'lists', 14, ''),
+(15, 'zagolovok2_15.jpg', 10, 'lists', 15, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Структура таблицы `products`
 --
 
 CREATE TABLE `products` (
@@ -633,21 +645,23 @@ CREATE TABLE `products` (
   `slug` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `price_discount` double(8,2) NOT NULL
+  `price_discount` double(8,2) NOT NULL,
+  `instructions` text COLLATE utf8_unicode_ci NOT NULL,
+  `soft` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`, `price_discount`) VALUES
-(22, 'DAISY EXPERT SX', 'DAISY EXPERT SX', '', '<p>Описание</p>\r\n', '<p>Descrierea</p>\r\n', '', 'Короткое описание', 'Descrierea short', '', 1950.00, '', 1, 1, 0, 0, 'daisy-expert-sx', '2016-08-01 21:00:00', '2016-08-03 05:54:26', 1500.00),
-(23, 'Чековая лента 44 мм', 'Bandă de primire 44 mm', '', '<p><strong>Кассовая (чековая) лента в рулоне 44мм</strong>&nbsp;- термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты. Печать чеков на термобумаге происходит на специальных термопринтерах, аналогичных тем, что используются в факс-аппаратах. Термопринтер просто нагревает термобумагу в нужных местах, в которых происходит потемнение термохимического слоя на поверхности бумаги. При этом бумажная лента быстро протягивается относительно нагревающих элементов принтера. Таким образом на термобумаге быстро и бесшумно появляется отчетливое изображение чека.</p>\r\n', '<p><strong>Numerar (cecuri) &icirc;n rola 44mm bandă</strong> - termochimic bandă de h&acirc;rtie cu un singur strat (h&acirc;rtie termică) este utilizată ca (cec) banda de verificare. Imprimați chitanțe pe h&acirc;rtie termică vine &icirc;n imprimantă termică specială, similare cu cele utilizate &icirc;n mașinile de fax. Termică pur și simplu &icirc;ncălzește h&acirc;rtia termică &icirc;n locurile potrivite, &icirc;n care există o &icirc;nchidere la culoare a stratului termo-chimic pe suprafața h&acirc;rtiei. &Icirc;n această bandă de h&acirc;rtie este tras rapid &icirc;n ceea ce privește elementele de &icirc;ncălzire ale imprimantei. Astfel, h&acirc;rtia termică apare rapid și &icirc;n liniște clar imaginea de verificare.</p>\r\n', '', 'Кассовая (чековая) лента в рулоне 44мм - термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты.', 'Numerar (cecuri) în rola 44mm bandă - termochimic bandă de hârtie cu un singur strat (hârtie termică) este utilizată ca (cec) banda de verificare.', '', 1518.00, '', 1, 1, 0, 0, 'chekovaya-lenta-mm', '2016-08-02 21:00:00', '2016-08-03 07:20:59', 0.00);
+INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`, `price_discount`, `instructions`, `soft`) VALUES
+(22, 'DAISY EXPERT SX', 'DAISY EXPERT SX', '', '<p>Описание</p>\r\n', '<p>Descrierea</p>\r\n', '', 'Короткое описание', 'Descrierea short', '', 1950.00, '', 1, 1, 0, 0, 'daisy-expert-sx', '2016-08-01 21:00:00', '2016-08-04 11:20:19', 1500.00, '<p>iiiii</p>\r\n', '<p>ssss</p>\r\n'),
+(23, 'Чековая лента 44 мм', 'Bandă de primire 44 mm', '', '<p><strong>Кассовая (чековая) лента в рулоне 44мм</strong>&nbsp;- термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты. Печать чеков на термобумаге происходит на специальных термопринтерах, аналогичных тем, что используются в факс-аппаратах. Термопринтер просто нагревает термобумагу в нужных местах, в которых происходит потемнение термохимического слоя на поверхности бумаги. При этом бумажная лента быстро протягивается относительно нагревающих элементов принтера. Таким образом на термобумаге быстро и бесшумно появляется отчетливое изображение чека.</p>\r\n', '<p><strong>Numerar (cecuri) &icirc;n rola 44mm bandă</strong> - termochimic bandă de h&acirc;rtie cu un singur strat (h&acirc;rtie termică) este utilizată ca (cec) banda de verificare. Imprimați chitanțe pe h&acirc;rtie termică vine &icirc;n imprimantă termică specială, similare cu cele utilizate &icirc;n mașinile de fax. Termică pur și simplu &icirc;ncălzește h&acirc;rtia termică &icirc;n locurile potrivite, &icirc;n care există o &icirc;nchidere la culoare a stratului termo-chimic pe suprafața h&acirc;rtiei. &Icirc;n această bandă de h&acirc;rtie este tras rapid &icirc;n ceea ce privește elementele de &icirc;ncălzire ale imprimantei. Astfel, h&acirc;rtia termică apare rapid și &icirc;n liniște clar imaginea de verificare.</p>\r\n', '', 'Кассовая (чековая) лента в рулоне 44мм - термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты.', 'Numerar (cecuri) în rola 44mm bandă - termochimic bandă de hârtie cu un singur strat (hârtie termică) este utilizată ca (cec) banda de verificare.', '', 1518.00, '', 1, 1, 0, 0, 'chekovaya-lenta-mm', '2016-08-02 21:00:00', '2016-08-03 07:20:59', 0.00, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products_categories`
+-- Структура таблицы `products_categories`
 --
 
 CREATE TABLE `products_categories` (
@@ -657,7 +671,7 @@ CREATE TABLE `products_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `products_categories`
+-- Дамп данных таблицы `products_categories`
 --
 
 INSERT INTO `products_categories` (`id`, `products_id`, `categories_id`) VALUES
@@ -667,7 +681,7 @@ INSERT INTO `products_categories` (`id`, `products_id`, `categories_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products_news`
+-- Структура таблицы `products_news`
 --
 
 CREATE TABLE `products_news` (
@@ -679,7 +693,7 @@ CREATE TABLE `products_news` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recommended_xref`
+-- Структура таблицы `recommended_xref`
 --
 
 CREATE TABLE `recommended_xref` (
@@ -688,10 +702,17 @@ CREATE TABLE `recommended_xref` (
   `recommended_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Дамп данных таблицы `recommended_xref`
+--
+
+INSERT INTO `recommended_xref` (`id`, `product_id`, `recommended_id`) VALUES
+(2, 22, 23);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Структура таблицы `tags`
 --
 
 CREATE TABLE `tags` (
@@ -706,7 +727,7 @@ CREATE TABLE `tags` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `types`
+-- Структура таблицы `types`
 --
 
 CREATE TABLE `types` (
@@ -719,7 +740,7 @@ CREATE TABLE `types` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -734,16 +755,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `rights`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Xsort', 'support@xsort.md', '$2y$10$twmlb5YlgimkrTIwnKqeauX9JusORUAVWnjjK1jBhM0AQwJW/3RIy', 1, NULL, NULL, NULL);
+(1, 'Xsort', 'support@xsort.md', '$2y$10$twmlb5YlgimkrTIwnKqeauX9JusORUAVWnjjK1jBhM0AQwJW/3RIy', 1, '0TnrED5PWJ6wvqqsAwbDzLzsvYRVRwtyHPtqOjuC9w7WHmJGMSH3ghPYxL10', NULL, '2016-08-03 14:07:44'),
+(6, 'Rezomedia', 'info@rezomedia.md', '$2y$10$B/UX6oV835fIjOaqImlRjuWefQc5zllnWx26HvN0rPZ2yyA6u.196', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videos`
+-- Структура таблицы `videos`
 --
 
 CREATE TABLE `videos` (
@@ -768,7 +790,7 @@ CREATE TABLE `videos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videos_xref`
+-- Структура таблицы `videos_xref`
 --
 
 CREATE TABLE `videos_xref` (
@@ -779,18 +801,18 @@ CREATE TABLE `videos_xref` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `categories`
+-- Индексы таблицы `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `categories_xref`
+-- Индексы таблицы `categories_xref`
 --
 ALTER TABLE `categories_xref`
   ADD PRIMARY KEY (`id`),
@@ -798,27 +820,27 @@ ALTER TABLE `categories_xref`
   ADD KEY `idx_child_id` (`child_id`);
 
 --
--- Indexes for table `constants`
+-- Индексы таблицы `constants`
 --
 ALTER TABLE `constants`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `constants_key_unique` (`key`);
 
 --
--- Indexes for table `content`
+-- Индексы таблицы `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `features`
+-- Индексы таблицы `features`
 --
 ALTER TABLE `features`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `features_products`
+-- Индексы таблицы `features_products`
 --
 ALTER TABLE `features_products`
   ADD PRIMARY KEY (`id`),
@@ -827,20 +849,20 @@ ALTER TABLE `features_products`
   ADD KEY `features_products_value_index` (`value`);
 
 --
--- Indexes for table `features_values`
+-- Индексы таблицы `features_values`
 --
 ALTER TABLE `features_values`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `galleries`
+-- Индексы таблицы `galleries`
 --
 ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `galleries_xref`
+-- Индексы таблицы `galleries_xref`
 --
 ALTER TABLE `galleries_xref`
   ADD PRIMARY KEY (`id`),
@@ -848,7 +870,7 @@ ALTER TABLE `galleries_xref`
   ADD KEY `idx_table` (`table`);
 
 --
--- Indexes for table `lists`
+-- Индексы таблицы `lists`
 --
 ALTER TABLE `lists`
   ADD PRIMARY KEY (`id`),
@@ -856,14 +878,14 @@ ALTER TABLE `lists`
   ADD KEY `lists_slug_index` (`slug`);
 
 --
--- Indexes for table `menu_categories`
+-- Индексы таблицы `menu_categories`
 --
 ALTER TABLE `menu_categories`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `menu_products`
+-- Индексы таблицы `menu_products`
 --
 ALTER TABLE `menu_products`
   ADD PRIMARY KEY (`id`),
@@ -871,7 +893,7 @@ ALTER TABLE `menu_products`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `meta`
+-- Индексы таблицы `meta`
 --
 ALTER TABLE `meta`
   ADD PRIMARY KEY (`id`),
@@ -879,14 +901,14 @@ ALTER TABLE `meta`
   ADD KEY `idx_table` (`table`);
 
 --
--- Indexes for table `news`
+-- Индексы таблицы `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `news_tags`
+-- Индексы таблицы `news_tags`
 --
 ALTER TABLE `news_tags`
   ADD PRIMARY KEY (`id`),
@@ -894,7 +916,7 @@ ALTER TABLE `news_tags`
   ADD KEY `news_tags_tags_id_foreign` (`tags_id`);
 
 --
--- Indexes for table `news_types`
+-- Индексы таблицы `news_types`
 --
 ALTER TABLE `news_types`
   ADD PRIMARY KEY (`id`),
@@ -902,14 +924,14 @@ ALTER TABLE `news_types`
   ADD KEY `news_types_types_id_foreign` (`types_id`);
 
 --
--- Indexes for table `password_resets`
+-- Индексы таблицы `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`),
   ADD KEY `password_resets_token_index` (`token`);
 
 --
--- Indexes for table `photos`
+-- Индексы таблицы `photos`
 --
 ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`),
@@ -919,14 +941,14 @@ ALTER TABLE `photos`
   ADD KEY `photos_token_index` (`token`);
 
 --
--- Indexes for table `products`
+-- Индексы таблицы `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `products_categories`
+-- Индексы таблицы `products_categories`
 --
 ALTER TABLE `products_categories`
   ADD PRIMARY KEY (`id`),
@@ -934,7 +956,7 @@ ALTER TABLE `products_categories`
   ADD KEY `products_categories_categories_id_foreign` (`categories_id`);
 
 --
--- Indexes for table `products_news`
+-- Индексы таблицы `products_news`
 --
 ALTER TABLE `products_news`
   ADD PRIMARY KEY (`id`),
@@ -942,7 +964,7 @@ ALTER TABLE `products_news`
   ADD KEY `products_news_news_id_foreign` (`news_id`);
 
 --
--- Indexes for table `recommended_xref`
+-- Индексы таблицы `recommended_xref`
 --
 ALTER TABLE `recommended_xref`
   ADD PRIMARY KEY (`id`),
@@ -950,7 +972,7 @@ ALTER TABLE `recommended_xref`
   ADD KEY `recommended_xref_recommended_id_index` (`recommended_id`);
 
 --
--- Indexes for table `tags`
+-- Индексы таблицы `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`),
@@ -958,26 +980,26 @@ ALTER TABLE `tags`
   ADD KEY `idx_slug` (`slug`);
 
 --
--- Indexes for table `types`
+-- Индексы таблицы `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `videos`
+-- Индексы таблицы `videos`
 --
 ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `videos_xref`
+-- Индексы таблицы `videos_xref`
 --
 ALTER TABLE `videos_xref`
   ADD PRIMARY KEY (`id`),
@@ -985,172 +1007,172 @@ ALTER TABLE `videos_xref`
   ADD KEY `idx_table` (`table`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
--- AUTO_INCREMENT for table `categories_xref`
+-- AUTO_INCREMENT для таблицы `categories_xref`
 --
 ALTER TABLE `categories_xref`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `constants`
+-- AUTO_INCREMENT для таблицы `constants`
 --
 ALTER TABLE `constants`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `content`
+-- AUTO_INCREMENT для таблицы `content`
 --
 ALTER TABLE `content`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT for table `features`
+-- AUTO_INCREMENT для таблицы `features`
 --
 ALTER TABLE `features`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `features_products`
+-- AUTO_INCREMENT для таблицы `features_products`
 --
 ALTER TABLE `features_products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
--- AUTO_INCREMENT for table `features_values`
+-- AUTO_INCREMENT для таблицы `features_values`
 --
 ALTER TABLE `features_values`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT for table `galleries`
+-- AUTO_INCREMENT для таблицы `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `galleries_xref`
+-- AUTO_INCREMENT для таблицы `galleries_xref`
 --
 ALTER TABLE `galleries_xref`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `lists`
+-- AUTO_INCREMENT для таблицы `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `menu_categories`
+-- AUTO_INCREMENT для таблицы `menu_categories`
 --
 ALTER TABLE `menu_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `menu_products`
+-- AUTO_INCREMENT для таблицы `menu_products`
 --
 ALTER TABLE `menu_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `meta`
+-- AUTO_INCREMENT для таблицы `meta`
 --
 ALTER TABLE `meta`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
--- AUTO_INCREMENT for table `news`
+-- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `news_tags`
+-- AUTO_INCREMENT для таблицы `news_tags`
 --
 ALTER TABLE `news_tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `news_types`
+-- AUTO_INCREMENT для таблицы `news_types`
 --
 ALTER TABLE `news_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `photos`
+-- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
--- AUTO_INCREMENT for table `products_categories`
+-- AUTO_INCREMENT для таблицы `products_categories`
 --
 ALTER TABLE `products_categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `products_news`
+-- AUTO_INCREMENT для таблицы `products_news`
 --
 ALTER TABLE `products_news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `recommended_xref`
+-- AUTO_INCREMENT для таблицы `recommended_xref`
 --
 ALTER TABLE `recommended_xref`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tags`
---
-ALTER TABLE `tags`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `types`
+-- AUTO_INCREMENT для таблицы `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `types`
 --
 ALTER TABLE `types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `videos`
+-- AUTO_INCREMENT для таблицы `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `videos_xref`
+-- AUTO_INCREMENT для таблицы `videos_xref`
 --
 ALTER TABLE `videos_xref`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- Constraints for dumped tables
+-- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Constraints for table `features_products`
+-- Ограничения внешнего ключа таблицы `features_products`
 --
 ALTER TABLE `features_products`
   ADD CONSTRAINT `features_products_features_id_foreign` FOREIGN KEY (`features_id`) REFERENCES `features` (`id`);
 
 --
--- Constraints for table `news_tags`
+-- Ограничения внешнего ключа таблицы `news_tags`
 --
 ALTER TABLE `news_tags`
   ADD CONSTRAINT `news_tags_news_id_foreign` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
   ADD CONSTRAINT `news_tags_tags_id_foreign` FOREIGN KEY (`tags_id`) REFERENCES `tags` (`id`);
 
 --
--- Constraints for table `news_types`
+-- Ограничения внешнего ключа таблицы `news_types`
 --
 ALTER TABLE `news_types`
   ADD CONSTRAINT `news_types_news_id_foreign` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
   ADD CONSTRAINT `news_types_types_id_foreign` FOREIGN KEY (`types_id`) REFERENCES `types` (`id`);
 
 --
--- Constraints for table `products_categories`
+-- Ограничения внешнего ключа таблицы `products_categories`
 --
 ALTER TABLE `products_categories`
   ADD CONSTRAINT `products_categories_categories_id_foreign` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`),
   ADD CONSTRAINT `products_categories_products_id_foreign` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`);
 
 --
--- Constraints for table `products_news`
+-- Ограничения внешнего ключа таблицы `products_news`
 --
 ALTER TABLE `products_news`
   ADD CONSTRAINT `products_news_news_id_foreign` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),

@@ -36,7 +36,8 @@ class CommonController extends Controller
 			    return view('products.categories')->with('data', $category);
 			} else {
 				$products = Categories::find($category->id)->products()->where('enabled', true)->get();
-				return view('products.products')->with('data', $products)->with(compact('category'));
+				$features = Features::all();
+				return view('products.products')->with('data', $products)->with(compact('category', 'features'));
 			}
 	    }
 	    
@@ -45,9 +46,14 @@ class CommonController extends Controller
     }
 
 
-        public function getContact()
-    {    
+    public function getContact(){
         return view('contact');
     }
 
+	public function getSearch(Request $request){
+		$search   = '%'.$request->search.'%';
+		$products = Products::where('name','like',$search)
+					->orWhere('name_ro','like',$search)->get();
+		return view('products.products')->with('data', $products);
+	}
 }
