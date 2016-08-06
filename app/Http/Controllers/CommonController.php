@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Features;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,8 +14,7 @@ use App\Models\Categories;
 
 use App\Models\Products;
 
-use App\Models\News;
-
+use Illuminate\Support\Facades\App;
 use View;
 
 
@@ -55,5 +55,12 @@ class CommonController extends Controller
 		$products = Products::where('name','like',$search)
 					->orWhere('name_ro','like',$search)->get();
 		return view('products.products')->with('data', $products);
+	}
+
+	public function createPDF(){
+		$data = ['name' => 'Test', 'email'=>'test', 'text'=>'test'];
+		$pdf  = App::make('dompdf.wrapper');
+		$pdf->loadView('emails.feedback', $data);
+		return $pdf->download('invoice.pdf');
 	}
 }

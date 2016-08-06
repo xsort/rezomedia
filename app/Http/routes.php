@@ -40,15 +40,19 @@ Route::group(['middleware' => ['web']], function () {
         'uses'  => 'CommonController@getContact'
     ]);
 
-    Route::post('search', ['uses'=>'CommonController@getSearch', 'as'=>'search']);
+    Route::post('search',           ['uses'=>'CommonController@getSearch', 'as'=>'search']);
     
-    Route::get('admin', 'Admin\AdminController@index');
+    Route::get('admin',             'Admin\AdminController@index');
 
     Route::get('get-json-products', ['uses'=>'ProductsController@getFilterJson', 'as'=>'get-json-products']);
 
-    Route::post('send-feedback', ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
+    Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
 
-    Route::get('{slug}', ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
+    Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
+
+    Route::get('create-pdf',        ['uses'=>'CommonController@createPDF', 'as'=>'create-pdf']);
+
+    Route::get('{slug}',            ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
 
 
 
