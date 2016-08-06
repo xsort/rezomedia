@@ -57,8 +57,10 @@
                                 <h3>{{ trans('common.contact-form') }}</h3>
                             </div>
 
-                            <form data-toggle="validator__"  id="contact-form" class="cendo fv-form fv-form-bootstrap" novalidate="novalidate" role="form" method="post" action="index.php?action=main_cart&a=sendcart">
-                                
+                            <form data-toggle="validator__"  id="contact-form" class="cendo fv-form fv-form-bootstrap" novalidate="novalidate" role="form" method="post" action="{{ route('send-feedback') }}">
+
+                                {!! Form::token() !!}
+
                                 <div class="form-group">
                                     <label class="col-md-2 control-label">{{ trans('common.your-name') }}</label>
                                     <div class="col-md-10"><input class="form-control" type="text" value="" name="name"></div>
@@ -184,10 +186,7 @@
                             processData: false,
                             type: 'POST',
                             success: function(result) {
-//                              alert("Вы подписаны!");
-                                var confirmlink = lg+"/order-confirmed";
-                                window.location.replace(confirmlink);
-                                    
+                                alert('{{ trans('common.sended') }}');
                             }   
                         });
 

@@ -45,7 +45,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin', 'Admin\AdminController@index');
 
     Route::get('get-json-products', ['uses'=>'ProductsController@getFilterJson', 'as'=>'get-json-products']);
-    
+
+    Route::post('send-feedback', ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
+
     Route::get('{slug}', ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
 
 

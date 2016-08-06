@@ -12,7 +12,7 @@ use App\Models\Tags;
 
 class JsonController extends Controller
 {
-    private function json_response($errors = null, $data = null){
+    public function json_response($errors = null, $data = null){
         if (!is_null($errors) && count($errors) > 0){
             return response()->json(['success' => 'false', 'data' => $errors]);
         }

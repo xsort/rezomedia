@@ -44,6 +44,7 @@ return [
     'email'         	=> 'E-mail',
     'your-message'      => 'Ваше сообщение',
     'submit'         	=> 'Отправить',
+    'sended'         	=> 'Сообщение отправлено!',
 
     'product-category'  => 'Категории товаров',
 
