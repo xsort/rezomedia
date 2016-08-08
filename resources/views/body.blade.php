@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#" ng-app> 
+<html prefix="og: http://ogp.me/ns#" ng-app="myApp"> 
 <head>
     <base href="{{ URL::to('/') }}"/>
         <meta charset="utf-8">

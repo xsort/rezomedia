@@ -4,40 +4,33 @@
         <!-- QUICKVIEW PRODUCT -->
         <div id="quickview-wrapper">
             <!-- Modal -->
-            <div class="modal fade" id="productModal" tabindex="-1" role="dialog" ng-app="modal_app">
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog" >
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                        <div class="modal-up">
+                        <div class="modal-up" ng-controller="myCtrl">
                            <table class="shop-container cart">
                                 <thead>
                                     <tr>
-                                        
-                                        
                                         <th class="item-thumb">&nbsp;</th>
                                         <th class="item-name">{{ trans('common.product-t') }}</th>
-                                        
                                         <th class="item-quantity">{{ trans('common.quant') }}</th>
                                         <th class="item-nom">&nbsp;</th>
                                         <th class="item-subtotal">{{ trans('common.total') }}</th>
                                         
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                
                                     <tr class="item-row">
-
-                                        
-
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                                <i class="fa fa-hdd-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
                                         <td class="item-name">
                                             <a href="javascript:void(0)">{{ trans('common.m-product') }}</a> 
                                         </td>
@@ -47,65 +40,50 @@
                                                 <input min="1" type="number" ng-model="value_prod" ng-init="value_prod='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
-                                        
                                         <td class="item-nom">
                                             <input type="checkbox" disabled checked>
                                         </td>
-
                                         <td class="item-subtotal">
                                             <span class="amount ng-binding" ng-model="price_prod" ng-init="price_prod='{{$data->price}}'">@{{product=value_prod*price_prod}} {{ trans('common.valut') }}</span> 
                                         </td>
-
                                     </tr>
+
                                     <tr class="item-row">
-
-                                        
-
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
                                         <td class="item-name">
                                             <a href="javascript:void(0)">{{ trans('common.m-journal') }}</a> 
                                         </td>
-
                                         <td class="item-quantity">
                                             <div class="quantity">
                                                 <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
-                                        
                                         <td class="item-nom">
                                             <input type="checkbox" disabled checked>
                                         </td>
-
                                         <td class="item-subtotal">
                                             <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='320'">@{{tech=value_prod*price_tech}} {{ trans('common.valut') }}</span> 
                                         </td>
-
                                     </tr>
+
                                     <tr class="item-row">
-
-                                        
-
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
                                         <td class="item-name">
                                             <a href="javascript:void(0)">{{ trans('common.m-plomb') }}</a> 
                                         </td>
-
                                         <td class="item-quantity">
                                             <div class="quantity">
                                                 <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
-                                        
                                         <td class="item-nom">
                                             <input type="checkbox" disabled checked>
                                         </td>
@@ -113,73 +91,64 @@
                                         <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='280'">
                                             <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} {{ trans('common.valut') }}</span> 
                                         </td>
-
                                     </tr>
 
                                     <tr class="item-row">
-
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
                                         <td class="item-name">
                                             <a href="javascript:void(0)">{{ trans('common.m-cashier') }}</a> 
                                         </td>
-
                                         <td class="item-quantity">
                                             <div class="quantity">
                                                 <input min="1" type="number" ng-model="value_journal" ng-init="value_journal='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
-                                        
-                                        <td class="item-nom">
-                                            <input type="checkbox" checked >
+                                        <td class="item-nom" >
+                                            <input type="checkbox" checked ng-model="cashier.price_cashier" ng-true-value="'200'" ng-false-value="'0'">
                                         </td>
-
-
-
-                                        <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='50'">
-                                            <span class="amount ng-binding"> @{{journal=value_journal*price_journal}} {{ trans('common.valut') }}</span> 
+                                        <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='200'">
+                                            <span class="amount ng-binding">
+                                            @{{journal1=value_journal*price_journal}} 
+                                            <span style="display:none">@{{journal=value_journal*cashier.price_cashier}} </span> 
+                                            {{ trans('common.valut') }}
+                                            </span> 
                                         </td>
-
                                     </tr>
 
-                                    <tr class="item-row">
-
-                                        
-
+                                    <tr class="item-row" >                                 
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
-                                                <img src="http://iconspot.ru/image.php?width=512&height=512&crop=none&id=17227">
+                                                <i class="fa fa-cogs" aria-hidden="true"></i>
                                             </a>
                                         </td>
-
                                         <td class="item-name">
                                             <a href="javascript:void(0)">{{ trans('common.m-exploitation') }}</a> 
                                         </td>
-
                                         <td class="item-quantity">
                                             <div class="quantity">
                                                 <input min="1" type="number" ng-model="value_instr" ng-init="value_instr='1'" value="1" class="ng-pristine ng-valid ng-touched">
                                             </div>
                                         </td>
-                                        
-                                        <td class="item-nom">
-                                            <input type="checkbox"  checked>
+                                        <td class="item-nom" >
+                                            <input type="checkbox" checked ng-model="exploit.price_exploit" ng-true-value="'150'" ng-false-value="'0'">
                                         </td>
-
-                                        <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='190'">
-                                            <span class="amount ng-binding">@{{instr=value_instr*price_instr}} {{ trans('common.valut') }}</span> 
+                                        <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='150'">
+                                            <span class="amount ng-binding">
+                                            @{{instr1=value_instr*price_instr}}
+                                            <span style="display:none">@{{instr=value_instr*exploit.price_exploit}} </span> 
+                                            {{ trans('common.valut') }}
+                                            </span> 
                                         </td>
-
                                     </tr>
-
                                 </tbody>
                             </table>  
+                            
                             <span class="col-xs-12 text-center">
-                                <span class="pull-right total-price">{{ trans('common.m-conc') }}: @{{total=product+tech+plomb+journal+instr}}</span>
+                                <span class="pull-right total-price" ng-model="total">{{ trans('common.m-conc') }}: @{{total=product+tech+plomb+journal+instr}}</span>
                             </span>  
                         </div>
                                     <div class="modal-down">
@@ -221,7 +190,10 @@
                                                             <input class="btn btn-primary" type="submit" value="{{ trans('common.submit') }}">
                                                         </div>
                                                     </div>
-                                            </div></div>
+
+                                            </div>
+
+                                            </div>
 </div>
                                         </form>
 
@@ -456,6 +428,22 @@
 
 @section('productValidation_angular')
 <script src="js/angular.min.js" ></script>
+  <script>
+  angular.module('myApp', [])
+    .controller('myCtrl', ['$scope', function($scope) {
+      $scope.exploit = {
+       price_exploit : '150'
+     };
+    $scope.cashier = {
+       price_cashier : '200'
+     };
+    }]);
+</script>
+
+                                        
+
+
+
     <script src="js/formValidation.min.js"></script>
     <script src="js/validate_bootstrap.js"></script>
     <script>
