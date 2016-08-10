@@ -16,7 +16,7 @@
 
 <body>
     <div class="f-container">
-        <header>
+        <header class="letter">
             <img src="img/logo/logo.jpg" alt="">
         </header>
         <section class="contacts">
