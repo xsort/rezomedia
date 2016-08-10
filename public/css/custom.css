@@ -811,3 +811,123 @@ table.shop-container td.item-quantity {
 a:focus{
     text-decoration: none;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+.add-to-cart .qty{
+    width: 50px !important;
+}
+
+/*LETTER*/
+
+.f-container {
+    width: 620px;
+    margin: 0 auto;
+    color: black;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 385px;
+}
+
+.contacts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.contacts .l-side {
+    border-bottom: 2px solid black;
+    border-right: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.contacts .r-side {
+    border-bottom: 2px solid black;
+    border-left: 1px solid black;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+.p-customer {
+    font-weight: bold;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.p-customer span {
+    border: 2px solid black;
+    width: 100%;
+    display: block;
+    margin-left: 5px;
+    padding-left: 3px;
+}
+
+.p-pay {
+    width: 100%;
+    border: 2px solid black;
+}
+
+.p-pay td,
+  .p-pay th {
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+.p-pay th {
+    text-align: center;
+    padding: 4px;
+}
+
+.p-pay td {
+    padding: 2px 4px;
+}
+
+.p-pay .p-total {
+    border-left: none;
+}
+
+.p-pay .p-total-f {
+    border-right: none;
+}
+
+.p-pay .bolder {
+    font-weight: 800 !important;
+}
+
+.p-pay .w-100 {
+    width: 100px;
+}
+
+footer span {
+    padding: 40px;
+    float: left;
+    font-weight: bold;
+    width: 43%;
+}
+
+/*END LETTER*/

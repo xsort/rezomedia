@@ -35,6 +35,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('card', 'ProductsController@getCard');
 
+    Route::get('letter', 'ProductsController@getLetter');
+
     Route::get('contacts', [
         'as'    => 'get-contacts',
         'uses'  => 'CommonController@getContact'

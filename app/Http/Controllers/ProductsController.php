@@ -22,6 +22,11 @@ class ProductsController extends Controller
         return view('products.product');
     }
 
+        public function getLetter()
+    {
+        return view('letter.letter');
+    }
+
         public function getProductlist()
     {
         return view('products.products');

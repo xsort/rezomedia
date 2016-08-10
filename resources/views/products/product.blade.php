@@ -1,6 +1,7 @@
 
 @extends('body')
 @section('centerbox')
+<div ng-controller="myCtrl">
         <!-- QUICKVIEW PRODUCT -->
         <div id="quickview-wrapper">
             <!-- Modal -->
@@ -11,7 +12,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                        <div class="modal-up" ng-controller="myCtrl">
+                        <div class="modal-up" >
                            <table class="shop-container cart">
                                 <thead>
                                     <tr>
@@ -305,7 +306,8 @@
                                     <div class="add-to-cart">
                                         <div class="input-content">
                                             <label for="qty">{{ trans('common.quant') }}:</label>
-                                            <input id="qty" class="input-text qty" type="text" name="qty" maxlength="12" value="1" title="Qty">
+                                            <!-- <input id="qty" class="input-text qty" ng-model="value_prod" ng-init="value_prod='1'" value="1" type="nomber" name="qty" maxlength="12" value="1" title="Qty"> -->
+                                            <input min="1" type="number" ng-model="value_prod" ng-init="value_prod='1'" value="1" class="input-text qty ng-pristine ng-valid ng-touched">
                                         </div>
                                         <div class="product-icon product-icon-buy">
                                             <a href="#productModal" data-toggle="modal" data-original-title="Quick View">
@@ -423,7 +425,7 @@
             </div>
         </section>
         @endif
-
+</div>
 @stop
 
 @section('productValidation_angular')
