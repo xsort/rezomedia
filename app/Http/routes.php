@@ -35,6 +35,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('card', 'ProductsController@getCard');
 
+    Route::get('letter-pdf', 'ProductsController@getLetterPDF');
+
     Route::get('letter', 'ProductsController@getLetter');
 
     Route::get('contacts', [
@@ -51,8 +53,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
 
     Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
-
-    Route::get('create-pdf',        ['uses'=>'CommonController@createPDF', 'as'=>'create-pdf']);
 
     Route::get('{slug}',            ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
 

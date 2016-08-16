@@ -90,7 +90,8 @@
                                         </td>
 
                                         <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='280'">
-                                            <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} {{ trans('common.valut') }}</span> 
+                                            <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} {{ trans('common.valut') }}</span>
+                                            <input value="@{{plomb}}" type="hidden">
                                         </td>
                                     </tr>
 

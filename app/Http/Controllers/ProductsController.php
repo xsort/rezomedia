@@ -7,6 +7,7 @@ use App\Models\FeaturesValues;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\App;
 
 class ProductsController extends Controller
 {
@@ -25,6 +26,12 @@ class ProductsController extends Controller
         public function getLetter()
     {
         return view('letter.letter');
+    }
+
+    public function getLetterPDF(){
+        $pdf  = App::make('dompdf.wrapper');
+        $pdf->loadView('letter.letter');
+        return $pdf->download('invoice.pdf');
     }
 
         public function getProductlist()
