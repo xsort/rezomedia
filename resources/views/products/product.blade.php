@@ -1,6 +1,7 @@
 
 @extends('body')
 @section('centerbox')
+
 <div ng-controller="myCtrl">
         <!-- QUICKVIEW PRODUCT -->
         <div id="quickview-wrapper">
@@ -20,8 +21,7 @@
                                         <th class="item-name">{{ trans('common.product-t') }}</th>
                                         <th class="item-quantity">{{ trans('common.quant') }}</th>
                                         <th class="item-nom">&nbsp;</th>
-                                        <th class="item-subtotal">{{ trans('common.total') }}</th>
-                                        
+                                        <th class="item-subtotal">{{ trans('common.total') }}</th>                                        
                                     </tr>
                                 </thead>
 
@@ -38,14 +38,34 @@
 
                                         <td class="item-quantity">
                                             <div class="quantity">
-                                                <input min="1" type="number" ng-model="value_prod" ng-init="value_prod='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                                <div class="i-arrows">
+
+                                                    <div class="i-arrows i-arrows-up">
+                                                        <button ng-click="value_prod = value_prod + 1">
+                                                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="i-arrows i-arrows-down">
+                                                        <button ng-click="value_prod=(value_prod-1) || 1">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <input  disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="item-nom">
                                             <input type="checkbox" disabled checked>
                                         </td>
                                         <td class="item-subtotal">
-                                            <span class="amount ng-binding" ng-model="price_prod" ng-init="price_prod='{{$data->price}}'">@{{product=value_prod*price_prod}} {{ trans('common.valut') }}</span> 
+                                            <span class="amount ng-binding" ng-model="price_prod" 
+                                            @if ($data->price_discount != 0) ng-init="price_prod='{{$data->price_discount}}' @else ng-init="price_prod='{{$data->price}}' @endif ">
+
+                                            @{{product=value_prod*price_prod}} {{ trans('common.valut') }}
+
+                                            </span> 
                                         </td>
                                     </tr>
 
@@ -60,7 +80,22 @@
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
-                                                <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                                <div class="i-arrows">
+
+                                                    <div class="i-arrows i-arrows-up">
+                                                        <button ng-click="value_prod = value_prod + 1">
+                                                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="i-arrows i-arrows-down">
+                                                        <button ng-click="value_prod=(value_prod-1) || 1">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <input disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="item-nom">
@@ -82,7 +117,22 @@
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
-                                                <input min="1" type="number" ng-model="value_prod" ng-init="value='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                                <div class="i-arrows">
+
+                                                    <div class="i-arrows i-arrows-up">
+                                                        <button ng-click="value_prod = value_prod + 1">
+                                                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="i-arrows i-arrows-down">
+                                                        <button ng-click="value_prod=(value_prod-1) || 1">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <input disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="item-nom">
@@ -106,7 +156,18 @@
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
-                                                <input min="1" type="number" ng-model="value_journal" ng-init="value_journal='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                                <div class="i-arrows">
+
+                                                <div class="i-arrows i-arrows-up">
+                                                    <button ng-click="value_journal = value_journal + 1"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+                                                </div>
+
+                                                <div class="i-arrows i-arrows-down">
+                                                    <button ng-click="value_journal=(value_journal-1) || 1"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                                                </div>
+                                                
+                                                <input disabled ng-model="value_journal" ng-init="value_journal=1" >
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="item-nom" >
@@ -131,8 +192,19 @@
                                             <a href="javascript:void(0)">{{ trans('common.m-exploitation') }}</a> 
                                         </td>
                                         <td class="item-quantity">
-                                            <div class="quantity">
-                                                <input min="1" type="number" ng-model="value_instr" ng-init="value_instr='1'" value="1" class="ng-pristine ng-valid ng-touched">
+                                          <div class="quantity">
+                                                <div class="i-arrows">
+
+                                                <div class="i-arrows i-arrows-up">
+                                                    <button ng-click="value_instr = value_instr + 1"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+                                                </div>
+
+                                                <div class="i-arrows i-arrows-down">
+                                                    <button ng-click="value_instr=(value_instr-1) || 1"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                                                </div>
+                                                
+                                                <input disabled ng-model="value_instr" ng-init="value_instr=1" >
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="item-nom" >
@@ -175,14 +247,14 @@
                                                     <div class="col-md-6"><input class="form-control" placeholder="{{ trans('common.m-fisc') }} *" type="text" value="" name="fisc"></div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-md-6"><input class="form-control" placeholder="{{ trans('common.m-firm') }} *" type="text" value="" name="firm"></div>
-                                                    <div class="col-md-6"><input class="form-control" placeholder="{{ trans('common.your-name') }} *" type="text" value="" name="name"></div>
+                                                    <div class="col-md-6"><input class="form-control" placeholder="{{ trans('common.m-firm') }} " type="text" value="" name="firm"></div>
+                                                    <div class="col-md-6"><input class="form-control" placeholder="{{ trans('common.your-name') }} " type="text" value="" name="name"></div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-md-12"><input class="form-control" placeholder="{{ trans('common.m-adress') }} *" type="text" value="" name="adres"></div>
+                                                    <div class="col-md-12"><input class="form-control" placeholder="{{ trans('common.m-adress') }} " type="text" value="" name="adres"></div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-md-12"><input class="form-control" placeholder="{{ trans('common.comment') }} *" type="text" value="" name="comm"></div>
+                                                    <div class="col-md-12"><input class="form-control" placeholder="{{ trans('common.comment') }} " type="text" value="" name="comm"></div>
                                                 </div>
                                             
 
@@ -241,7 +313,7 @@
                             <div class="tab-pane active" id="image-1">
                                 <div class="simpleLens-big-image-container">
                                     <a class="simpleLens-lens-image" data-lightbox="roadtrip" data-lens-image="uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" href="uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}">
-                                        <img src="uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" alt="" class="simpleLens-big-image">
+                                        <img rel="image_src" src="uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" alt="" class="simpleLens-big-image">
                                     </a>
                                 </div>
                             </div>
@@ -269,18 +341,6 @@
 
                             @endforeach
 
-                            <!-- <div class="item">
-                                <a href="#image-1" data-toggle="tab">
-                                    <img src="uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" alt="" />
-                                </a>
-                            </div>
-
-                            <div class="item"><a href="#image-2" data-toggle="tab"><img src="http://spb-kassa.ru/images/%D1%8D%D0%BA%D1%80_2102_%D0%BC%D0%BA/%D1%8D%D0%BA%D1%80_2102%D0%BC%D0%BA.jpg" alt="" /></a></div>
-
-                            <div class="item"><a href="#image-3" data-toggle="tab"><img src="http://www.dial-union.ru/images/stories/virtuemart/product/kkm_mercury-115k.jpg" alt="" /></a></div>
-
-                            <div class="item"><a href="#image-4" data-toggle="tab"><img src="http://spb-kassa.ru/images/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA/%D0%BE%D0%BA%D0%B0_%D0%BC%D0%BA.jpg" alt="" /></a></div> -->
-
                         </div>
 
 
@@ -307,8 +367,21 @@
                                     <div class="add-to-cart">
                                         <div class="input-content">
                                             <label for="qty">{{ trans('common.quant') }}:</label>
-                                            <!-- <input id="qty" class="input-text qty" ng-model="value_prod" ng-init="value_prod='1'" value="1" type="nomber" name="qty" maxlength="12" value="1" title="Qty"> -->
-                                            <input min="1" type="number" ng-model="value_prod" ng-init="value_prod='1'" value="1" class="input-text qty ng-pristine ng-valid ng-touched">
+                                                <div class="i-arrows">
+
+                                                    <div class="i-arrows i-arrows-up">
+                                                        <button ng-click="value_prod = value_prod + 1">
+                                                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="i-arrows i-arrows-down">
+                                                        <button ng-click="value_prod=(value_prod-1) || 1">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                    <input disabled ng-model="value_prod" ng-init="value_prod=1" class="input-text qty" value="@{{value_prod}}">
+                                                </div>
                                         </div>
                                         <div class="product-icon product-icon-buy">
                                             <a href="#productModal" data-toggle="modal" data-original-title="Quick View">
@@ -319,9 +392,10 @@
                                 </div>
                             </div>
                             <div class="s-cart-img">
-                                <a href="#">
-                                    <img alt="" src="img/shopping-cart/Screenshot_2.png">
-                                </a>
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-services="vkontakte,facebook,gplus,odnoklassniki" data-counter=""></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -442,9 +516,7 @@
      };
     }]);
 </script>
-
-                                        
-
+         
 
 
     <script src="js/formValidation.min.js"></script>
@@ -453,55 +525,7 @@
         $('#product-form') //инициализируем валидатор форм
                 .formValidation({
                     fields: {
-                        comm: {
-                            validators: {
-                                notEmpty: {
-                                   message: 'Введите ваш комментарий'
-                                },
-                            
-                            stringLength: {
-                                 min: 5,
-                                 max: 200,
-                                 message: 'Комментарий должен содержать не меньше 5 символов.'
-                                }
-                                }
-                            },
-                        
-                        firm: {
-                            validators: {
-                                notEmpty: {
-                                   message: 'Введите название фирмы'
-                                }
-                            }
-                        },
-                        name: {
-                             validators: {
-                                notEmpty: {
-                                    message: 'Введите ваше имя'
-                                },
-                                 stringLength: {
-                                 min: 3,
-                                 max: 20,
-                                 message: 'Имя должно содержать не меньше 3 символов.'
-                                },
-                                regexp: {
-                                   regexp: /^[a-zA-Zа-яА-Я ]+$/,
-                                   message: 'Имя должно содержать только буквы'
-                                }
-                             }
-                         },
-                        adres: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Введите адрес.'
-                                },
-                                stringLength: {
-                                 min: 3,
-                                 max: 20,
-                                 message: 'Адрес должен содержать не меньше 3 символов.'
-                                }
-                             }
-                         },
+                      
                         tel: {
                             validators: {
                                 notEmpty: {
@@ -565,4 +589,18 @@
 
                 });
     </script>
+@stop
+
+@section('product_share')
+    <meta property="og:url"           content="http://cab37e30.ngrok.io/{{$data->slug}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{$data->name}}" />
+    <meta property="og:description"   content="{!!$data->description_short!!}" />
+    <meta property="og:image"         content="{{ URL::to('/') }}/uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" />
+
+     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ URL::to('/') }}/{{$data->slug}}">
+    <meta name="twitter:title" content="{{$data->name}}">
+    <meta name="twitter:description" content="{!!$data->description_short!!}">
+    <meta name="twitter:image" content="{{ URL::to('/') }}/uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}">
 @stop

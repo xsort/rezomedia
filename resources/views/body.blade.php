@@ -3,10 +3,13 @@
 <head>
     <base href="{{ URL::to('/') }}"/>
         <meta charset="utf-8">
+
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Rezomedia - Integrarea sistemelor de casa si control</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=.5, user-scalable=no">
+        @yield('product_share')
 
         <!-- favicon
         ============================================ -->        
@@ -53,12 +56,18 @@
         <!-- modernizr JS
         ============================================ -->        
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=.5, user-scalable=no">
     
    
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.7&appId=1786619678226339";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     
 
 
