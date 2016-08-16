@@ -192,7 +192,7 @@ table{
                         <th >Наименование</th>
                         <th style="width:49px;">Ед.изм.</th>
                         <th style="width:45px;">Кол.</th>
-                        <th style="width:100px;">Цена</th>
+                        <th style="width:80px;">Цена</th>
                         <th style="width:100px;" class="w-100">Сумма</th>
                     </tr>
                 </thead>
