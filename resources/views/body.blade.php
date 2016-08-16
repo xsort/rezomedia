@@ -74,10 +74,10 @@
     
             
         @include('partials.header')
-        
-            @yield('centerbox') 
 
-    @include('partials.footer')
+        @yield('centerbox')
+
+        @include('partials.footer')
 
             
         <!-- start scrollUp

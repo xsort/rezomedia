@@ -122,8 +122,8 @@ table{
 
     }
     body{
-                font-family: DejaVu Sans;
-        font-size:12px !important;
+        font-family:    DejaVu Sans;
+        font-size:12px  !important;
     }
     </style>
 
@@ -154,8 +154,8 @@ table{
                         </td>
                         <td class="r-side">
                             СЧЕТ-ФАКТУРА
-                            <br> № 00006898
-                            <br> от 06.06.2016
+                            <br> № {{ $order_number }}
+                            <br> от {{ date('d.m.Y') }}
                         </td>
 
                     </tr>
@@ -176,9 +176,8 @@ table{
                              Плательщик
                         </td>
                         <td class="r-side">
-                           CATOL LUX S.R.L
+                           {{ $organization }}
                         </td>
-
                     </tr>
                 </tbody>
         </table>
@@ -192,47 +191,25 @@ table{
                         <th >Наименование</th>
                         <th style="width:49px;">Ед.изм.</th>
                         <th style="width:45px;">Кол.</th>
-                        <th style="width:80px;">Цена</th>
+                        <th style="width:100px;">Цена</th>
                         <th style="width:100px;" class="w-100">Сумма</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($products as $counter => $p)
                     <tr>
-                        <td class="text-center">1</td>
-                        <td>Daisy eXpert SX</td>
+                        <td class="text-center">{{ $counter }}</td>
+                        <td>{{ $p['name'] }}</td>
                         <td class="text-center">buc.</td>
-                        <td class="text-center">1</td>
-                        <td class="text-right">3200,00</td>
-                        <td class="text-right">3200,00</td>
+                        <td class="text-center">{{ $p['quantity'] }}</td>
+                        <td class="text-right">{{ $p['price'] }}</td>
+                        <td class="text-right">{{ $p['amount'] }}</td>
                     </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td>Registru asistenta tehnica MCC</td>
-                        <td class="text-center">buc.</td>
-                        <td class="text-center">1</td>
-                        <td class="text-right">30,00</td>
-                        <td class="text-right">30,00</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">3</td>
-                        <td>Registru masini de casa si control</td>
-                        <td class="text-center">buc.</td>
-                        <td class="text-center">1</td>
-                        <td class="text-right">25,00</td>
-                        <td class="text-right">25,00</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">4</td>
-                        <td>Dare in exploatare MCC</td>
-                        <td class="text-center">buc.</td>
-                        <td class="text-center">1</td>
-                        <td class="text-right">280,00</td>
-                        <td class="text-right">280,00</td>
-                    </tr>
+                    @endforeach
                     <tr>
                         <td class="text-center p-total-f" colspan="4"></td>
                         <td class="text-right text-uppercase p-total">Итого</td>
-                        <td class="text-right bolder">3535,00</td>
+                        <td class="text-right bolder">{{ $amount }}</td>
                     </tr>
                     <tr>
                         <td class="text-center p-total-f" colspan="6" style="height:20px;"></td>
@@ -240,7 +217,7 @@ table{
                     <tr>
                         <td class="text-center p-total-f" colspan="4"></td>
                         <td class="text-right p-total">Включая НДС</td>
-                        <td class="text-right bolder">589,17</td>
+                        <td class="text-right bolder">{{ $amount * 0.20 }}</td>
                     </tr>
                 </tbody>
             </table>

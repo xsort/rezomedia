@@ -111,11 +111,11 @@ class BaseModel extends Model
     public function getNameAttribute()
     {
         $locale = Lang::locale();
-        if ($locale == "ru"){
-            return $this->attributes['name'];
-        }else{
-            return $this->attributes['name_' . $locale];
+        if ($locale != "ru"){
+            if (isset($this->attributes['name_' . $locale]))
+                return $this->attributes['name_' . $locale];
         }
+        return $this->attributes['name'];
     }
 
     public function photos(){

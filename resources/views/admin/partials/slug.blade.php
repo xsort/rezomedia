@@ -16,7 +16,7 @@
                                 text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
                                 text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
                             }
-                            text = text.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
+                            text = text.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").split(' ').join('-');
                             return text;
                         }
                     })();

@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
+
 use App\Models\Categories;
-use App\Models\News;
-use App\Models\Tags;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 

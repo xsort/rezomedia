@@ -1,4 +1,3 @@
-
 @extends('body')
 @section('centerbox')
 
@@ -13,7 +12,11 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                        <div class="modal-up" >
+                            <form id="product-form" class="prod-fisc" role="form" method="post" action="{{ route('create-pdf') }}">
+
+                            {!! Form::token() !!}
+
+                           <div class="modal-up" >
                            <table class="shop-container cart">
                                 <thead>
                                     <tr>
@@ -33,13 +36,13 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
-                                            <a href="javascript:void(0)">{{ trans('common.m-product') }}</a> 
+                                            <input type="hidden" name="product_names[]" value="{{$data->name}}" />
+                                            <a href="javascript:void(0)">{{ $data->name }}</a>
                                         </td>
 
                                         <td class="item-quantity">
                                             <div class="quantity">
                                                 <div class="i-arrows">
-
                                                     <div class="i-arrows i-arrows-up">
                                                         <button ng-click="value_prod = value_prod + 1">
                                                             <i class="fa fa-angle-up" aria-hidden="true"></i>
@@ -52,7 +55,7 @@
                                                         </button>
                                                     </div>
 
-                                                    <input  disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                    <input readonly ng-model="value_prod" ng-init="value_prod=1" value="@{{value_prod}}" name="quantities[]"/>
                                                 </div>
                                             </div>
                                         </td>
@@ -65,7 +68,8 @@
 
                                             @{{product=value_prod*price_prod}} {{ trans('common.valut') }}
 
-                                            </span> 
+                                            </span>
+                                            <input type="hidden" name="amounts[]" value="@{{product}}"/>
                                         </td>
                                     </tr>
 
@@ -76,6 +80,7 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
+                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-journal') }}" />
                                             <a href="javascript:void(0)">{{ trans('common.m-journal') }}</a> 
                                         </td>
                                         <td class="item-quantity">
@@ -94,7 +99,7 @@
                                                         </button>
                                                     </div>
 
-                                                    <input disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                    <input readonly ng-model="value_prod" ng-init="value_prod=1" value="@{{value_prod}}" name="quantities[]" >
                                                 </div>
                                             </div>
                                         </td>
@@ -102,7 +107,8 @@
                                             <input type="checkbox" disabled checked>
                                         </td>
                                         <td class="item-subtotal">
-                                            <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='320'">@{{tech=value_prod*price_tech}} {{ trans('common.valut') }}</span> 
+                                            <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='320'">@{{tech=value_prod*price_tech}} {{ trans('common.valut') }}</span>
+                                            <input type="hidden" name="amounts[]" value="@{{tech}}"/>
                                         </td>
                                     </tr>
 
@@ -113,6 +119,7 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
+                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-plomb') }}" />
                                             <a href="javascript:void(0)">{{ trans('common.m-plomb') }}</a> 
                                         </td>
                                         <td class="item-quantity">
@@ -131,7 +138,7 @@
                                                         </button>
                                                     </div>
 
-                                                    <input disabled ng-model="value_prod" ng-init="value_prod=1" >
+                                                    <input readonly ng-model="value_prod" ng-init="value_prod=1" value="@{{value_prod}}" name="quantities[]">
                                                 </div>
                                             </div>
                                         </td>
@@ -141,7 +148,7 @@
 
                                         <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='280'">
                                             <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} {{ trans('common.valut') }}</span>
-                                            <input value="@{{plomb}}" type="hidden">
+                                            <input type="hidden" name="amounts[]" value="@{{plomb}}"/>
                                         </td>
                                     </tr>
 
@@ -152,6 +159,7 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
+                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-cashier') }}" />
                                             <a href="javascript:void(0)">{{ trans('common.m-cashier') }}</a> 
                                         </td>
                                         <td class="item-quantity">
@@ -166,19 +174,20 @@
                                                     <button ng-click="value_journal=(value_journal-1) || 1"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
                                                 </div>
                                                 
-                                                <input disabled ng-model="value_journal" ng-init="value_journal=1" >
+                                                <input readonly ng-model="value_journal" ng-init="value_journal=1" value="@{{value_journal}}" name="quantities[]">
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="item-nom" >
-                                            <input type="checkbox" checked ng-model="cashier.price_cashier" ng-true-value="'200'" ng-false-value="'0'">
+                                            <input type="checkbox" checked ng-model="cashier.price_cashier" ng-true-value="'200'" ng-false-value="'0'" name="cashier"/>
                                         </td>
                                         <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='200'">
                                             <span class="amount ng-binding">
                                             @{{journal1=value_journal*price_journal}} 
                                             <span style="display:none">@{{journal=value_journal*cashier.price_cashier}} </span> 
                                             {{ trans('common.valut') }}
-                                            </span> 
+                                            </span>
+                                            <input type="hidden" name="amounts[]" value="@{{journal}}"/>
                                         </td>
                                     </tr>
 
@@ -189,6 +198,7 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
+                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-exploitation') }}" />
                                             <a href="javascript:void(0)">{{ trans('common.m-exploitation') }}</a> 
                                         </td>
                                         <td class="item-quantity">
@@ -203,19 +213,20 @@
                                                     <button ng-click="value_instr=(value_instr-1) || 1"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
                                                 </div>
                                                 
-                                                <input disabled ng-model="value_instr" ng-init="value_instr=1" >
+                                                <input readonly ng-model="value_instr" ng-init="value_instr=1" value="@{{value_instr}}" name="quantities[]">
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="item-nom" >
-                                            <input type="checkbox" checked ng-model="exploit.price_exploit" ng-true-value="'150'" ng-false-value="'0'">
+                                            <input type="checkbox" checked ng-model="exploit.price_exploit" ng-true-value="'150'" ng-false-value="'0'" name="exploit">
                                         </td>
                                         <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='150'">
                                             <span class="amount ng-binding">
                                             @{{instr1=value_instr*price_instr}}
                                             <span style="display:none">@{{instr=value_instr*exploit.price_exploit}} </span> 
                                             {{ trans('common.valut') }}
-                                            </span> 
+                                            </span>
+                                            <input type="hidden" name="amounts[]" value="@{{instr}}"/>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -226,8 +237,6 @@
                             </span>  
                         </div>
                                     <div class="modal-down">
-
-                                        <form id="product-form" class="prod-fisc" role="form" method="post" action="index.php?action=main_cart&a=sendcart">
                                             <div class="form-container">
                                             <div class="row">
 
@@ -268,10 +277,11 @@
                                             </div>
 
                                             </div>
-</div>
-                                        </form>
+                        </div>
+
 
                                     </div>
+                            </form>
                         </div><!-- .modal-body -->
                     </div><!-- .modal-content -->
                 </div><!-- .modal-dialog -->
@@ -557,36 +567,6 @@
                             }
                          }
                     }
-                })
-                .on('success.form.fv', function(e) {
-                    // Prevent form submission
-                    e.preventDefault();
-        
-                    var $form = $(e.target),
-                        formData = new FormData(),
-                        params   = $form.serializeArray(),
-                        fv    = $(e.target).data('formValidation');
-                        
-                    $.each(params, function(i, val) {
-                        formData.append(val.name, val.value);
-                    });
-                    
-                    $.ajax({
-                            url: $form.attr('action'),
-                            data: formData,
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            type: 'POST',
-                            success: function(result) {
-//                              alert("Вы подписаны!");
-                                var confirmlink = lg+"/order-confirmed";
-                                window.location.replace(confirmlink);
-                                    
-                            }   
-                        });
-
                 });
     </script>
 @stop
@@ -598,7 +578,7 @@
     <meta property="og:description"   content="{!!$data->description_short!!}" />
     <meta property="og:image"         content="{{ URL::to('/') }}/uploaded/{{isset($data->photos{0}) ? $data->photos{0}->source : 'nophoto.png'}}" />
 
-     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ URL::to('/') }}/{{$data->slug}}">
     <meta name="twitter:title" content="{{$data->name}}">
     <meta name="twitter:description" content="{!!$data->description_short!!}">

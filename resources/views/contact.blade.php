@@ -79,7 +79,7 @@
                                 <div class="col-md-12">
                                     <div class="buttons">
                                         <div class="pull-right">
-                                            <input class="btn btn-primary" type="submit" value="{{ trans('common.submit') }}">
+                                            <input class="btn btn-primary" type="submit" value="{{ trans('common.send') }}">
                                         </div>
                                     </div>
                                 </div>

@@ -35,28 +35,22 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('card', 'ProductsController@getCard');
 
-    Route::get('letter-pdf', 'ProductsController@getLetterPDF');
-
-    Route::get('letter', 'ProductsController@getLetter');
-
-    Route::get('letter-old', 'ProductsController@getLetterOld');
-
     Route::get('contacts', [
         'as'    => 'get-contacts',
         'uses'  => 'CommonController@getContact'
     ]);
 
-    Route::post('search',           ['uses'=>'CommonController@getSearch', 'as'=>'search']);
+    Route::post('search',           ['uses'=>'CommonController@getSearch',          'as'=>'search']);
     
     Route::get('admin',             'Admin\AdminController@index');
 
-    Route::get('get-json-products', ['uses'=>'ProductsController@getFilterJson', 'as'=>'get-json-products']);
+    Route::get('get-json-products', ['uses'=>'ProductsController@getFilterJson',    'as'=>'get-json-products']);
 
-    Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
+    Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback',         'as'=>'send-feedback']);
 
-    Route::post('send-feedback',    ['uses'=>'MailController@sendFeedback', 'as'=>'send-feedback']);
+    Route::post('create-pdf',       ['uses'=>'ProductsController@createPDF',        'as'=>'create-pdf']);
 
-    Route::get('{slug}',            ['uses'=>'CommonController@getSlug', 'as'=>'get_slug']);
+    Route::get('{slug}',            ['uses'=>'CommonController@getSlug',            'as'=>'get_slug']);
 
 
 
@@ -120,10 +114,10 @@ Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin', 'as' => 'ad
  * Route patterns
  *
  */
-Route::pattern('id', '\d+');
-Route::pattern('hash', '[a-z0-9]+');
-Route::pattern('hex', '[a-f0-9]+');
-Route::pattern('uuid', '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}');
-Route::pattern('base', '[a-zA-Z0-9]+');
-Route::pattern('slug', '[a-z0-9-]+');
-Route::pattern('username', '[a-z0-9_-]{3,16}');
+Route::pattern('id',        '\d+');
+Route::pattern('hash',      '[a-z0-9]+');
+Route::pattern('hex',       '[a-f0-9]+');
+Route::pattern('uuid',      '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}');
+Route::pattern('base',      '[a-zA-Z0-9]+');
+Route::pattern('slug',      '[a-z0-9-]+');
+Route::pattern('username',  '[a-z0-9_-]{3,16}');

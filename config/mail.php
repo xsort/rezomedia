@@ -55,7 +55,9 @@ return [
     |
     */
 
-    'from' => ['address' => 'support@xsort.md', 'name' => 'Xsort Web Studio'],
+    'from' => ['address' => env('MAIL_USERNAME'), 'name' => 'Xsort Web Studio'],
+
+    'to'   => ['address' => 'info@rezomedia.md',  'name' => 'Rezomedia'],
 
     /*
     |--------------------------------------------------------------------------

@@ -44,6 +44,7 @@ return [
     'email'             => 'E-mail',
     'your-message'      => 'Mesajul dvs.',
     'submit'            => 'Descarcă factura de plată',
+    'send'         	    => 'Trimite',
 
     'product-category'  => 'Categorii de produse',
 
