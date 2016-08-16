@@ -156,6 +156,9 @@ body {
     .home2-all-area {
         padding-bottom: 20px;
     }
+    table.shop-container th:first-child{
+        display: none !important;
+    }
 }
 
 .table_carac tr td {
@@ -765,7 +768,7 @@ table.cart .item-name > * {
 }
 
 table.shop-container th.item-quantity {
-    padding: 0 20px;
+    padding: 15px 20px;
     text-align: center;
 }
 
@@ -966,3 +969,4 @@ footer span {
 .i-arrows button:disabled {
     color: #adadad;
 }
+

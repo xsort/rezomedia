@@ -28,10 +28,16 @@ class ProductsController extends Controller
         return view('letter.letter');
     }
 
+            public function getLetterOld()
+    {
+        return view('letter.letter-old');
+    }
+
     public function getLetterPDF(){
         $pdf  = App::make('dompdf.wrapper');
         $pdf->loadView('letter.letter');
-        return $pdf->download('invoice.pdf');
+        return $pdf->stream('invoice.pdf');
+        
     }
 
         public function getProductlist()

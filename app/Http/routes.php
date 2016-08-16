@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('letter', 'ProductsController@getLetter');
 
+    Route::get('letter-old', 'ProductsController@getLetterOld');
+
     Route::get('contacts', [
         'as'    => 'get-contacts',
         'uses'  => 'CommonController@getContact'
