@@ -50,7 +50,7 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="first-banner">
                                         <a target="_blank" href="{{$ban->description_short}}">
-                                            <img  alt="{{$ban->name}}" src="uploaded/{{isset($ban->photos{0}) ? $ban->photos{0}->source : 'nophoto.png'}}" style="height:216px; width:100%; ">
+                                            <img  alt="{{$ban->name}}" src="resize.php?width=555&height=181&cropratio=555:181&image=/uploaded/{{isset($ban->photos{0}) ? $ban->photos{0}->source : 'nophoto.png'}}" >
                                         </a>
                                     </div>
                                 </div>

@@ -43,7 +43,7 @@ return [
     'your-name'         => 'Ваше имя',
     'email'         	=> 'E-mail',
     'your-message'      => 'Ваше сообщение',
-    'submit'         	=> 'Отправить',
+    'submit'         	=> 'Скачать счет на оплату',
     'sended'         	=> 'Сообщение отправлено!',
 
     'product-category'  => 'Категории товаров',
