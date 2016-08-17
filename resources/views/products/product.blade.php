@@ -80,8 +80,8 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
-                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-journal') }}" />
-                                            <a href="javascript:void(0)">{{ trans('common.m-journal') }}</a> 
+                                            <input type="hidden" name="product_names[]" value="{{ $aproducts['m-journal']['name'] }}" />
+                                            <a href="javascript:void(0)">{{ $aproducts['m-journal']['name'] }}</a>
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
@@ -107,7 +107,7 @@
                                             <input type="checkbox" disabled checked>
                                         </td>
                                         <td class="item-subtotal">
-                                            <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='320'">@{{tech=value_prod*price_tech}} {{ trans('common.valut') }}</span>
+                                            <span class="amount ng-binding" ng-model="price_tech" ng-init="price_tech='{{ $aproducts['m-journal']['value'] }}'">@{{tech=value_prod*price_tech}} {{ trans('common.valut') }}</span>
                                             <input type="hidden" name="amounts[]" value="@{{tech}}"/>
                                         </td>
                                     </tr>
@@ -119,8 +119,8 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
-                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-plomb') }}" />
-                                            <a href="javascript:void(0)">{{ trans('common.m-plomb') }}</a> 
+                                            <input type="hidden" name="product_names[]" value="{{ $aproducts['m-plomb']['name'] }}" />
+                                            <a href="javascript:void(0)">{{ $aproducts['m-plomb']['name'] }}</a>
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
@@ -146,7 +146,7 @@
                                             <input type="checkbox" disabled checked>
                                         </td>
 
-                                        <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='280'">
+                                        <td class="item-subtotal" ng-model="price_plomb" ng-init="price_plomb='{{ $aproducts['m-plomb']['value'] }}'">
                                             <span class="amount ng-binding">@{{plomb=value_prod*price_plomb}} {{ trans('common.valut') }}</span>
                                             <input type="hidden" name="amounts[]" value="@{{plomb}}"/>
                                         </td>
@@ -159,8 +159,8 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
-                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-cashier') }}" />
-                                            <a href="javascript:void(0)">{{ trans('common.m-cashier') }}</a> 
+                                            <input type="hidden" name="product_names[]" value="{{ $aproducts['m-cashier']['name'] }}" />
+                                            <a href="javascript:void(0)">{{ $aproducts['m-cashier']['name'] }}</a>
                                         </td>
                                         <td class="item-quantity">
                                             <div class="quantity">
@@ -179,9 +179,9 @@
                                             </div>
                                         </td>
                                         <td class="item-nom" >
-                                            <input type="checkbox" checked ng-model="cashier.price_cashier" ng-true-value="'200'" ng-false-value="'0'" name="cashier"/>
+                                            <input type="checkbox" checked ng-model="cashier.price_cashier" ng-true-value="'{{ $aproducts['m-cashier']['value'] }}'" ng-false-value="'0'" name="cashier"/>
                                         </td>
-                                        <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='200'">
+                                        <td class="item-subtotal" ng-model="price_journal" ng-init="price_journal='{{ $aproducts['m-cashier']['value'] }}'">
                                             <span class="amount ng-binding">
                                             @{{journal1=value_journal*price_journal}} 
                                             <span style="display:none">@{{journal=value_journal*cashier.price_cashier}} </span> 
@@ -198,8 +198,8 @@
                                             </a>
                                         </td>
                                         <td class="item-name">
-                                            <input type="hidden" name="product_names[]" value="{{ trans('common.m-exploitation') }}" />
-                                            <a href="javascript:void(0)">{{ trans('common.m-exploitation') }}</a> 
+                                            <input type="hidden" name="product_names[]" value="{{ $aproducts['m-exploitation']['name'] }}" />
+                                            <a href="javascript:void(0)">{{ $aproducts['m-exploitation']['name'] }}</a>
                                         </td>
                                         <td class="item-quantity">
                                           <div class="quantity">
@@ -218,9 +218,9 @@
                                             </div>
                                         </td>
                                         <td class="item-nom" >
-                                            <input type="checkbox" checked ng-model="exploit.price_exploit" ng-true-value="'150'" ng-false-value="'0'" name="exploit">
+                                            <input type="checkbox" checked ng-model="exploit.price_exploit" ng-true-value="'{{ $aproducts['m-exploitation']['value'] }}'" ng-false-value="'0'" name="exploit">
                                         </td>
-                                        <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='150'">
+                                        <td class="item-subtotal" ng-model="price_instr" ng-init="price_instr='{{ $aproducts['m-exploitation']['value'] }}'">
                                             <span class="amount ng-binding">
                                             @{{instr1=value_instr*price_instr}}
                                             <span style="display:none">@{{instr=value_instr*exploit.price_exploit}} </span> 

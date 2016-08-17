@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Features;
+use App\Models\Lists;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
@@ -37,12 +38,20 @@ class CommonController extends Controller
 			} else {
 				$products = Categories::find($category->id)->products()->where('enabled', true)->get();
 				$features = Features::all();
+
 				return view('products.products')->with('data', $products)->with(compact('category', 'features'));
 			}
 	    }
 	    
-	    $product 	 = Products::where('slug',$slug)->where('enabled',true)->firstOrFail();
-		return view('products.product')->with('data', $product);
+	    $product 	= Products::where('slug',$slug)->where('enabled',true)->firstOrFail();
+
+		//additional products for order
+		$lists 		= Lists::where('slug', 'additional-products')->first()->children;
+		$aproducts 	= [];
+		foreach($lists as $l){
+			$aproducts[$l->slug] = ['name'=>$l->name, 'value'=>$l->value];
+		}
+		return view('products.product')->with('data', $product)->with(compact('aproducts'));
     }
 
 

@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 class Controller extends BaseController
 {
@@ -15,13 +13,15 @@ class Controller extends BaseController
 
     public function __construct()
     {
+        /*
         $cur_prefix = Route::getCurrentRoute()->getPrefix();
         $cur_link   = Request::path();
 
         if ($cur_prefix){
             $cur_link = $this->str_replace_once($cur_prefix, "", $cur_link);
         }
-
+        */
+        $cur_link = "";
         view()->share('cur_link', $cur_link);
     }
 

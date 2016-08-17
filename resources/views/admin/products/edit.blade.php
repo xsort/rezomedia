@@ -267,9 +267,9 @@
                     <div class="col-sm-12">
                         @if(isset($products))
                             @if(isset($recommended))
-                                {{ Form::select('recommended[]', $products, $recommended, ['multiple'=>'multiple','id'=>'chosencat2','class'=>'chosen tag-input-style col-sm-11 control-label no-padding-right']) }}
+                                {{ Form::select('recommended[]', $products, $recommended, ['multiple'=>'multiple','id'=>'chosencat2','class'=>'tag-input-style col-sm-11 control-label no-padding-right']) }}
                             @else
-                                {{ Form::select('recommended[]', $products, '', ['multiple'=>'multiple','id'=>'chosencat2','class'=>'chosen tag-input-style col-sm-11 control-label no-padding-right']) }}
+                                {{ Form::select('recommended[]', $products, '', ['multiple'=>'multiple','id'=>'chosencat2','class'=>'tag-input-style col-sm-11 control-label no-padding-right']) }}
                             @endif
                         @endif
                     </div>
