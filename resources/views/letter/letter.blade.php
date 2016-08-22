@@ -122,7 +122,7 @@ table{
 
     }
     body{
-        font-family:    DejaVu Sans;
+        font-family:   arial;
         font-size:12px  !important;
     }
     </style>
