@@ -72,7 +72,7 @@
                                             <input type="hidden" name="amounts[]" value="@{{product}}"/>
                                         </td>
                                     </tr>
-
+                                    @if ($data->parents{0}->id == 40)
                                     <tr class="item-row">
                                         <td class="item-thumb">
                                             <a href="javascript:void(0)">
@@ -229,6 +229,7 @@
                                             <input type="hidden" name="amounts[]" value="@{{instr}}"/>
                                         </td>
                                     </tr>
+                                    @endif
                                 </tbody>
                             </table>  
                             
