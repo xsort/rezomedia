@@ -46,12 +46,12 @@ class RouteServiceProvider extends ServiceProvider
                 require app_path('Http/routes.php');
             });
         }else{
-            $locale = $this->app->config->get('app.fallback_locale');
+            $segment = $this->app->config->get('app.fallback_locale');
             $router->group(['namespace' => $this->namespace], function ($router) {
                 require app_path('Http/routes.php');
             });
         }
 
-        $this->app->setLocale($locale);
+        $this->app->setLocale($segment);
     }
 }
