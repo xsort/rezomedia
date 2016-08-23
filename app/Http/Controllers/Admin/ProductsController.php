@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Contacts;
 use App\Models\Features;
+use App\Models\Lists;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Products;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\Categories;
 
@@ -21,10 +23,15 @@ class ProductsController extends Controller
     }
 
     public function create(){
-        $products   = Products::lists('name','id')->toArray();
-        $categories = Categories::lists('name','id')->toArray();
-        $features   = Features::all();
-        return view('admin.products.edit')->with(compact('categories','contacts','features','products'));
+        $products               = Products::lists('name','id')->toArray();
+        $categories             = Categories::lists('name','id')->toArray();
+        $features               = Features::all();
+        $features_custom_list   = Lists::where('slug', 'features-custom')->first()->children;
+        $features_custom        = [];
+        foreach($features_custom_list as $fc){
+            $features_custom[] = ['id' => $fc['id'], 'name' => $fc['name'], 'value' => ''];
+        }
+        return view('admin.products.edit')->with(compact('categories','contacts','features','products','features_custom'));
     }
 
     public function store(Request $request)
@@ -47,8 +54,11 @@ class ProductsController extends Controller
             $data = Products::find($id);
         }
 
+
+        if ($request->top) {
+            $data->top = $request->top;
+        }
         $data->name              = $request->name;
-        $data->top               = $request->top;
         $data->created_at        = $request->date;
         $data->slug              = $request->slug;
         $data->description       = $request->description;
@@ -60,6 +70,14 @@ class ProductsController extends Controller
         $data->price_discount    = $request->price_discount;
         $data->instructions      = $request->instructions;
         $data->soft              = $request->soft;
+
+        //custom text features
+        if ($request->features_custom){
+            $data->features_custom = serialize($request->features_custom);
+        }
+
+
+        //SAVING PRODUCTS
         $data->save();
         
         $this->UpdatePhotos($request, $data->id);
@@ -75,13 +93,24 @@ class ProductsController extends Controller
         }
 
         //features
-        if ($request->features_ids) {
-            $pivot = [];
-            foreach($request->features_ids as $key => $feature_id){
-                $pivot[$feature_id] = ['value' => $request->features_values[$key]];
+        if ($request->features_values) {
+            foreach($request->features_values as $key => $features_values){
+                foreach($features_values as $value) {
+                    //$cur_value = DB::table('features_products')->where('products_id', $data->id)->where('features_id',$key)->where('value',$value)->get();
+                    $cur_value = DB::table('features_products')->where('products_id', $data->id)->where('features_id', $key)->where('value', $value)->first();
+                    $insert_data = [    'features_id'  => $key,
+                                        'value'        => $value,
+                                        'products_id'  => $data->id
+                                    ];
+                    if (empty($cur_value)){
+                        DB::table('features_products')->insert($insert_data);
+                    }else{
+                        DB::table('features_products')->where('id', $cur_value->id)->update($insert_data);
+                    }
+                }
             }
-            $data->features()->sync($pivot);
         }
+
 
         // redirect
         Session::flash('message', trans('common.saved'));
@@ -117,7 +146,18 @@ class ProductsController extends Controller
             $features_values[] = $f->pivot->value;
         }
 
-        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values','products','recommended'));
+        $features_custom_list = Lists::where('slug', 'features-custom')->first()->children;
+        $db_features_custom   = unserialize($data->features_custom);
+        $features_custom      = [];
+        foreach($features_custom_list as $fc){
+            $value = "";
+            if ($db_features_custom){
+                $value = $db_features_custom[$fc['id']];
+            }
+            $features_custom[] = ['id' => $fc['id'], 'name' => $fc['name'], 'value' => $value];
+        }
+
+        return view('admin.products.edit')->with(compact('data','categories','parents','features','features_values','products','recommended','features_custom'));
     }
 
     /**

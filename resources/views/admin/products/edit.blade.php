@@ -282,17 +282,28 @@
                         @foreach($features as $f)
                             <div class="form-group">
                                 {{ Form::label('features_value[]', $f->name, ['class'=>'col-sm-3 control-label no-padding-right']) }}
-                                {{ Form::hidden('features_ids[]', $f->id) }}
                                 <div class="col-sm-9">
                                     @if (isset($features_values))
-                                        {{ Form::select('features_values[]', ["0" => "Не указано"] + $f->values_array, $features_values, ['class' => 'col-sm-11 col-xs-12']) }}
+                                        {{ Form::select('features_values['.$f->id.'][]', $f->values_array, $features_values, ['multiple'=>'multiple', 'id' => 'chosencat_' . $f->id, 'class' => 'chosencat col-sm-11 col-xs-12']) }}
                                     @else
-                                        {{ Form::select('features_values[]', ["0" => "Не указано"] + $f->values_array, ['class' => 'col-sm-11 col-xs-12']) }}
+                                        {{ Form::select('features_values['.$f->id.'][]', $f->values_array, '' , ['multiple'=>'multiple', 'id' => 'chosencat_' . $f->id, 'class' => 'chosencat col-sm-11 col-xs-12']) }}
                                     @endif
                                 </div>
                             </div>
                         @endforeach
                     </div><!-- /.col-xs-12 -->
+                    <div class="col-xs-12">
+                        @if(isset($features_custom))
+                            @foreach($features_custom as $fc)
+                                <div class="form-group">
+                                    {{ Form::label('features_custom[]', $fc['name'], ['class'=>'col-sm-3 control-label no-padding-right']) }}
+                                    <div class="col-sm-9">
+                                        {{ Form::text('features_custom['.$fc['id'].']', $fc['value'], ['class' => 'col-sm-11 col-xs-12']) }}
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
 
@@ -325,6 +336,7 @@
     </div>
 
     {{ Form::close() }}
+
 @endsection
 
 @section('scripts')

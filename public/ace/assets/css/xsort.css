@@ -137,8 +137,11 @@ button.deletebutton{
 
 
 
-#chosencat2_chosen
+#chosencat2_chosen, .chosen
 {
     width: 100% !important;
 }
 
+.chosen-container{
+    width:100% !important;
+}

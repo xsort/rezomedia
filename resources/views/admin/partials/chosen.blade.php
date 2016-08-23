@@ -3,4 +3,7 @@
 <script>
     $("#chosencat").chosen();
     $("#chosencat2").chosen();
+    $(".chosencat").each(function(){
+        $(this).chosen();
+    });
 </script>
