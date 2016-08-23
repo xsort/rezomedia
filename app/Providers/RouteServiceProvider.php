@@ -39,11 +39,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router,  Request $request)
     {
-
-        $locale = $request->segment(1);
-
-        if (array_key_exists($locale, $this->app->config->get('app.locales'))){
-            $router->group(['namespace' => $this->namespace, 'prefix' => $locale], function ($router) {
+        //localization
+        $segment = $request->segment(1);
+        if (array_key_exists($segment, $this->app->config->get('app.locales'))){
+            $router->group(['namespace' => $this->namespace, 'prefix' => $segment], function ($router) {
                 require app_path('Http/routes.php');
             });
         }else{

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 05 2016 г., 14:31
+-- Время создания: Авг 23 2016 г., 15:35
 -- Версия сервера: 10.1.10-MariaDB
 -- Версия PHP: 5.6.19
 
@@ -54,7 +54,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `menu_type_id`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`) VALUES
 (40, 'Кассовые аппараты', 'Case de marcat', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'kassovye-apparaty', '2016-08-01 21:00:00', '2016-08-03 09:55:02'),
 (41, 'Купюросчетные машинки', 'Masini de numarat bancnote', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'kupyuroschetnye-mashinki', '2016-08-01 21:00:00', '2016-08-03 03:59:54'),
-(42, 'Детекторы валют', 'Detectoare de valută', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'detektory-valyut', '2016-08-02 21:00:00', '2016-08-03 03:59:16'),
+(42, 'Детекторы валют ', 'Detectoare de valută ', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'detektory-valyut', '2016-08-02 21:00:00', '2016-08-10 09:56:47'),
 (43, 'Сканеры', 'Scanere', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'skanery', '2016-08-02 21:00:00', '2016-08-03 02:25:46'),
 (44, 'Весы', 'Balanța', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'vesy', '2016-08-02 21:00:00', '2016-08-03 02:26:01'),
 (47, 'Денежные ящики', 'Sertare de bani', '', '', '', '', '', '', '', 0, 1, 0, 0, 0, 'denezhnye-yashhiki', '2016-08-02 21:00:00', '2016-08-03 02:26:44'),
@@ -115,7 +115,7 @@ INSERT INTO `content` (`id`, `name`, `name_en`, `name_ro`, `description`, `descr
 (11, 'Ремонт', '', 'Reparație', '<p>Страница ремонта</p>\r\n', '', '<p>Pagina reparatie</p>\r\n', 1, 0, 'repair', '2016-08-02 21:00:00', '2016-08-03 06:18:11'),
 (12, 'Снятие с учета', '', 'Îndepărtarea din registru', '<p>Страница снятие с учета</p>\r\n', '', '<p>Pagina indepartarii din registru</p>\r\n', 1, 0, 'remove', '2016-08-02 21:00:00', '2016-08-03 06:17:54'),
 (13, 'Регистрации', '', 'Înregistrare', '<p>Страница регистрации</p>\r\n', '', '<p>Pagina inregistrarii</p>\r\n', 1, 0, 'registration', '2016-08-02 21:00:00', '2016-08-03 06:17:32'),
-(14, 'Законодательство', '', 'Legislație', '<p>Страница законодательство</p>\r\n', '', '<p>Pagina legislatie</p>\r\n', 1, 0, 'legislation', '2016-08-02 21:00:00', '2016-08-03 06:17:06'),
+(14, 'Законодательство', '', 'Legislație', '<p><strong><a href="http://lex.justice.md/viewdoc.php?action=view&amp;view=doc&amp;id=296361&amp;lang=2">1. ПОСТАНОВЛЕНИЕ Nr. 474 от 28.04.1998 о применении контрольно-кассовых машин с фискальнойпамятью при расчетах наличными</a></strong></p>\r\n\r\n<p><strong><a href="http://lex.justice.md/index.php?action=view&amp;view=doc&amp;lang=2&amp;id=313445">2. ПОЛОЖЕНИЕ Nr. 2407 on 24.07.1998 о порядке эксплуатации контрольно-кассовых машин с фискальной памятью</a></strong></p>\r\n\r\n<p>3. Единый реестр контрольно-кассовых машин (обновлено 28.09.2015)</p>\r\n\r\n<p>4. Приказ Министрa финансов № 146 с 23 октября 2014 oб утверждении Положения о порядке регистрации и осуществления контроля за использованием контрольно-кассовых машин</p>\r\n', '', '<p>Pagina legislatie</p>\r\n', 1, 0, 'legislation', '2016-08-02 21:00:00', '2016-08-22 08:24:03'),
 (15, 'Инструкции', '', 'Instrucțiuni', '<p>Страница инструкции</p>\r\n', '', '<p>Pagina instructiunii</p>\r\n', 1, 0, 'instructions', '2016-08-02 21:00:00', '2016-08-03 06:16:42'),
 (16, 'Бланки', '', 'Blancuri', '<p>Страница бланки</p>\r\n', '', '<p>Pagina blancuri</p>\r\n', 1, 0, 'forms', '2016-08-02 21:00:00', '2016-08-03 06:16:19'),
 (17, 'Драйверы', '', 'Driverii', '<p>Страница драйверы</p>\r\n', '', '<p>Pagina driverii</p>\r\n', 1, 0, 'drivers', '2016-08-02 21:00:00', '2016-08-03 06:16:02'),
@@ -147,11 +147,11 @@ CREATE TABLE `features` (
 --
 
 INSERT INTO `features` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `enabled`, `sort`, `created_at`, `updated_at`) VALUES
-(1, 'Ширина ленты', '', '', '', '', '', 1, 0, NULL, NULL),
-(2, 'Тип аппарата', '', '', '', '', '', 1, 0, NULL, NULL),
-(3, 'Питание', '', '', '', '', '', 1, 0, NULL, NULL),
-(4, 'Интерфейс', '', '', '', '', '', 1, 0, NULL, NULL),
-(5, 'Бренд', '', '', '', '', '', 1, 0, NULL, NULL);
+(1, 'Ширина ленты', 'Lăţimea benzii', '', '', '', '', 1, 0, NULL, NULL),
+(2, 'Тип аппарата', 'Tipul de vehicul', '', '', '', '', 1, 0, NULL, NULL),
+(3, 'Питание', 'Putere', '', '', '', '', 1, 0, NULL, NULL),
+(4, 'Интерфейс', 'Interfață', '', '', '', '', 1, 0, NULL, NULL),
+(5, 'Бренд', 'Brand', '', '', '', '', 1, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -180,12 +180,33 @@ INSERT INTO `features_products` (`id`, `products_id`, `features_id`, `value`) VA
 (7, 22, 2, 12),
 (8, 22, 3, 15),
 (9, 22, 4, 17),
-(10, 22, 5, 7),
+(10, 22, 5, 8),
 (11, 23, 1, 0),
 (12, 23, 2, 0),
 (13, 23, 3, 0),
 (14, 23, 4, 0),
-(15, 23, 5, 0);
+(15, 23, 5, 0),
+(16, 24, 1, 4),
+(17, 24, 2, 13),
+(18, 24, 3, 15),
+(19, 24, 4, 19),
+(20, 24, 5, 7),
+(21, 25, 1, 4),
+(22, 25, 2, 12),
+(23, 25, 3, 15),
+(24, 25, 4, 17),
+(25, 25, 5, 8),
+(26, 26, 1, 1),
+(27, 26, 2, 14),
+(28, 26, 3, 15),
+(29, 26, 4, 17),
+(30, 26, 5, 8),
+(37, 27, 4, 18),
+(38, 27, 4, 17),
+(39, 27, 1, 1),
+(40, 27, 2, 12),
+(41, 27, 3, 15),
+(42, 27, 5, 7);
 
 -- --------------------------------------------------------
 
@@ -216,9 +237,9 @@ INSERT INTO `features_values` (`id`, `features_id`, `name`, `name_ro`, `name_en`
 (9, 5, 'Daisy', 'Daisy', 'Daisy'),
 (10, 5, 'Elicom', 'Elicom', 'Elicom'),
 (11, 5, 'Aclas', 'Aclas', 'Aclas'),
-(12, 2, 'портативный', 'портативный', 'портативный'),
-(13, 2, 'стационарный', 'стационарный', 'стационарный'),
-(14, 2, 'фискальный регистратор', 'фискальный регистратор', 'фискальный регистратор'),
+(12, 2, 'портативный', 'portabil', 'портативный'),
+(13, 2, 'стационарный', 'staționar', 'стационарный'),
+(14, 2, 'фискальный регистратор', 'aparat fiscal', 'фискальный регистратор'),
 (15, 3, 'с АКБ', 'с АКБ', 'с АКБ'),
 (16, 3, 'без АКБ', 'без АКБ', 'без АКБ'),
 (17, 4, 'USB', 'USB', 'USB'),
@@ -301,7 +322,16 @@ INSERT INTO `lists` (`id`, `name`, `name_ro`, `name_en`, `description`, `descrip
 (7, 'MIcrosoft', '', '', '', '', '', 'xsort.md', 'xsort.md', '', 5, 1, 0, 0, 'microsoft', '2016-08-02 21:00:00', '2016-08-03 07:44:20'),
 (8, 'banner-red', '', '', '', '', '', 'google.ru', 'google.ru', '', 4, 1, 0, 0, 'bannerred', '2016-08-02 21:00:00', '2016-08-03 07:53:49'),
 (9, 'Тестовый заголовок', 'Title test', '', '', '', '', 'Тестовое описание', 'Descrierea test', '', 1, 1, 0, 0, 'testovyj-zagolovok', '2016-08-02 21:00:00', '2016-08-03 09:56:02'),
-(10, 'Заголовок 2', '', '', '', '', '', 'описание лрпшгыыв авы агш ывршщга', '', '', 1, 1, 0, 0, 'zagolovok2', '2016-08-03 21:00:00', '2016-08-04 11:29:16');
+(10, 'Заголовок 2', '', '', '', '', '', 'описание лрпшгыыв авы агш ывршщга', '', '', 1, 1, 0, 0, 'zagolovok2', '2016-08-03 21:00:00', '2016-08-04 11:29:16'),
+(11, 'Simpals', 'Simpals', '', '', '', '', 'test.md', 'test.md', '', 5, 1, 0, 0, 'simpals', '2016-08-15 21:00:00', '2016-08-16 04:18:51'),
+(12, 'Сопутствующие товары', '', '', '', '', '', '', '', '', 0, 1, 0, 0, 'additional-products', '2016-08-16 21:00:00', '2016-08-17 09:13:28'),
+(13, 'Технический журнал', 'Registru asistenta tehnica MCC', '', '', '', '', '30', '30', '', 12, 1, 0, 0, 'm-journal', '2016-08-16 21:00:00', '2016-08-22 07:44:29'),
+(18, 'Пломба', 'Sigiliu', '', '', '', '', '15', '15', '', 12, 1, 0, 0, 'm-plomb', '2016-08-16 21:00:00', '2016-08-22 07:44:03'),
+(19, 'Журнал кассира', 'Registru masini de casa si control', '', '', '', '', '30', '30', '', 12, 1, 0, 0, 'm-cashier', '2016-08-16 21:00:00', '2016-08-22 07:44:16'),
+(20, 'Ввод в эксплуатацию', 'Dare in exploatare MCC', '', '', '', '', '320', '320', '', 12, 1, 0, 0, 'm-exploitation', '2016-08-16 21:00:00', '2016-08-22 07:44:41'),
+(21, 'Текстовые характеристики', '', '', '', '', '', '', '', '', 0, 1, 0, 0, 'features-custom', '2016-08-22 21:00:00', '2016-08-23 09:57:33'),
+(22, 'Длина', '', '', '', '', '', '', '', '', 21, 1, 0, 0, 'dlina', '2016-08-22 21:00:00', '2016-08-23 09:59:20'),
+(23, 'Ширина', '', '', '', '', '', '', '', '', 21, 1, 0, 0, 'shirina', '2016-08-22 21:00:00', '2016-08-23 09:59:28');
 
 -- --------------------------------------------------------
 
@@ -413,7 +443,24 @@ INSERT INTO `meta` (`id`, `meta_description`, `meta_description_ro`, `meta_descr
 (28, '', '', '', '', '', '', '', '', '', 8, 'lists'),
 (29, '', '', '', '', '', '', '', '', '', 3, 'lists'),
 (30, '', '', '', '', '', '', '', '', '', 9, 'lists'),
-(31, '', '', '', '', '', '', '', '', '', 10, 'lists');
+(31, '', '', '', '', '', '', '', '', '', 10, 'lists'),
+(32, '', '', '', '', '', '', '', '', '', 24, 'products'),
+(33, '', '', '', '', '', '', '', '', '', 25, 'products'),
+(34, '', '', '', '', '', '', '', '', '', 11, 'lists'),
+(35, '', '', '', '', '', '', '', '', '', 12, 'lists'),
+(36, '', '', '', '', '', '', '', '', '', 13, 'lists'),
+(37, '', '', '', '', '', '', '', '', '', 14, 'lists'),
+(38, '', '', '', '', '', '', '', '', '', 15, 'lists'),
+(39, '', '', '', '', '', '', '', '', '', 16, 'lists'),
+(40, '', '', '', '', '', '', '', '', '', 17, 'lists'),
+(41, '', '', '', '', '', '', '', '', '', 18, 'lists'),
+(42, '', '', '', '', '', '', '', '', '', 19, 'lists'),
+(43, '', '', '', '', '', '', '', '', '', 20, 'lists'),
+(44, '', '', '', '', '', '', '', '', '', 26, 'products'),
+(45, '', '', '', '', '', '', '', '', '', 27, 'products'),
+(46, '', '', '', '', '', '', '', '', '', 21, 'lists'),
+(47, '', '', '', '', '', '', '', '', '', 22, 'lists'),
+(48, '', '', '', '', '', '', '', '', '', 23, 'lists');
 
 -- --------------------------------------------------------
 
@@ -522,7 +569,8 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_08_01_084832_create_features_products', 6),
 ('2016_08_01_085333_create_features_values', 6),
 ('2016_08_01_114433_create_lists', 7),
-('2016_08_04_132810_update_products', 8);
+('2016_08_04_132810_update_products', 8),
+('2016_08_16_105545_create_orders', 9);
 
 -- --------------------------------------------------------
 
@@ -577,6 +625,67 @@ CREATE TABLE `news_types` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `phone` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `fiscal` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `company` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `filename` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `comments` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `phone`, `fiscal`, `company`, `name`, `address`, `filename`, `comments`, `created_at`, `updated_at`) VALUES
+(1, '3123123123', '12312312312312', '312312', '312312', '31233123123', '', '12312312312312', '2016-08-16 08:19:37', '2016-08-16 08:19:37'),
+(2, '312321', '32131232', 'dasd', 'asdsads', 'adsad', '', 'dsadas', '2016-08-16 10:54:25', '2016-08-16 10:54:25'),
+(3, '37369335875', '1008600098392131', 'Xsort SRL ', 'Антон', 'dssadsadasdasdas', '', 'dasdsadasdasdasdasdas выа ваыва ыва ыв', '2016-08-16 12:05:48', '2016-08-16 12:05:48'),
+(4, '069308306', '1008600053395', 'Xsort', 'Alex', 'Pietrarilor 2', '', 'Segodnia', '2016-08-17 04:46:32', '2016-08-17 04:46:32'),
+(5, '456546456', '345435435435', '', '', '', '', '', '2016-08-17 04:47:17', '2016-08-17 04:47:17'),
+(6, '123123', '123213123', 'dasdasd', 'sadasd', 'asdasdad', '', 'dsadsad', '2016-08-17 04:47:18', '2016-08-17 04:47:18'),
+(7, '456546456', '345435435435', '', '', '', '', '', '2016-08-17 04:47:42', '2016-08-17 04:47:42'),
+(8, '069308306', '1008600053395', 'Xsort', 'Alex', '', '', '', '2016-08-17 04:48:52', '2016-08-17 04:48:52'),
+(9, '12345', '12345678', '', '', '', '', '', '2016-08-17 04:48:59', '2016-08-17 04:48:59'),
+(10, '37378584222', '222222222222', 'alexzc', 'алекс', '123', '', '134', '2016-08-17 08:59:19', '2016-08-17 08:59:19'),
+(11, '069400040', '1007600000934', '', '', '', '', '', '2016-08-22 05:27:25', '2016-08-22 05:27:25'),
+(12, '78646456746', '1007600000934', '', '', '', '', '', '2016-08-22 05:39:01', '2016-08-22 05:39:01'),
+(13, '123333', '1111111111', 'alexzc', 'alexandru', '', '', '', '2016-08-22 06:33:03', '2016-08-22 06:33:03'),
+(14, '123333', '1111111111', 'alexzc', 'alexandru', '', '', '', '2016-08-22 06:36:48', '2016-08-22 06:36:48'),
+(15, '111111111111', '1111111111111', 'alex', 'alexandru', '', '', '', '2016-08-22 06:37:25', '2016-08-22 06:37:25'),
+(16, '123455', '232323232', 'skkkk', 'sss', '', '', '', '2016-08-22 06:39:48', '2016-08-22 06:39:48'),
+(17, '1111111', '1111111111', '', '', '', '', '', '2016-08-22 06:44:12', '2016-08-22 06:44:12'),
+(18, '11111111111111', '11111111', '', '', '', '', '', '2016-08-22 06:44:52', '2016-08-22 06:44:52'),
+(19, '11111111', '22222222222', '', '', '', '', '', '2016-08-22 08:04:35', '2016-08-22 08:04:35'),
+(20, '222222', '222222222', 'sdadas', '', '', '', '', '2016-08-22 08:05:10', '2016-08-22 08:05:10'),
+(21, '1111111111', '1111111111', '', '', '', '', '', '2016-08-22 09:02:36', '2016-08-22 09:02:36'),
+(22, '1111111111', '1111111111', '', '', '', '', '', '2016-08-22 09:33:43', '2016-08-22 09:33:43'),
+(23, '1111111111', '1111111111', '', '', '', '', '', '2016-08-22 09:44:19', '2016-08-22 09:44:19'),
+(24, '1111111111', '1111111111', '', '', '', '', '', '2016-08-22 09:47:41', '2016-08-22 09:47:41'),
+(25, '12312321', '3123123', '23123', '', '', '', '', '2016-08-22 09:48:25', '2016-08-22 09:48:25'),
+(26, '12312321', '3123123', '23123', '', '', '', '', '2016-08-22 09:49:35', '2016-08-22 09:49:35'),
+(27, '1111111111', '1111111111', '', '', '', '', '', '2016-08-22 09:50:02', '2016-08-22 09:50:02'),
+(28, '3212312312', '312312312', 'asdad', '', '', '', '', '2016-08-22 09:51:11', '2016-08-22 09:51:11'),
+(29, '1212121', '212121', '', '', '', '', '', '2016-08-22 09:59:05', '2016-08-22 09:59:05'),
+(30, '12312312', '1231231233', '', '', '', '', '', '2016-08-22 10:00:30', '2016-08-22 10:00:30'),
+(31, '12312312', '1231231233', '', '', '', '', '', '2016-08-22 10:05:19', '2016-08-22 10:05:19'),
+(32, '12312312', '1231231233', '', '', '', '', '', '2016-08-22 10:05:56', '2016-08-22 10:05:56'),
+(33, '12312312', '1231231233', '', '', '', '', '', '2016-08-22 10:06:16', '2016-08-22 10:06:16'),
+(34, '12312312', '3123123', 'dasd', '', '', '', '', '2016-08-22 10:07:47', '2016-08-22 10:07:47'),
+(35, '12312312', '1231231233', '', '', '', '', '', '2016-08-22 10:08:26', '2016-08-22 10:08:26'),
+(36, '3123123', '12312312', '', '', '', '', '', '2016-08-22 10:34:41', '2016-08-22 10:34:41');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `password_resets`
 --
 
@@ -617,7 +726,33 @@ INSERT INTO `photos` (`id`, `source`, `table_id`, `table`, `sort`, `token`) VALU
 (12, '57a1e7120d094.jpg', 0, 'lists', 12, 'bd6a42c8dd9de2f585a77fb8f82df4bcd1f355ba'),
 (13, '57a1e749db3fa.jpg', 0, 'lists', 13, '489ffb6707c9bdf2189049cc752dc88905955963'),
 (14, 'testovyj-zagolovok_14.jpg', 9, 'lists', 14, ''),
-(15, 'zagolovok2_15.jpg', 10, 'lists', 15, '');
+(15, 'zagolovok2_15.jpg', 10, 'lists', 15, ''),
+(16, 'datecs-dpsd_16.jpg', 24, 'products', 16, ''),
+(17, 'datecs-dpsd_17.jpg', 24, 'products', 17, ''),
+(18, 'datecs-dpsd_18.jpg', 24, 'products', 18, ''),
+(19, '57a9da33bb434.jpg', 0, 'products', 19, '79d086b87070da8b0269714678b7d81f25a935b3'),
+(20, 'tremol-skl_20.jpg', 25, 'products', 20, ''),
+(23, '57ab24b87b482.jpg', 0, 'products', 23, 'e2407315cf0bb037e48307a29a0473c93e648e46'),
+(24, '57ab24b881ee0.jpg', 0, 'products', 24, 'f94d8b9dde35eac357936a7eb3575a1448d7e85f'),
+(25, '57ab251285b18.jpg', 0, 'products', 25, '32c5ea9aaf211359b6690dfabc210101e365d21b'),
+(26, '57ab251288a84.jpg', 0, 'products', 26, '51a682d07ea38e81ec012211ab5244bd6b6055ed'),
+(27, '57ab25b0c6a45.jpg', 0, 'products', 27, 'ed8d2c2df790e0309564ec803b172d4ccdc91cf3'),
+(28, '57ab25b0c952b.jpg', 0, 'products', 28, '4eef1420b09065b6f18821f3d9fec439a1df3eea'),
+(29, '57ab25d35feea.jpg', 0, 'products', 29, 'ee56cd448516ab4d6c66f8cf4dc7e82f48f0f64e'),
+(30, '57ab25d36a3a5.jpg', 0, 'products', 30, 'd6b4df3e0c976507b0737c47a95fce235b4138ba'),
+(31, '57ab26a5d6ef7.jpg', 0, 'products', 32, '7af1331e2a85688636e9520bc4e82ed9df3d523e'),
+(32, '57ab26a5d68eb.jpg', 0, 'products', 31, 'fd63ff6945bec44d1546e45f79cd0b6e12719afc'),
+(33, '57ac424500485.jpg', 0, 'products', 33, '72d85aca082b1d140a6092525ee73c67e8ae8bf7'),
+(34, '57ac4245004f9.jpg', 0, 'products', 34, 'faeb9dfd789642024a92873bf541511f9dd7374c'),
+(35, '57ac44286d475.jpg', 0, 'products', 35, 'dd58936fd9653ba5c03948087adab952cd5b99f2'),
+(36, '57ac44be42f90.jpg', 0, 'products', 36, '3e811a6e7f2ff57d6c106925d625066f3e9e02bf'),
+(37, '57ac45f3f23e9.jpg', 0, 'products', 37, '997b2c0fb67e6e2f823f099a59ff37cbcfcce559'),
+(38, '57ac4dbb46dab.jpg', 0, 'products', 38, '5379329daaf532c6bdd1ab07cf25fc83814e73a9'),
+(39, '57b2b5ddcbbe7.jpg', 0, 'products', 39, 'df578d9779ef409146976a835a93e02d24725097'),
+(40, 'simpals_40.png', 11, 'lists', 40, ''),
+(41, '57bab38df3fd6.jpg', 0, 'products', 41, 'e9b92e22a0b1fb709ade1655ee45d8eebb02f23c'),
+(42, '57babcd3c1a16.jpg', 0, 'products', 42, '978e358ffd1da9f27d4c88199c59400f1b3bd6a9'),
+(43, 'kassovyj-apparat_43.jpg', 26, 'products', 43, '');
 
 -- --------------------------------------------------------
 
@@ -647,16 +782,21 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `price_discount` double(8,2) NOT NULL,
   `instructions` text COLLATE utf8_unicode_ci NOT NULL,
-  `soft` text COLLATE utf8_unicode_ci NOT NULL
+  `soft` text COLLATE utf8_unicode_ci NOT NULL,
+  `features_custom` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`, `price_discount`, `instructions`, `soft`) VALUES
-(22, 'DAISY EXPERT SX', 'DAISY EXPERT SX', '', '<p>Описание</p>\r\n', '<p>Descrierea</p>\r\n', '', 'Короткое описание', 'Descrierea short', '', 1950.00, '', 1, 1, 0, 0, 'daisy-expert-sx', '2016-08-01 21:00:00', '2016-08-04 11:20:19', 1500.00, '<p>iiiii</p>\r\n', '<p>ssss</p>\r\n'),
-(23, 'Чековая лента 44 мм', 'Bandă de primire 44 mm', '', '<p><strong>Кассовая (чековая) лента в рулоне 44мм</strong>&nbsp;- термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты. Печать чеков на термобумаге происходит на специальных термопринтерах, аналогичных тем, что используются в факс-аппаратах. Термопринтер просто нагревает термобумагу в нужных местах, в которых происходит потемнение термохимического слоя на поверхности бумаги. При этом бумажная лента быстро протягивается относительно нагревающих элементов принтера. Таким образом на термобумаге быстро и бесшумно появляется отчетливое изображение чека.</p>\r\n', '<p><strong>Numerar (cecuri) &icirc;n rola 44mm bandă</strong> - termochimic bandă de h&acirc;rtie cu un singur strat (h&acirc;rtie termică) este utilizată ca (cec) banda de verificare. Imprimați chitanțe pe h&acirc;rtie termică vine &icirc;n imprimantă termică specială, similare cu cele utilizate &icirc;n mașinile de fax. Termică pur și simplu &icirc;ncălzește h&acirc;rtia termică &icirc;n locurile potrivite, &icirc;n care există o &icirc;nchidere la culoare a stratului termo-chimic pe suprafața h&acirc;rtiei. &Icirc;n această bandă de h&acirc;rtie este tras rapid &icirc;n ceea ce privește elementele de &icirc;ncălzire ale imprimantei. Astfel, h&acirc;rtia termică apare rapid și &icirc;n liniște clar imaginea de verificare.</p>\r\n', '', 'Кассовая (чековая) лента в рулоне 44мм - термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты.', 'Numerar (cecuri) în rola 44mm bandă - termochimic bandă de hârtie cu un singur strat (hârtie termică) este utilizată ca (cec) banda de verificare.', '', 1518.00, '', 1, 1, 0, 0, 'chekovaya-lenta-mm', '2016-08-02 21:00:00', '2016-08-03 07:20:59', 0.00, '', '');
+INSERT INTO `products` (`id`, `name`, `name_ro`, `name_en`, `description`, `description_ro`, `description_en`, `description_short`, `description_short_ro`, `description_short_en`, `price`, `map`, `enabled`, `top`, `views`, `sort`, `slug`, `created_at`, `updated_at`, `price_discount`, `instructions`, `soft`, `features_custom`) VALUES
+(22, 'DAISY EXPERT SX', 'DAISY EXPERT SX', '', '<p>Описание</p>\r\n', '<p>Descrierea</p>\r\n', '', 'Короткое описание', 'Descrierea short', '', 3200.00, '', 1, 1, 0, 0, 'daisy-expert-sx', '2016-08-01 21:00:00', '2016-08-10 09:30:50', 0.00, '<p>iiiii</p>\r\n', '<p>s<strong>sss</strong></p>\r\n', ''),
+(23, 'Чековая лента 57 мм', 'Bandă de primire 57 mm', '', '<p><strong>Кассовая (чековая) лента в рулоне 57мм</strong>&nbsp;- термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты. Печать чеков на термобумаге происходит на специальных термопринтерах, аналогичных тем, что используются в факс-аппаратах. Термопринтер просто нагревает термобумагу в нужных местах, в которых происходит потемнение термохимического слоя на поверхности бумаги. При этом бумажная лента быстро протягивается относительно нагревающих элементов принтера. Таким образом на термобумаге быстро и бесшумно появляется отчетливое изображение чека.</p>\r\n', '<p><strong>Numerar (cecuri) &icirc;n rola 44mm bandă</strong> - termochimic bandă de h&acirc;rtie cu un singur strat (h&acirc;rtie termică) este utilizată ca (cec) banda de verificare. Imprimați chitanțe pe h&acirc;rtie termică vine &icirc;n imprimantă termică specială, similare cu cele utilizate &icirc;n mașinile de fax. Termică pur și simplu &icirc;ncălzește h&acirc;rtia termică &icirc;n locurile potrivite, &icirc;n care există o &icirc;nchidere la culoare a stratului termo-chimic pe suprafața h&acirc;rtiei. &Icirc;n această bandă de h&acirc;rtie este tras rapid &icirc;n ceea ce privește elementele de &icirc;ncălzire ale imprimantei. Astfel, h&acirc;rtia termică apare rapid și &icirc;n liniște clar imaginea de verificare.</p>\r\n', '', 'Кассовая (чековая) лента в рулоне 57мм - термохимическая однослойная бумажная лента (термобумага) применяется в качестве чековой (контрольной) ленты.', 'Numerar (cecuri) în rola 44mm bandă - termochimic bandă de hârtie cu un singur strat (hârtie termică) este utilizată ca (cec) banda de verificare.', '', 5.00, '', 1, 1, 0, 0, 'chekovaya-lenta-mm', '2016-08-02 21:00:00', '2016-08-11 04:29:07', 0.00, '', '', ''),
+(24, 'Datecs DP-25SD', 'Datecs DP-25SD', '', '', '', '', 'Кассовый аппарат Datecs DP - 25-SD предназначен для поддержки малого и среднего точки продаж и услуг . Он предлагает различные интерфейсы , что позволяет соединение с различной периферии , например, сканер штрих-кодов , цифровые весы , ящик. Хранение электронной контрольной ленты обеспечивает встроенный электронный журнал и SD Card.', '', '', 3800.00, '', 1, 1, 0, 0, 'datecs-dpsd', '2016-08-08 21:00:00', '2016-08-11 06:17:40', 0.00, '', '', ''),
+(25, 'TREMOL - SKL', '', '', '<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p>Департаменты</p>\r\n			</td>\r\n			<td>\r\n			<p>до 40</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Наименования</p>\r\n			</td>\r\n			<td>\r\n			<p>до 10 000</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Операторы</p>\r\n			</td>\r\n			<td>\r\n			<p>до 20</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Клиенты</p>\r\n			</td>\r\n			<td>\r\n			<p>1000 с возможностью выписывать счет-фактуры</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Тип оплаты</p>\r\n			</td>\r\n			<td>\r\n			<p>Cash, Card, Bon de masa, программируемый.</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan="2">\r\n			<p>Лого</p>\r\n			</td>\r\n			<td>\r\n			<p>2 файла</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>*.bmp monochrome 384x80</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Операции</p>\r\n			</td>\r\n			<td>\r\n			<p>Продажи (магазины, общепит),Программирование, Отчетность</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Фискальная память</p>\r\n			</td>\r\n			<td>\r\n			<p>Минимально&nbsp; 5 лет&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Электронный журнал</p>\r\n			</td>\r\n			<td>\r\n			<p>SD карта</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Часы</p>\r\n			</td>\r\n			<td>\r\n			<p>Минимально 1500 часов без перезагрузки</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan="3">\r\n			<p>Дисплей оператора</p>\r\n			</td>\r\n			<td>\r\n			<p>LCD, двухлинейный</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>16 профилей</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Подсветка</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan="2">\r\n			<p>Дисплей клиента</p>\r\n			</td>\r\n			<td>\r\n			<p>LCD, двухлинейный</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>16 профилей</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Клавиатура</p>\r\n			</td>\r\n			<td>\r\n			<p>Силикон, 28 кнопок</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan="4">\r\n			<p>Принтер</p>\r\n			</td>\r\n			<td>\r\n			<p>Легкая перезагрузка&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Fujitsu Printer</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>60 мм/сек</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>38 символов в ряд</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Термобумага</p>\r\n			</td>\r\n			<td>\r\n			<p>57 мм &Oslash;40 мм</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan="2">\r\n			<p>Блок Питания</p>\r\n			</td>\r\n			<td>\r\n			<p>AC 100-240V ~ 50/60Hz 0.5A</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>DC 9.6В &ndash; 0.51A</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Батарея</p>\r\n			</td>\r\n			<td>\r\n			<p>Li-Ion 7.4В / 2200 mAh</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Размеры</p>\r\n			</td>\r\n			<td>\r\n			<p>103x210x60 мм, 0.505 кг</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', '', '', 'Портативный кассовый аппарат, легкий и простой в обращении. Аппарат подходит для работы на открытом воздухе, для работы с доставкой на дом и в офисы, для открытых рынков, а также для магазинов с ограниченной площадью. Благодаря большой емкости зарядной батареи, аппарат может работать в местах с нестабильной электроэнергией. \r\nTremol S-KL смело можно назвать бестселлером из всей линейки кассовых аппаратов. Дизайн и функциональность были дополнены и улучшены, что увеличило качество самого аппарата. Аппарат легок в использовании. ', '', '', 3200.00, '', 1, 1, 0, 0, 'tremol-skl', '2016-08-08 21:00:00', '2016-08-10 09:44:49', 0.00, '', '', ''),
+(26, 'Кассовый аппарат', 'Кассовый аппарат', '', '<p>Описание на русском</p>\r\n', '<p>Описание на рум</p>\r\n', '', 'Тест описание', 'Descrierea de test', '', 2000.00, '', 1, 1, 0, 0, 'kassovyj-apparat', '2016-08-21 21:00:00', '2016-08-22 05:51:40', 1900.00, '<p>1</p>\r\n', '<p>2</p>\r\n', ''),
+(27, 'Тестовый товар', '', '', '', '', '', '', '', '', 0.00, '', 1, 1, 0, 0, 'testovyj-tovar', '2016-08-22 21:00:00', '2016-08-23 10:07:09', 0.00, '', '', 'a:2:{i:22;s:0:"";i:23;s:0:"";}');
 
 -- --------------------------------------------------------
 
@@ -676,7 +816,11 @@ CREATE TABLE `products_categories` (
 
 INSERT INTO `products_categories` (`id`, `products_id`, `categories_id`) VALUES
 (1, 22, 40),
-(2, 23, 48);
+(2, 23, 48),
+(3, 24, 40),
+(4, 25, 40),
+(5, 26, 40),
+(6, 27, 40);
 
 -- --------------------------------------------------------
 
@@ -707,7 +851,9 @@ CREATE TABLE `recommended_xref` (
 --
 
 INSERT INTO `recommended_xref` (`id`, `product_id`, `recommended_id`) VALUES
-(2, 22, 23);
+(3, 24, 23),
+(4, 22, 24),
+(5, 26, 24);
 
 -- --------------------------------------------------------
 
@@ -759,7 +905,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `rights`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Xsort', 'support@xsort.md', '$2y$10$twmlb5YlgimkrTIwnKqeauX9JusORUAVWnjjK1jBhM0AQwJW/3RIy', 1, '0TnrED5PWJ6wvqqsAwbDzLzsvYRVRwtyHPtqOjuC9w7WHmJGMSH3ghPYxL10', NULL, '2016-08-03 14:07:44'),
+(1, 'Xsort', 'support@xsort.md', '$2y$10$twmlb5YlgimkrTIwnKqeauX9JusORUAVWnjjK1jBhM0AQwJW/3RIy', 1, '8RNbqi7f1HdHko6w8TjpI1VQmdfP5YxsVHMrsiwS7CQ5Y6xi6jOulrB0YlYl', NULL, '2016-08-05 10:09:28'),
 (6, 'Rezomedia', 'info@rezomedia.md', '$2y$10$B/UX6oV835fIjOaqImlRjuWefQc5zllnWx26HvN0rPZ2yyA6u.196', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -924,6 +1070,12 @@ ALTER TABLE `news_types`
   ADD KEY `news_types_types_id_foreign` (`types_id`);
 
 --
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -1039,7 +1191,7 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT для таблицы `features_products`
 --
 ALTER TABLE `features_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT для таблицы `features_values`
 --
@@ -1059,7 +1211,7 @@ ALTER TABLE `galleries_xref`
 -- AUTO_INCREMENT для таблицы `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT для таблицы `menu_categories`
 --
@@ -1074,7 +1226,7 @@ ALTER TABLE `menu_products`
 -- AUTO_INCREMENT для таблицы `meta`
 --
 ALTER TABLE `meta`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT для таблицы `news`
 --
@@ -1091,20 +1243,25 @@ ALTER TABLE `news_tags`
 ALTER TABLE `news_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+--
 -- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT для таблицы `products_categories`
 --
 ALTER TABLE `products_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `products_news`
 --
@@ -1114,7 +1271,7 @@ ALTER TABLE `products_news`
 -- AUTO_INCREMENT для таблицы `recommended_xref`
 --
 ALTER TABLE `recommended_xref`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `tags`
 --

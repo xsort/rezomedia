@@ -453,14 +453,17 @@
                                 <div role="tabpanel" class="tab-pane" id="characteristic">
                                     <table class="table table-bordered table_carac">
                                         <tbody>
-                                            @foreach($data->features as $feature)
-                                            @if (!isset($feature->getValuesArrayAttribute()[$feature->pivot->value]))
-                                                @continue
-                                            @endif
+                                            @foreach($features as $name => $values)
                                             <tr>
-                                                <td style="width: 35%;">{{ $feature->name }}</td>
-                                                <td>{{ $feature->getValuesArrayAttribute()[$feature->pivot->value] }}</td>
+                                                <td style="width: 35%;">{{ $name }}</td>
+                                                <td>@foreach($values as $value){{ $value }}@if ($value != last($values)), @endif @endforeach</td>
                                             </tr>
+                                            @endforeach
+                                            @foreach($features_custom as $feature)
+                                                <tr>
+                                                    <td style="width: 35%;">{{ $feature['name'] }}</td>
+                                                    <td>{{ $feature['value'] }}</td>
+                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

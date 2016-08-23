@@ -11,6 +11,13 @@
 |
 */
 
+/*
+ *
+ * LARAVEL FILEMANAGER
+ *
+ */
+
+require app_path('Http/routes.files.php');
 
 /*
  *
@@ -51,8 +58,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('create-pdf',       ['uses'=>'ProductsController@createPDF',        'as'=>'create-pdf']);
 
     Route::get('{slug}',            ['uses'=>'CommonController@getSlug',            'as'=>'get_slug']);
-
-
 
 });
 

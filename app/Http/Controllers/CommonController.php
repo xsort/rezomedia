@@ -51,7 +51,31 @@ class CommonController extends Controller
 		foreach($lists as $l){
 			$aproducts[$l->slug] = ['name'=>$l->name, 'value'=>$l->value];
 		}
-		return view('products.product')->with('data', $product)->with(compact('aproducts'));
+
+		//getting features
+		$features = [];
+		foreach($product->features as $feature) {
+			if (!isset($feature->getValuesArrayAttribute()[$feature->pivot->value])) continue;
+			$name  = $feature->name;
+			$value = $feature->getValuesArrayAttribute()[$feature->pivot->value];
+			$features[$feature->name][] = $value;
+		}
+
+		//getting custom features
+		$features_custom_list = Lists::where('slug', 'features-custom')->first()->children;
+		$db_features_custom   = unserialize($product->features_custom);
+		$features_custom      = [];
+		foreach($features_custom_list as $fc){
+			$value = "";
+			if ($db_features_custom){
+				$value = $db_features_custom[$fc['id']];
+			}
+			if ($value == "") continue;
+			$features_custom[] = ['id' => $fc['id'], 'name' => $fc['name'], 'value' => $value];
+		}
+
+
+		return view('products.product')->with('data', $product)->with(compact('aproducts','features','features_custom'));
     }
 
 
