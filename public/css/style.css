@@ -479,7 +479,7 @@ body {
     padding: 5px 15px;
 }
 strong {
-    font-weight: normal;
+    /*font-weight: normal;*/
 }
 .cat_d a:hover {
     background-color: #019cb2;
