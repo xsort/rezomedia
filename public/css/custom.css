@@ -142,6 +142,7 @@ body {
 }
 
 .table_carac {
+    color: #444444;
     width: 80%;
     margin-left: 10%;
     margin-top: 10px;
@@ -181,8 +182,7 @@ body {
 
 .simpleLens-lens-image {
     display: table-cell;
-    height: 400px;
-    vertical-align: middle;
+
 }
 
 .simpleLens-big-image {
@@ -228,6 +228,10 @@ body {
     .product_img_min a img {
         max-height: 80px;
     }
+    .discount .price-old, .discount .price-new {
+        font-size: 20px !important;
+    }
+
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
@@ -242,6 +246,12 @@ body {
     }
     .product_img_min a img {
         max-height: 70px;
+    }
+    .prod-fisc .form-group .form-control{
+        margin-bottom:10px !important;
+    }
+    .discount .price-old, .discount .price-new {
+        font-size: 20px !important;
     }
 }
 
@@ -267,6 +277,9 @@ body {
     }
     .tab_area .nav-tabs::before {
         top: 115%;
+    }
+    .discount .price-old, .discount .price-new {
+        font-size: 20px !important;
     }
 }
 
@@ -643,7 +656,11 @@ table.cart .item-name > * {
 .price .price-new {
     width: 100%;
     display: block;
-    font-size: 17px;
+    font-size: 13px;
+}
+
+.price .price-old{
+    padding-right: 0px ;
 }
 
 .rnf > img {
@@ -774,7 +791,7 @@ table.shop-container td.item-quantity {
     text-align: center;
 }
 
-#home p {
+#home p,#characteristic p,#software p,#instructions p {
     margin-bottom: 0;
 }
 
@@ -1020,4 +1037,8 @@ input:-moz-placeholder {
 
 .top_header_info ul li {
     font-size: 12px
+}
+.nivo-controlNav{
+    width: 100%;
+    left: 0 !important;
 }
