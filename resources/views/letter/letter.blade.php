@@ -202,14 +202,14 @@ table{
                         <td>{{ $p['name'] }}</td>
                         <td class="text-center">buc.</td>
                         <td class="text-center">{{ $p['quantity'] }}</td>
-                        <td class="text-right">{{ $p['price'] }}</td>
-                        <td class="text-right">{{ $p['amount'] }}</td>
+                        <td class="text-right">{{ number_format($p['price'], 2, '.', '') }}</td>
+                        <td class="text-right">{{ number_format($p['amount'], 2, '.', '') }}</td>
                     </tr>
                     @endforeach
                     <tr>
                         <td class="text-center p-total-f" colspan="4"></td>
                         <td class="text-right text-uppercase p-total">Итого</td>
-                        <td class="text-right bolder">{{ $amount }}</td>
+                        <td class="text-right bolder">{{ number_format($amount, 2, '.', '') }}</td>
                     </tr>
                     <tr>
                         <td class="text-center p-total-f" colspan="6" style="height:20px;"></td>
@@ -217,7 +217,7 @@ table{
                     <tr>
                         <td class="text-center p-total-f" colspan="4"></td>
                         <td class="text-right p-total">Включая НДС</td>
-                        <td class="text-right bolder">{{ $amount * 0.20 }}</td>
+                        <td class="text-right bolder">{{ number_format($amount / 6, 2, '.', '') }}</td>
                     </tr>
                 </tbody>
             </table>
