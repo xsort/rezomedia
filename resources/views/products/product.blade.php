@@ -519,15 +519,48 @@
 
 @section('productValidation_angular')
 <script src="js/angular.min.js" ></script>
-  <script>
-  angular.module('myApp', [])
-    .controller('myCtrl', ['$scope', function($scope) {
-      $scope.exploit = {
-       price_exploit : '150'
-     };
-    $scope.cashier = {
-       price_cashier : '200'
-     };
+<script>
+    angular.module('myApp', []).controller('myCtrl', ['$scope', function ($scope) {
+        $scope.exploit = {
+            price_exploit: '{{ $aproducts['m-exploitation']['value'] }}'
+        };
+        $scope.cashier = {
+            price_cashier: '{{ $aproducts['m-cashier']['value'] }}'
+        };
+
+        $scope.getTotal = function () {
+            /*total = $scope.product + $scope.tech + $scope.plomb + $scope.journal + $scope.instr;*/
+
+            var total = $scope.product;
+
+            if(!isNaN($scope.tech)){
+                total += $scope.tech;
+            }
+
+            if(!isNaN($scope.plomb)){
+                total += $scope.plomb;
+            }
+
+            if($("input[name=cashier]").length) {
+                if ($("input[name=cashier]").is(':checked')) {
+                    total += $scope.journal;
+                }
+                else{
+                    total -= $scope.journal;
+                }
+            }
+
+            if ($("input[name=exploit]").length) {
+                if ($("input[name=exploit]").is(':checked')) {
+                    total += $scope.instr;
+                }
+                else {
+                    total -= $scope.instr;
+                }
+            }
+
+            return total;
+        }
     }]);
 </script>
          
