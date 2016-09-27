@@ -96,15 +96,17 @@ class ProductsController extends Controller
         if ($request->features_values) {
             foreach($request->features_values as $key => $features_values){
                 foreach($features_values as $value) {
-                    //$cur_value = DB::table('features_products')->where('products_id', $data->id)->where('features_id',$key)->where('value',$value)->get();
                     $cur_value = DB::table('features_products')->where('products_id', $data->id)->where('features_id', $key)->where('value', $value)->first();
+
                     $insert_data = [    'features_id'  => $key,
                                         'value'        => $value,
                                         'products_id'  => $data->id
                                     ];
+
                     if (empty($cur_value)){
                         DB::table('features_products')->insert($insert_data);
                     }else{
+                        DB::table('features_products')->where('products_id', $data->id)->where('features_id', $key)->whereNotIn('value', [$value])->delete();
                         DB::table('features_products')->where('id', $cur_value->id)->update($insert_data);
                     }
                 }
