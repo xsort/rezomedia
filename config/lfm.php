@@ -4,10 +4,10 @@ return [
     'use_package_routes' => true,
     'middleware' => ['web','admin'],
 
-    'images_dir'         => 'public/uploaded/images/',
+    'images_dir'         => 'public_html/uploaded/images/',
     'images_url'         => '/uploaded/images/',
 
-    'files_dir'          => 'public/uploaded/files/',
+    'files_dir'          => 'public_html/uploaded/files/',
     'files_url'          => '/uploaded/files/',
 
     'file_type_array'         => [
