@@ -25,7 +25,9 @@ class ListsController extends Controller
     }
 
     public function create(){
-        $parents    = $this->getParentsArray();
+        //$parents    = $this->getParentsArray();
+        $parents    = Lists::all()->pluck('name', 'id')->toArray();
+
         return view('admin.lists.edit')->with(compact('parents'));
     }
 
@@ -77,7 +79,9 @@ class ListsController extends Controller
     public function edit($id)
     {
         $data       = Lists::find($id);
-        $parents    = $this->getParentsArray();
+        //$parents    = $this->getParentsArray();
+        $parents    = Lists::all()->lists('name', 'id')->toArray();
+
 
         return view('admin.lists.edit')->with(compact('data', 'parents'));
 
