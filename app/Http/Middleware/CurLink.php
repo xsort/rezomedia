@@ -20,9 +20,15 @@ class CurLink
         $cur_prefix = Route::getCurrentRoute()->getPrefix();
         $cur_link   = Request::path();
 
-        if ($cur_prefix){
+        if ($cur_prefix) {
             $cur_link = $this->str_replace_once($cur_prefix . "/", "", $cur_link);
         }
+
+        $cur_link = preg_replace("/^\/{1}|(ro)$/", "", $cur_link);
+
+        /*if (($cur_link === "/" && count($cur_link) == 1) || $cur_link === "ro") {
+            $cur_link = "";
+        }*/
 
         view()->share('cur_link', $cur_link);
 
