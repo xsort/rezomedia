@@ -4,6 +4,7 @@ namespace App\Providers;
 
 
 use App\Models\Categories;
+use App\Models\Lists;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +24,14 @@ class ViewServiceProvider extends ServiceProvider
         $categories = Categories::all();
 
         view()->share('categories', $categories);
+
+        $menuItems = Lists::where('slug', 'menyu')->first();
+
+        /*foreach ($menuItems->children as $menuItem){
+            dd(count($menuItem->children));
+        }*/
+
+        view()->share('menuItems', $menuItems);
 
     }
 
