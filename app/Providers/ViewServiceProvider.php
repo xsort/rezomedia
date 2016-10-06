@@ -25,11 +25,9 @@ class ViewServiceProvider extends ServiceProvider
 
         view()->share('categories', $categories);
 
-        $menuItems = Lists::where('slug', 'menyu')->first();
+        $menu = Lists::where('slug', 'menyu')->first();
 
-        /*foreach ($menuItems->children as $menuItem){
-            dd(count($menuItem->children));
-        }*/
+        $menuItems = $menu->children()->enabled()->get();
 
         view()->share('menuItems', $menuItems);
 

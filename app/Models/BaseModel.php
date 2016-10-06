@@ -165,4 +165,11 @@ class BaseModel extends Model
         $meta->save();
     }
 
+    public function scopeEnabled($query){
+        return $query->where('enabled', 1);
+    }
+
+    public function scopeUnenabled($query){
+        return $query->where('enabled', 0);
+    }
 }

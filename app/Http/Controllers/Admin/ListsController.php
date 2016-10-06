@@ -20,6 +20,25 @@ class ListsController extends Controller
            $data    = Lists::all();
        }
 
+       $tmp = [];
+       foreach ($data as $d){
+           $tmp[] = $d;
+           foreach ($d->children as $child){
+               $newname = " ---- " . $child->name;
+               $child->name = [$newname];
+               $tmp[] = $child;
+           }
+       }
+
+       $data = $tmp;
+        /*
+        $menu_id = Lists::where('slug', 'menyu')->first()->id;
+        $menu_max_id = Lists::where('parent_id', $menu_id)->max('id');
+
+        if ($id == $menu_id) {
+            $data = Lists::whereBetween('parent_id', array($menu_id, $menu_max_id))->get();
+        }
+        */
         $parents = $this->getParentsArray();
         return view('admin.lists.index')->with(compact('data','parents','id'));
     }
@@ -121,8 +140,8 @@ class ListsController extends Controller
         return back();
     }
 
-    private function getParentsArray(){
+    private function getParentsArray()
+    {
         return Lists::where('parent_id', 0)->lists('name', 'id')->toArray();
     }
-
 }
